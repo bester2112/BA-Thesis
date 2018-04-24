@@ -12,6 +12,12 @@
 - Taptic Engine (von Einleitung)
 https://de.wikipedia.org/wiki/Taptic_Engine
 
+
+
+
+# Änderungen
+- 24.04.2018 Änderungen der Struktur
+
 links
 
 https://de.camelcamelcamel.com/Celebrations-Blisterbox-1er-Pack-1-435/product/B06XNWQRN3?active=summary
