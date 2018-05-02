@@ -1,0 +1,39 @@
+%% Abschnitt1.tex
+%% $Id: Abschnitt1.tex 28 2007-01-18 16:31:32Z bless $
+%%
+
+%% ==============================
+\section{Ausführung des Programms}
+%% ==============================
+\label{ch:Entwurf:sec:Ausführung des Programms}
+
+Zu Beginn musste man sich über alles einen Überblick schaffen. 
+Das heißt, dass man sich alle Bestandteile einzeln betrachten musste bevor man alles zusammen setzen konnte. 
+Es gibt drei / vier große Bestandteile die ich mir überlegen musste.
+
+Zualler erst musste man sich mit dem Armband beschäftigen, um herauzufinden, was es alles konnte. 
+Man konnte die Zeit, die das Armband vibrieren sollte festlegen, sowie auch die Stärke, wie Stark das Armband vibrieren sollte. 
+Man musst darauf achten, dass man die 20 Bytes, die man lediglich mit Bluethooth übertragen konnte nicht überschreitet.
+
+Als nächstes habe ich mir erst einmal überlegt, wie ich die Daten repräsentieren sollte. Ich habe mir überlegt, dass ich eine Datenstruktur erstellen müsste um das Signal anschließend über BLE an das Armband zu übertragen. Aber wie sehen Signale aus? Zuerst habe ich mir überlegt, was ist die Maximale und Minimale Länge, die ich übertragen werde. Dabei habe ich mich für einen Minimalen Wert von 100 Millisekunden (ms) und eine Maximale Länge von 1024 ms entschieden. Da man das Armabnd auch in verschiedenen Vibrationsstärken abspielen konnte, habe ich herausgefunden, manche Vibrationsstärken gar keine Vibration abspielten, weil so wenig Strom übertragen wurde, dass die Vibrationsmotoren gar nicht erst angesteuert wurden. Dabei haben sich die Grenzen hierbei von 0x07FF bis 0xFFFF behandelt. Um jedoch merkbare unterschiede der Vibrationsstärke zu bestimmen habe ich mir die Grenzen in 5 Bereiche aufgeteilt. 
+Somit hatte ich zwei Variablen, die ich für meine Darstellung von einem Signal entscheidend war. 
+
+Da ich jetzt Signale mit einer Länge von 100 ms bis 1024 ms hatte musste ich mir überlegen, wie viele Signaltpyen ich hier erzeugen würde. Der Morsecode beispielsweise bestand aus 3 Teilen ein Kurzes Signal, ein Langes Signal und einer Pause. Dabei wollte ich jetzt nicht den Morsecode nehmen und habe mich für eine eigene Definition entschieden. Dabei habe ich gesagt dass es drei Signaltypen gibt. Diese drei Signaltypen sind Kurz, Mittel und Lang, auf die ich gleich noch einmal zu sprechen komme.
+
+Vorher will ich auf den Evolutionären Algorithmus zu sprechen kommen. Beim Evolutionären Algorithmus musste man sich zu beginn eine Anfangspopulation erstellen. Also in meinem Fall wäre die Anfangspopulation eine Menge von Signalen die eine Variation aufweisen sollte. Wie sollte eine solche Population aussehen? Hier ist mir der Gedanken gekommen, man sollte die Signaltypen in Grenzen aufteilen, das bedeutet, dass man beispielsweise von 100 bis 300 ms Kurz, von 400 bis 700 ms Mittel und von 800 bis 1024 ms Lang definieren sollte. Am Anfang habe ich dies auch gemacht, dass die Grenzen fest von mir vorgegeben waren, jedoch  hat man festgestellt, dass die Nutzer nicht genau diese Grenzen als Kurz, Mittel und Lang empfunden haben. Das heißt man musste sich vor dem Evolutionören Algorithmus überlegen, wie die Nutzer die Signalgrenzen selbst bestimmten. (Nähere Information im Kapitel Implementierung)
+
+Nach der Bestimmung der Signaltypen, hat man sich erneut an den Evolutionären Algorithmus gewagt. Das bedeutete, man musste eine Anfangspopulation bestimmen. Dabei hat man N Individuen für jeden Signaltypen innerhalb seiner Grenzen erzeugt. Zuerst komplett zufällig innerhalb der Grenzen, dabei kam man zu dem Ergebnis, dass die Grenzen nur in seltenen fällen drinnen waren. D.h. dass man nie den vollständigen Intervall den man vorher bestimmt hat in der Anfangspopulation vertreten war. Deshalb habe man von den N Individuen zwei Individuen erzeugt, die genau die beiden Grenzen repräsentiert haben.
+
+Nach der Erzeugung der Anfangspopulation sollten die Signale vom Benutzer alle bewertet werden. 
+Dabei hatte man den Gedanken, dass man den Benutzer die Signale mehrmals abspielt und ihn jedes mal abfragt, was für ein Signal er erkannt hat und anhand der Häufigkeit, die er das Signal als den Signaltypen erkannt hat wie das Programm es für Ihn im Vorfeld bestimmt hatte, einen Fittnesswert bestimme. Jedoch müssten diese 3*N Signale mehrmals abgespielt werden, um eine Häufigkeit zu erhalten. Wenn man hier für die Population jedes Individuum fünf mal abspielen würde, wäre man bei 15*N. Bei einem N von 10 Signalen pro Signaltyp wären dass dann 150 Bewertungen die der Nutzer pro Population machen müsste um nur eine Generation zu bewerten. Wenn man nur vier Generationen bestimmen wollte, so wäre man bei 450 Bewertungen nur um einen personalisierten Wert zu erhalten. Das wäre für einen normalen Benutzer nicht zumutbar, dass er so viel Zeit in anspruch nehmen würde um so viele Signale zu bewerten. 
+
+Daher musste eine alternative her. Die Alternative ist gewesen, man spiele dem Benutzer jedes Individuum nur einmal ab und stellt Ihn dazu drei Fragen, die wie in einem SUS Fragebogen gestellt wird, mit einer Skala von sehr gut bis sehr schlecht. [BILD EINFÜGEN]
+Anhand der Fragen habe ich einen Fitnesswert bestimmt. Die weitere Beschreibung des Algorithmus wird in der Implementierung beschrieben.
+
+Mit jeder Generation ist man davon ausgegangen, dass die Grenzen der Signaltypen kleiner wurde und zu dem Wert, dass dem Nutzer am besten gefallen würde hinkonvergieren würde.
+ Würde man dies weitertreiben, bis die jeweiligen Signaltypen gegen eine Zahl konvergieren, würde man noch ein paar mehr Itterationen machen müssen, was unter Bedacht, dass der Benutzer nicht so lange die Signale bewerten würde nach vier Itterationen aufgehort. Nachdem der Algorithmus also nach der vierten Generation die Population erzeugt hat, wurde von allen Individuen das Minumin und Maximum der jeweiligen Signaltypen bestimmt worden. Anhand der Minima und Maxima wurde für jeden Signaltypen der Mittelwert bestimmt.
+
+Somit hat man nach dem Algorithmus einen personalisierten Kurz, Mittel und Lang Wert.
+
+Im dritten Schritt musste man herausfinden, wie die Signale im Vergleich zu Vorgegebenen Werten erkannt werden.
+Dabei hat man verschiedene Folgen von Signalen vordefiniert, die der Benutzer erkennen sollte. Dabei habe man zuerst drei Signal-Folgen (aka Muster) abgespielt, anschließend vierer Muster und zu letzt fünfer Muster. Es wurde abwechselnd ein zufälliges genetisches Muster und ein generisches Muster abgespielt. 

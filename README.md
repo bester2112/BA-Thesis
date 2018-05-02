@@ -16,7 +16,13 @@ https://de.wikipedia.org/wiki/Taptic_Engine
 
 
 # Änderungen
-- 24.04.2018 Änderungen der Struktur
+- 24.04 Änderungen der Struktur
+- 25.04 Anpassungen der Struktur, beginn inhaltsverzeichnis hinzuzufügen, Themen hinzuzufügen.
+
+
+Excel mehrere Kategorien (Kurz mittel lang) Link
+https://support.office.com/de-de/article/hinzuf%C3%BCgen-einer-legende-zu-einem-diagramm-eccd4b70-30ec-429d-8600-6305e08862c7
+
 
 links
 
