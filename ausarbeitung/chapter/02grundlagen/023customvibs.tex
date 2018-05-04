@@ -1,0 +1,45 @@
+%% custom vibs.tex
+%% $Id: Genetischer Algorithmus.tex 28 2007-01-18 16:31:32Z bless $
+%%
+
+Da heutzutage beinahe jedes Gerät ein Vibtarionsmotor verbaut hat, sei es das Handy, die Smartwatches oder Fitnessarmbänder (uvm.), werde ich im folgenden noch auf einige aktuelle Technologien und deren Umsetzung der personalisierten Vibtationsmuster zu sprechen kommen. 
+
+%% ==============================
+\subsection{Taptic Engine}
+%% ==============================
+\label{ch:Grundlagen:sec:RelatedWork:subsec:TapticEngine}
+
+Die Taptic Engine ist eine von der Firma Apple eine eigen entwickeltes Vibrationsmotor, dass heutzutage in nahezu allen Apple Produkten vertreten ist. Das erste Gerät was die Taptic Engine bekommen hatte, war die Apple Watch. Der Name bildet sich aus dem Wort "Taktil" und "Haptisch". 
+Trotz des neu erfinden einer mechanischen Rückmeldung bietet Apple keine Personalisierung, wie lange eine Rückmeldung erfolgen soll, für die Apple Watch an. Die Einstellungsmöglichkeiten an der Apple Watch ist lediglich die Stärke der Vibration. Diese ist in 3 StÃ¤rkestufen unterteilt. Dabei kann man aber nicht wirklich von einer Personalisierung sprechen. 
+
+(BILD) 
+
+Aktuell ist es so, dass man bei dem Hersteller Samsung keinerlei MÃ¶glichkeit hat sich dort die Vibrationen zu Personalisieren. Man kann hier lediglich unter einer Handvoll vordefinierten Vibrationsmuster entscheiden. 
+ 
+%% ==============================
+\subsection{Personalisierte Vibration}
+%% ==============================
+\label{ch:Grundlagen:sec:RelatedWork:subsec:PersonalisierteVibration}
+
+(BILD)
+
+Der Hersteller Apple hat auch bei dem iPhone eine Möglichkeit geboten eigene Vibrationsmuster zu erstellen, jedoch mit Einschränkungen.
+Wenn man in die jeweilige Einstellung der iPhones gelangt, erscheint das folgende Bild. Beim drücken auf das Display wird an der Stelle eine Vibration erzeugt. Man hat 10 Sekunden um ein eigenes Muster zu erzeugen, indem man wiederholt auf den Bildschirm drückt. An der Stelle, an der man den Bildschirm berührt hat, erscheint visuell um der Position ein Kreis. Die erzeugten Vibrationen werden in einer Leiste visuell angezeigt. 
+Man kann sich beliebig viele Vibrationsmuster speichern, die bis zu 10 Sekunden lang sind. \cite{fleizach2016custom}
+
+Die Einschränkung die man hier nennen muss ist, dass man die Vibrationsmuster nur für Systeminterne Funktionen benutzen kann. Dies bedeutet, dass man die Funktionen für Klingeltöne, Nachrichtentöne, Erinnerungshinweise, Kalenderhinweise (o.Ä.) hinzufügen kann. Für eine andere Anwendung, die nicht im Betriebsystem integriert ist, ist das nicht möglich. Somit können Benachrichtigungen von anderen Entwicklern keine eigene Vibrationsmuster zuweisen. Somit kann man bei Benachrichtigungen von anderen Entwicklern nicht anhand der Vibrationen des iPhones  unterscheiden.
+
+%% ==============================
+\subsection{Personalisierte Smartwatch}
+%% ==============================
+\label{ch:Grundlagen:sec:RelatedWork:subsec:PersonalisierteSmartwatch}
+
+Das letzte Gerät ist eine Smartwatch von einem kleinen StartUp namens Martian. 
+
+Das letzte GerÃ¤t was ich ansprechen mÃ¶chte, ist von keiner groÃŸen Firma wie Apple oder Samsung sondern ein StartUp namens Martian. Diese Firma hat eine Uhr hergestellt, die man mittels einer App auf dem Handy anpassen kann. Mittels der Application kann man sich fÃ¼r mehrere Hunderte Apps die Benachrichtigungen senden, ein Muster mit bis zu 4 Signalen auf der Uhr als Vibration darstellen lassen. Die Signale sind zwischen Lang, Kurz und Pause (also kein Signal) Darstellbar. 
+Die Uhr hat mich als einziges Produkt Ã¼berzeugt, dass man sich persÃ¶nliche Vibrationsmuster erstellen und abspielen lassen kann. NatÃ¼rlich ist die LÃ¤nge und StÃ¤rke der Vibration damit vorgegeben.
+
+Somit wollte ich herausfinden, ob es mÃ¶glich ist fÃ¼r jedes Individuum eine eigene passende LÃ¤nge und StÃ¤rke von Vibrationssignalen zu erstellen, so dass die Kombination der Signale noch erkannt werden.
+
+Die Hypothese die ich mit dieser Bachelorarbeit beantworten mÃ¶chte ist, ob man mittels personalisierten Vibrationen eine Folge von Vibrationen besser unterscheiden als vorgegebene Vibrationen.
+Um dies beantworten zu kÃ¶nnen verwende ich Wearable zur Darstellung der Vibrationssignale und einen Genetischen Algorithmus um die personalisierten Vibrationen zu ermitteln.
