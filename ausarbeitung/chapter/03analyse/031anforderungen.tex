@@ -1,10 +1,31 @@
 %% Anfroderungen.tex
 %% $Id: Anfroderungen.tex 28 2007-01-18 16:31:32Z bless $
 
-Die Aufgabenstellung bestand darin, herauszufinden ob personalisierte Virbationsmuster gegenüber standard Vibrationsmuster besser erkannt worden sind. 
-Dabei musste man sich definieren wie ein Signal aufgebaut gewesen ist. Dabei musste für ein Signal eine Datenstruktur erstellt werden. 
+Die Aufgabenstellung bestand darin, herauszufinden, ob ein personalisiertes Vibrationsmuster besser als ein vordefiniertes Vibrationsmuster erkannt wird.
+Um dies zu lösen musste man sich im Vorfeld ein paar Gedanken über die Repräsenatation eines Signals, die Dekodierung und über die Übertragung machen.
+Im Folgenden werden diese Entscheidungsfindungen beschrieben.
+
+Die Übertragung
+
+Zu aller erst hat man sich das vorgegebene Armband genauer inspiziert. Dabei konnte man das Armband über eine Serielle Schnittstelle sowie über Bluetooth Low Energie (LE) nutzen. 
+Bei der Nutzung der Seriellen Schnittstelle hatte man zwar den Vorteil, dass man sich nicht mittels Bluetooth auseinander setzen müsse, jedoch ist man an einem Kabel über den PC verbunden gewesen, was zur Einschränkung der Bewegungsfreiheit _______________ hat. Um genau diesen Nachteil nicht zu haben hat man sich für Bluetooth LE entschieden. Dabei gab es auch einige Nachteile, die man beheben musste. Die Kommunikation mittels Bluetooth LE hatte eine maximale Datenübertragung von 20 Bytes. Diese wurden jeweils in zwei Bytes Blöcke unterteilt.
+
+Anhand der Begrenzung der Datenübertragung hat man sich eine geeignete Dekodierung des Signals überlegen müssen. 
+
+
+
+
+
+
+
+
+
+
 
 \dots
+Dabei musste man sich definieren wie ein Signal aufgebaut gewesen ist. Dabei musste für ein Signal eine Datenstruktur erstellt werden. 
+
+
 
 Dekodierung eines Signals.
 
