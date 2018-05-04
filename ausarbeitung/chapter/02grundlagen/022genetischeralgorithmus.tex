@@ -3,7 +3,7 @@
 %%
 
 Die Evalutionären Algorithmen sind stochastische Optimierungsverfahren. Man findet damit nicht die beste Lösung für ein Problem, jedoch findet man eine gute Annäherung.
-Dabei hat man sich bei den Evolutionären Algorithmen an der Biologischen Evolution von Darwin inspirieren lassen.
+Dabei hat man sich bei den Evolutionären Algorithmen an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
 
 In der Biologie ist jeder lebende Organismus ein Induvidiuum.
 Jedes Induvidiuum besitzt Erbinformationen in der Form von Chromosomen. Die Erbinformationen werden auch \textbf{Gene} oder \textbf{DNA} genannt.
@@ -12,16 +12,16 @@ Eine Gruppe von Induviduen wird als \textbf{Population} bezeichnet.
 Der Algorithmus wurde anhand der folgenden Merkmale erstellt.
 
 %% ==============================
-\section{Selektion}
+\subsection{Selektion}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Geräte:sec:Selektion}
+\label{ch:Grundlagen:sec:Taktile Geräte:subsec:Selektion}
 
 Eine \textbf{Selektion} ist ein Mechanismus, bei dem man sich zwei Individuen auswählt, um anschließend die Gene der beiden Individuen, mittels der sogenannten \textbf{Rekombination}, zu kombinieren. Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, um eine bestmöglichste Lösung für ein Problem zu liefern.
 
 %% ==============================
-\section{Variation}
+\subsection{Variation}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Geräte:sec:Variation}
+\label{ch:Grundlagen:sec:Taktile Geräte:subsec:Variation}
 
 Man sollte eine zahlreiche Variation von Genen der einzelnen Individuen besitzen. 
 Denn nehme anhand einem Beispiel von Süßigkeiten einmal kurz an, dass alle Süßigkeiten die gleiche Farbe und die gleiche Form haben. Wenn man sich jetzt zwei zufällige Süßigkeiten auswählen würde, hätten Sie keinerlei unterschiede und so würde das Nachkommen die gleichen Gene besitzen. Damit genau das nicht auftaucht, versucht man zu Beginn eine große Variation an Individuen zu erzeugen und diese als Anfangs Population für einen Evolutionären Algorithmus zu nutzen. Mittels Rekombination und Mutation wird dabei ein neues Induvidiuum für die nächste Generation erzeugt. 
@@ -35,50 +35,50 @@ Die Variation der DNA  spielt eine wichtige Rolle, denn die ist für die nachfol
 Um bei der Selektion unterschiedliche Induviduuen ausgewählt werden können, benötigt man zunächst eine Variation 
 
 %% ==============================
-\section{Vererbung / Gendrift}
+\subsection{Vererbung / Gendrift}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Geräte:sec:Variation}
+\label{ch:Grundlagen:sec:Taktile Geräte:subsec:Variation}
 Bla fasel \dots
 
 %% ==============================
-\section{Allgeimeiner Vorgang eines Evolutionären Algorithmus}
+\subsection{Allgeimeiner Vorgang eines Evolutionären Algorithmus}
 %% ==============================
 \label{ch:Grundlagen:sec:Taktile Geräte:sec:Allgeimeiner Vorgang eines Evolutionären Algorithmus}
 Ein Evolutionärer Algorithmus besitzt grundsätzlich immer die gleichen Komponenten die miteinander.
 
 %% ==============================
-\section{Initialisierung}
+\subsection{Initialisierung}
 %% ==============================
 \label{ch:Grundlagen:sec:Initialisierung}
 Man erzeugt sich zur Initialisierung eine Population von Individuen, die eine Variation von Genen besitzt. 
 
 %% ==============================
-\section{Bewertung der Individuen}
+\subsection{Bewertung der Individuen}
 %% ==============================
 \label{ch:Grundlagen:sec:Bewertung der Individuen}
 Bevor man eine neue Population für die nächste Generation berechnen kann, muss man zuerst mithilfe einer Fitnessfunktion jedes Induvidiuum einen Fitnesswert bestimmen. 
 
 %% ==============================
-\section{Selektion}
+\subsection{Selektion}
 %% ==============================
 \label{ch:Grundlagen:sec:Selektion}
 Anhand dem Fitnesswert der Induviduen werden zwei zufällige Induviduen bestimmt. Diese selektierten Induviduen werden als Eltern für die Nächste Generation benutzt.
 Bei der Selektion wird ein hoher Fitnesswert bevorzugt.
 
 %% ==============================
-\section{Rekombination}
+\subsection{Rekombination}
 %% ==============================
 \label{ch:Grundlagen:sec:Rekombination}
 Die Gene der ausgewählten Eltern werden miteinander kombiniert und bilden die Gene des neuen Induvidiuum für die Population der nächsten Generation. Hier gibt es verschiedene Kombinationsmöglichkeiten, die angewendet werden können.
 
 %% ==============================
-\section{Mutation}
+\subsection{Mutation}
 %% ==============================
 \label{ch:Grundlagen:sec:Mutation}
 Bei dem erzeugen Induvidiuum besteht eine Chance, dass die kombinierten Gene durch eine Mutation verändert werden. 
 
 %% ==============================
-\section{Wiederholung durch neuer Generation}
+\subsection{Wiederholung durch neuer Generation}
 %% ==============================
 \label{ch:Grundlagen:sec:Wiederholung durch neuer Generation}
 Der Vorgang der Selektion, Rekombination und Mutation wird so oft ausgeführt, bis man eine neue Population hat, die genauso groß ist, wie die Anfangapopulation.
