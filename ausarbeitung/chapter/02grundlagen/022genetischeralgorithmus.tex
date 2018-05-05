@@ -2,92 +2,98 @@
 %% $Id: Genetischer Algorithmus.tex 28 2007-01-18 16:31:32Z bless $
 %%
 
-Die Evalution{\"a}ren Algorithmen sind stochastische Optimierungsverfahren. Man findet damit nicht die beste L{\"o}sung f{\"u}r ein Problem, jedoch findet man eine gute Ann{\"a}herung.
-Dabei hat man sich bei den Evolution{\"a}ren Algorithmen an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
+Man versteht unter dem Begriff der Evalution{\"a}ren Algorithmen (EA) eine Ansammlung von Techniken und Methoden die f{\"u}r Optimierungsprobleme eine n{\"a}herungsweise eine L{\"o}sung findet. \cite{weicker2015evolutionare} 
 
-In der Biologie ist jeder lebende Organismus ein Induvidiuum.
-Jedes Induvidiuum besitzt Erbinformationen in der Form von Chromosomen. Die Erbinformationen werden auch \textbf{Gene} oder \textbf{DNA} genannt.
-Eine Gruppe von Induviduen wird als \textbf{Population} bezeichnet.
+// Die Evalution{\"a}ren Algorithmen sind stochastische Optimierungsverfahren. Mithilfe eines Evolution{\"a}ren Algorithmus (EA) findet man nicht die beste L{\"o}sung f{\"u}r ein Problem, jedoch findet man eine gute L{\"o}sung, die der eigentlichen L{\"o}sung recht nahe kommt.
+Man hat sich bei dem EA an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
 
-Der Algorithmus wurde anhand der folgenden Merkmale erstellt.
+%% ==============================
+\subsection{Evolution in der Biologie}
+%% ==============================
+Im 19. Jahrhundert hat sich Darwin mit der Gedanken {\"u}ber die Evolution von Lebewesen {\"u}ber mehrere Generationen gemacht. Dabei kam hat er auf das Prinzip \grqq{Survival of the fittest}. Mit dem Prinzip hat Charles Darwin die Entstehung neuer Arten beschrieben. Dabei haben die Arten {\"u}berlebt, die sich am besten f{\"u}r die Umgebung angepasst haben. Die die sich an die neue Situation nicht angepasst hatten sind nach ein paar Generationen zur Minderheit geworden. \cite{hunermann2007brockhaus}
+
+In der Biologie ist jeder lebende Organismus ein \textvf{Individuum}.
+Jedes Individuum besitzt Erbinformationen in der Form von Chromosomen. Die Erbinformationen werden auch \textbf{Gene} oder \textbf{DNA} genannt. 
+Eine Gruppe von Individuen wird als \textbf{Population} bezeichnet. 
+
+Beim EA hat man sich das Verhalten in der Biologie angeschaut und versucht zu {\"u}bernehmen. \cite{flickevolutionare}
+
 
 %% ==============================
 \subsection{Selektion}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Ger{\"a}te:subsec:Selektion}
 
-Eine \textbf{Selektion} ist ein Mechanismus, bei dem man sich zwei Individuen ausw{\"a}hlt, um anschlie{\ss}end die Gene der beiden Individuen, mittels der sogenannten \textbf{Rekombination}, zu kombinieren. Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, um eine bestm{\"o}glichste L{\"a}sung f{\"u}r ein Problem zu liefern.
+Eine \textbf{Selektion} ist eine Auswahl von Individuen einer Population. Durch Kombination der Gene der ausgew{\"a}hlten Individuen, werden neue Individuen f{\"u}r die n{\"a}chste Generation erzeugt. Diese Kombination wird \textbf{Rekombination} genannt.
+Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, die eine bestm{\"o}glichste L{\"o}sung f{\"u}r ein Problem liefern. \cite{weicker2015evolutionare} \cite{flickevolutionare}
 
 %% ==============================
 \subsection{Variation}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Geräte:subsec:Variation}
 
-Man sollte eine zahlreiche Variation von Genen der einzelnen Individuen besitzen. 
-Denn nehme anhand einem Beispiel von S{\"u}{\ss}igkeiten einmal kurz an, dass alle S{\"u}{\"ss}igkeiten die gleiche Farbe und die gleiche Form haben. Wenn man sich jetzt zwei zuf{\"a}llige S{\"u}{\ss}igkeiten ausw{\"a}hlen w{\"u}rde, h{\"a}tten Sie keinerlei unterschiede und so w{\"u}rde das Nachkommen die gleichen Gene besitzen. Damit genau das nicht auftaucht, versucht man zu Beginn eine gro{\ss}e Variation an Individuen zu erzeugen und diese als Anfangs Population f{\"u}r einen Evolution{\"a}ren Algorithmus zu nutzen. Mittels Rekombination und Mutation wird dabei ein neues Induvidiuum f{\"u}r die n{\"a}chste Generation erzeugt. 
+F{\"u}r eine Population sollte man zu Beginn eine gro�e \textbf{Variation} von Individuen mit unterschiedlichen Genen besitzen. 
+Nehme man anhand einem Beispiel an, dass man mithilfe einer Evolution eine neue Art von S{\"u}{\ss}igkeiten entwickeln m{\"o}chte. Dabei sollten die Form und Farbe neu bestimmt werden. Wenn man jetzt eine Start-Population von Induviduen habe, die alle die gleichen Gene besessen w{\"u}rde, so w{\"u}rde man anhand zwei Selektierten Individuen keine {\"A}nderung der n{\"a}chesten Generation erkennen, da die Nachkommen auch alle die gleichen Gene besitzen w{\"u}rden, falls keine Mutation auftreten w{\"u}rde.
+Damit dieses Verhalten nicht auftritt, versucht man zu Beginn eine gro{\ss}e Variation an Individuen zu erzeugen und diese als Anfangs Population f{\"u}r einen Evolution{\"a}ren Algorithmus zu nutzen. Mittels Rekombination und Mutation wird dabei ein neues Individuum f{\"u}r die n{\"a}chste Generation erzeugt, dass andere Gene vorweist. Mittels der Rekombination werden verschiedene Gene bei der Fortpflantzung der n{\"a}chsten Generation vermischt und somit neue Gene f{\"u}r erzeugt. Die Mutation ist eine Ver{\"a}nderung der Gene eines Individuums, die meistens durch Umwelteinfl{\"u}sse ausgel{\"o}st werden. \cite{flickevolutionare} 
 
+//Durch Rekombination und Mutation der DNA der Individuen erh{\"a}lt man eine Variation. 
+//Die Rekombination und Mutation erzeugt lediglich ein neues Individuum aus der DNA der zuvor selektierten Individuen.
 
-//Durch Rekombination und Mutation der DNA der Induviduuen erh{\"a}lt man eine Variation. 
-//Die Rekombination und Mutation erzeugt lediglich ein neues Induviduum aus der DNA der zuvor selektierten Induviduen.
-
-Um die n{\"a}chsten Generationen zu bilden wird eine Rekombination und Mutation auf die DNA der Selektierten Induviduen ausgef{\"u}hrt. 
+//Um die n{\"a}chsten Generationen zu bilden wird eine Rekombination und Mutation auf die DNA der Selektierten Induviduen ausgef{\"u}hrt. 
 Die Variation der DNA  spielt eine wichtige Rolle, denn die ist f{\"u}r die nachfolgende Rekombination und Mutation entscheident f{\"u}r die n{\"a}chsten Generationen. 
-Um bei der Selektion unterschiedliche Induviduuen ausgew{\"a}hlt werden k{\"o}nnen, ben{\"o}tigt man zun{\"a}chst eine Variation 
+Um bei der Selektion unterschiedliche Individuen ausgew{\"a}hlt werden k{\"o}nnen, ben{\"o}tigt man zun{\"a}chst eine Variation 
 
 %% ==============================
-\subsection{Vererbung / Gendrift}
+\subsection{Gendrift}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Ger{\"a}te:subsec:Variation}
-Bla fasel \dots
+Unter \textbf{Gendrift} versteht man eine zuf{\"a}llige Ver{\"a}nderung der Genh{\"a}ufigkeit in einer Population, innerhalb einer Evolution. Ein Gendrift tritt bei kleineren Populationen h{\"a}ufiger auf. \cite{gendrift2018brockhaus}
+
 
 %% ==============================
 \subsection{Allgeimeiner Vorgang eines Evolution{\"a}ren Algorithmus}
 %% ==============================
-\label{ch:Grundlagen:sec:Taktile Ger{\"a}te:sec:Allgeimeiner Vorgang eines Evolution{\"a}ren Algorithmus}
-Ein Evolution{\"a}rer Algorithmus besitzt grunds{\"a}tzlich immer die gleichen Komponenten die miteinander.
+Der EA besitzt im allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im folgenden erl{\"a}utert. Dieses Wissen stammt aus den folgenden Quellen \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
 
 %% ==============================
-\subsection{Initialisierung}
+\paragraph*{Initialisierung}
 %% ==============================
-\label{ch:Grundlagen:sec:Initialisierung}
-Man erzeugt sich zur Initialisierung eine Population von Individuen, die eine Variation von Genen besitzt. 
+In der Initialisierung erzeugt man sich eine Population von Individuen, die eine zahlreiche Variation von Genen besitzen. F{\"u}r die Anfangs-Population nimmt man in der Praxis zuf{\"a}llige Individuen oder auch die besten bekanntesten L{\"o}sungskandidaten.
 
 %% ==============================
-\subsection{Bewertung der Individuen}
+\paragraph*{Bewertung der Individuen}
 %% ==============================
-\label{ch:Grundlagen:sec:Bewertung der Individuen}
-Bevor man eine neue Population f{\"u}r die n{\"a}chste Generation berechnen kann, muss man zuerst mithilfe einer Fitnessfunktion jedes Induvidiuum einen Fitnesswert bestimmen. 
+Bevor man eine Evolution f{\"u}r eine Population erzeugen kann, ben{\"o}tigt man zuvor Attribute anhand derer man die n{\"a}chste Generation berechnet. 
+Diese Attribute nennt man den \textbf{Fitnesswert}. Der Fitnesswert muss f{\"u}r jedes Individuum der Population bestimmt werden. Der Fitnesswert wird anhand mithilfe einer Fitnessfunktion berechnet. 
+
+//Bevor man eine neue Population f{\"u}r die n{\"a}chste Generation berechnen kann, muss man zuerst mithilfe einer Fitnessfunktion jedes Induvidiuum einen Fitnesswert bestimmen. 
 
 %% ==============================
-\subsection{Selektion}
+\paragraph*{Selektion}
 %% ==============================
-\label{ch:Grundlagen:sec:Selektion}
-Anhand dem Fitnesswert der Induviduen werden zwei zuf{\"a}llige Induviduen bestimmt. Diese selektierten Induviduen werden als Eltern f{\"u}r die n{\"a}chste Generation benutzt.
-Bei der Selektion wird ein hoher Fitnesswert bevorzugt.
+Bei der Selektion w{\"a}hlt man die Individuen jeweils Individuen aus einer Population aus. Dabei werden die Individuen bevorzugt, die einen hohen  Fitnesswert aufweisen. Diese selektierten Individuen werden als Eltern f{\"u}r die Rekombination ausgew{\"a}hlt.
 
 %% ==============================
-\subsection{Rekombination}
+\paragraph*{Rekombination}
 %% ==============================
-\label{ch:Grundlagen:sec:Rekombination}
-Die Gene der ausgew{\"a}hlten Eltern werden miteinander kombiniert und bilden die Gene des neuen Induvidiuum f{\"u}r die Population der n{\"a}chsten Generation. Hier gibt es verschiedene Kombinationsm{\"o}glichkeiten, die angewendet werden k{\"o}nnen.
+Die Eltern aus der Selektion werden in diesem Schritt einen Nachfahren f{\"u}r die n{\"a}chste Generation erzeugen. Dabei werden die jeweiligen Gene der Eltern Kombiniert und an die n{\"a}chste Generation vererbt. Die Kombinationsm{\"o}glichkeiten h{\"a}ngen davon ab, wie die Gene repr{\"a}sentiert sind.
+Die neuen Individuen werden in die Population f{\"u}r die n{\"a}chste Generation hinzugef{\"u}gt.
+
+//Die Gene der ausgew{\"a}hlten Eltern werden miteinander kombiniert und bilden die Gene des neuen Induvidiuum f{\"u}r die Population der n{\"a}chsten Generation. Hier gibt es verschiedene Kombinationsm{\"o}glichkeiten, die angewendet werden k{\"o}nnen.
 
 %% ==============================
-\subsection{Mutation}
+\paragraph*{Mutation}
 %% ==============================
-\label{ch:Grundlagen:sec:Mutation}
-Bei dem erzeugen Induvidiuum besteht eine Chance, dass die kombinierten Gene durch eine Mutation ver{\"a}ndert werden. 
+Es besteht eine Chance, dass die Gene der Individuen der neuen Generation sich mutieren k{\"o}nnen. 
 
 %% ==============================
-\subsection{Wiederholung durch neuer Generation}
+\paragraph*{Wiederholung durch neuer Generation}
 %% ==============================
-\label{ch:Grundlagen:sec:Wiederholung durch neuer Generation}
+
+Man f{\"u}hrt die Rekombination so oft aus, bis man die gleiche Anzahl an Individuen f{\"u}r die neue Population hat, wie die Anzahl vorherige Population gewesen ist. 
+Der Vorgang der Bewertung, Selektion, Rekombination und Mutation muss f{\"u}r jede neue Generation durchgef{\"u}hrt werden. 
+Die neu erzeugte Population wird als Eingabe f{\"u}r die neue Generation verwendet. 
+Dabei wird der Algorithmus so lange ausgef{\"u}hrt bis eine hinreichende Abbruchbedingung erreicht worden ist. 
+Das dabei erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das Problem.
+
+//Man f{\"a}hrt den Schritt so oft aus, bis man wieder die gleiche gro{\ss}e an Individuen f{\"u}r die n{\"a}chste Generation 
 Der Vorgang der Selektion, Rekombination und Mutation wird so oft ausgef{\"u}hrt, bis man eine neue Population hat, die genauso gro{\ss} ist, wie die Anfangapopulation.
 Nachdem die neue Population erzeugt wurde, wird diese durch die Anfangspopulation ersetzt und man f{\"u}hrt den Algorithmus erneut aus. 
-Dies geschieht so lange, bis man eine hinreichende L{\"o}sung für das Problem hat. 
-
-
-
-
-Ich habe meinen Evolution{\"a}ren Algorithmus so angepasst, dass bei mir ein Induviduum ein Signal ist. 
-Ich habe dem Benutzer das Signal mit dem Wearable abspielen lassen und im Anschluss Fragen beantworten lassen. 
-Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer war entscheidend um nach der kompletten Bewertung der Population 
+Dies geschieht so lange, bis man eine hinreichende L{\"o}sung f{\"u}r das Problem hat. 

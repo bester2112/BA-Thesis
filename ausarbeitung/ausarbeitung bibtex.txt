@@ -47,3 +47,10 @@
 %  url    = "https://support.apple.com/de-de/HT204793",
 %  year   = "2018 (accessed May 1, 2018)"
 %}
+
+% Evolutionaere Algorithmen
+
+@article{flickevolutionare,
+  title={Evolution{\"a}re Algorithmen},
+  author={Flick, Patrick}
+}
