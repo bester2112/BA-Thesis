@@ -5,7 +5,7 @@ Die Aufgabenstellung bestand darin, herauszufinden, ob ein personalisiertes Vibr
 Um dies zu l{\"o}sen musste man sich im Vorfeld ein paar Gedanken {\"u}ber die Repr{\"a}senatation eines Signals, die Dekodierung und {\"u}ber die {\"U}bertragung machen.
 Im Folgenden werden diese Entscheidungsfindungen beschrieben.
 
-Die {\"U}úbertragung
+Die {\"U}bertragung
 
 Zu aller erst hat man sich das vorgegebene Armband genauer inspiziert. Dabei konnte man das Armband {\"u}ber eine Serielle Schnittstelle sowie {\"u}ber Bluetooth Low Energie (LE) nutzen. 
 Bei der Nutzung der Seriellen Schnittstelle hatte man zwar den Vorteil, dass man sich nicht mittels Bluetooth auseinander setzen m√ºsse, jedoch ist man an einem Kabel {\"u}ber den PC verbunden gewesen, was zur Einschr{\"a}nkung der Bewegungsfreiheit \dots hat. Um genau diesen Nachteil nicht zu haben hat man sich f{\"u}r Bluetooth LE entschieden. Dabei gab es auch einige Nachteile, die man beheben musste. Die Kommunikation mittels Bluetooth LE hatte eine maximale Daten{\"a}bertragung von 20 Bytes. Diese wurden jeweils in zwei Bytes Bl{\"o}cke unterteilt.
