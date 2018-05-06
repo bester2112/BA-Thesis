@@ -91,21 +91,21 @@ $Lang_{Max}$   & 100          & 200          & 300          & 400          & 500
 Bei einer kleinen Abweichung von zwei nebeneinanderliegen von zwei Werten ist dies noch akzeptabel, bei gr{\"o}{\ss}eren Abweichungen, hat man Benutzer noch einmal darum gebeten erneut zu bewerten. Im Verlauf der Studie musste man nur bei einer Minderheit von Probanden ein weiteres mal darum bitten, die Signale neu zu bewerten. Denn es ist oft schon so gewesen, dass die Probanden es wie im Idealfall zugeordnet hatten.
 
 
-Anhand dem Verfahren hat man nur eine grobe Unterteilung, deswegen {\"u}berpr{\"u}ft man, ob diese grobe Absch{\"a}tzung passt.
-Zun{\"a}chst bestimmt man f{\"u}r jeden Signaltypen das arithmetische Median, was in diesem Fall 150 f{\"u}r Kurz, 433 f{\"u}r Mittel und 780 f{\"u}r Lang ist.
-Da sich die Grenzen vom Minimum von Kurz und das Maximum von Lang nicht {\"a}ndern, sind $Kurz_{Min}$ = 100ms und $Lang_{Max}$ = 1000ms bei jedem Probanden fest definiert und beginnt damit f{\"u}r Kurz und Lang die Grenzen zu bestimmen.
-Zuerst berechnet man anhand der groben Absch{\"a}tzung der Grenzen den Mittelwert, dabei ergibt sich $Kurz_{Mit}$ = 150 und $Lang_{Mit}$ = 850.
+%Anhand dem Verfahren hat man nur eine grobe Unterteilung, deswegen {\"u}berpr{\"u}ft man, ob diese grobe Absch{\"a}tzung passt.
+%Zun{\"a}chst bestimmt man f{\"u}r jeden Signaltypen das arithmetische Median, was in diesem Fall 150 f{\"u}r Kurz, 433 f{\"u}r Mittel und 780 f{\"u}r Lang ist.
+%Da sich die Grenzen vom Minimum von Kurz und das Maximum von Lang nicht {\"a}ndern, sind $Kurz_{Min}$ = 100ms und $Lang_{Max}$ = 1000ms bei jedem Probanden fest definiert und beginnt damit f{\"u}r Kurz und Lang die Grenzen zu bestimmen.
+%Zuerst berechnet man anhand der groben Absch{\"a}tzung der Grenzen den Mittelwert, dabei ergibt sich $Kurz_{Mit}$ = 150 und $Lang_{Mit}$ = 850.
 
-Wenn das arithmetische Median kleiner als der Mittelwert ist, dann berechnet man bei Kurz ein neues Maximum und bei Lang ein neues Minimum.
-Bei Kurz ist dies nicht der Fall, da der Median und Mittelwert beide 150 sind, daher bleibt $Kurz_{Max}$ = 200ms.
-Bei Lang tritt dieser Fall ein und daher berechnet anhand der Formel $Lang_{Min} = (2 * Lang_{Med}) - Lang_{Max}$ daraus ergibt sich f{\"u}r $Lang_{Min}$ = 560. 
+%Wenn das arithmetische Median kleiner als der Mittelwert ist, dann berechnet man bei Kurz ein neues Maximum und bei Lang ein neues Minimum.
+%Bei Kurz ist dies nicht der Fall, da der Median und Mittelwert beide 150 sind, daher bleibt $Kurz_{Max}$ = 200ms.
+%Bei Lang tritt dieser Fall ein und daher berechnet anhand der Formel $Lang_{Min} = (2 * Lang_{Med}) - Lang_{Max}$ daraus ergibt sich f{\"u}r $Lang_{Min}$ = 560. 
 
-W{\"u}rden sich die erkannten Signaltypen {\"u}berschneiden, so f{\"a}ngt man an das arithmetische Mittel von Kurz, Mittel und Lang zu bilden; desweiteren werden neue Grenzen bestimmt, indem man von der kleinsten Signall{\"a}nge anf{\"a}ngt und diese dann dem zuwei{\ss}t, was ausgew{\"a}hlt worden ist. Man hat drei mal das Minimum und das Maximum von Kurz, Mittel und Lang, die neu bestimmt werden, dabei wird anhand der folgenden Tabelle gezeigt, wie die neuen Intervalle bestimmt werden.
+%W{\"u}rden sich die erkannten Signaltypen {\"u}berschneiden, so f{\"a}ngt man an das arithmetische Mittel von Kurz, Mittel und Lang zu bilden; desweiteren werden neue Grenzen bestimmt, indem man von der kleinsten Signall{\"a}nge anf{\"a}ngt und diese dann dem zuwei{\ss}t, was ausgew{\"a}hlt worden ist. Man hat drei mal das Minimum und das Maximum von Kurz, Mittel und Lang, die neu bestimmt werden, dabei wird anhand der folgenden Tabelle gezeigt, wie die neuen Intervalle bestimmt werden.
 
 
-Da man wei{\ss}, dass das Minimum von Kurz 100ms und das Maximum von Lang 1000ms ist, berechnet man die Intervalle von Kurz und Lang zuerst. Dabei berechnet man den Mittelwert um herauszufinden, ob das arithmetische Mittel identisch mit dem Mittel wert ist. Wenn dies der Fall ist, so sind die Grenzen f{\"u}r den Fall richtig und es muss f{\"u}r den Signaltypen nichts weiter berechnet werden. 
+%Da man wei{\ss}, dass das Minimum von Kurz 100ms und das Maximum von Lang 1000ms ist, berechnet man die Intervalle von Kurz und Lang zuerst. Dabei berechnet man den Mittelwert um herauszufinden, ob das arithmetische Mittel identisch mit dem Mittel wert ist. Wenn dies der Fall ist, so sind die Grenzen f{\"u}r den Fall richtig und es muss f{\"u}r den Signaltypen nichts weiter berechnet werden. 
 
-Da man wei{\ss}, dass das Minimum von Kurz 100 ms und das Maximum von Lang 1000ms ist, berechnet man die Differenz zwischen dem  und dem Minimum von Kurz. Diese Differenz auf das Median dazu addiert und {\"u}berpr{\"u}ft, ob 
+%Da man wei{\ss}, dass das Minimum von Kurz 100 ms und das Maximum von Lang 1000ms ist, berechnet man die Differenz zwischen dem  und dem Minimum von Kurz. Diese Differenz auf das Median dazu addiert und {\"u}berpr{\"u}ft, ob 
 
 
 %\input{chapter/04entwurf/0421signalZustandsdiagramm}
