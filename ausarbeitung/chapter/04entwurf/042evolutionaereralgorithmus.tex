@@ -87,10 +87,10 @@ $Lang_{Max}$   & 100          & 200          & 300          & 400          & 500
 
 Bei einer kleinen Abweichung von zwei nebeneinanderliegen von zwei Werten ist dies noch akzeptabel, bei gr{\"o}{\ss}eren Abweichungen, hat man Benutzer noch einmal darum gebeten erneut zu bewerten. Im Verlauf der Studie musste man nur bei einer Minderheit von Probanden ein weiteres mal darum bitten, die Signale neu zu bewerten. Denn es ist oft schon so gewesen, dass die Probanden es wie im Idealfall zugeordnet hatten.
 
-Nachdem man jetzt die Grenzen für einen Probanden bestimmt hat, kann man endlich die Startpopulation des Algorithmus erzeugen. 
-Bei der Startpopulation hat man für jeden Signaltypen zehn Signale. 
-Die zehn Signale beinhalten zwei Signale, die das Minimum und Maximum des jeweiligen Signaltypen repräsentieren. Die restlichen acht Signale erhalten eine zufällige Länge innerhalb des Intervalls. Die Stärke eines Signal wird zufällig für jedes Signal zufällig zugewiesen. 
-Man besitzt somit für die Startpopulation dreißig Signale, die jeweils in zehn Kurze, Mittlere und Lange Signale unterteilt sind. 
+Nachdem man jetzt die Grenzen f{\"u}r einen Probanden bestimmt hat, kann man endlich die Startpopulation des Algorithmus erzeugen. 
+Bei der Startpopulation hat man f{\"u}r jeden Signaltypen zehn Signale. 
+Die zehn Signale beinhalten zwei Signale, die das Minimum und Maximum des jeweiligen Signaltypen repr{\"a}sentieren. Die restlichen acht Signale erhalten eine zuf{\"a}llige L{\"a}nge innerhalb des Intervalls. Die St{\"a}rke eines Signal wird zuf{\"a}llig f{\"u}r jedes Signal zuf{\"a}llig zugewiesen. 
+Man besitzt somit f{\"u}r die Startpopulation drei{\ss}ig Signale, die jeweils in zehn Kurze, Mittlere und Lange Signale unterteilt sind. 
 
 %Anhand dem Verfahren hat man nur eine grobe Unterteilung, deswegen {\"u}berpr{\"u}ft man, ob diese grobe Absch{\"a}tzung passt.
 %Zun{\"a}chst bestimmt man f{\"u}r jeden Signaltypen das arithmetische Median, was in diesem Fall 150 f{\"u}r Kurz, 433 f{\"u}r Mittel und 780 f{\"u}r Lang ist.
@@ -113,16 +113,16 @@ Man besitzt somit für die Startpopulation dreißig Signale, die jeweils in zehn K
 \subsection{Bewertung des Algorithmus}
 %% ==============================
 
-Jedes Individuum der Startpopulation muss für die Fortsetzung des nächsten Schritts vom Algorithmus bewertet werden.
-Um diese Bewertung zu erhalten hätte man aus einigen Alternativen wählen können wobei ich hier ein weiteres erläutern werde und wieso man dieses nicht gewählt hat. 
+Jedes Individuum der Startpopulation muss f{\"u}r die Fortsetzung des n{\"a}chsten Schritts vom Algorithmus bewertet werden.
+Um diese Bewertung zu erhalten h{\"a}tte man aus einigen Alternativen w{\"a}hlen k{\"o}nnen wobei ich hier ein weiteres erl{\"a}utern werde und wieso man dieses nicht gew{\"a}hlt hat. 
 
-Zuerst könnte man hergehen und jedes Signal aus der Population dem Probanden abspielen und fragen was für ein Signaltyp er erkannt hat, wie man es bei den ersten zehn Signalen gemacht hat um die Grenzen der Signaltypen zu bestimmen. 
+Zuerst k{\"o}nnte man hergehen und jedes Signal aus der Population dem Probanden abspielen und fragen was f{\"u}r ein Signaltyp er erkannt hat, wie man es bei den ersten zehn Signalen gemacht hat um die Grenzen der Signaltypen zu bestimmen. 
 
-Der erste Ansatz wäre man würde genau dies tun, dabei würde man die Anzahl der richtigen Zuweisungen und Abweichungen zählen um eine geeigneten Fitnesswert zu bestimmen. Ferner würde das bedeuten, dass für eine Population ein Individuum mehrmals abgespielt werden müsse um eine Bewertung des einzelnen Individuums zu erhalten. Bei einer Annahme von fünf Bewertungen pro Individuum, um nur eine Population damit bewerten zu können, müsste der Proband eine Anzahl von 150 Signalen bewerten, damit der Algorithmus eine Generation bestimmen kann. Dies würde bedeuten, dass wenn man vier Generationen bestimmen wollen würde, man auf eine Anzahl von 600 Bewertungen alleine für die Bestimmung des personalisierten Wertes mithilfe dem EA. 
+Der erste Ansatz w{\"a}re man w{\"u}rde genau dies tun, dabei w{\"u}rde man die Anzahl der richtigen Zuweisungen und Abweichungen z{\"a}hlen um eine geeigneten Fitnesswert zu bestimmen. Ferner w{\"u}rde das bedeuten, dass f{\"u}r eine Population ein Individuum mehrmals abgespielt werden m{\"u}sse um eine Bewertung des einzelnen Individuums zu erhalten. Bei einer Annahme von f{\"u}nf Bewertungen pro Individuum, um nur eine Population damit bewerten zu k{\"o}nnen, m{\"u}sste der Proband eine Anzahl von 150 Signalen bewerten, damit der Algorithmus eine Generation bestimmen kann. Dies w{\"u}rde bedeuten, dass wenn man vier Generationen bestimmen wollen w{\"u}rde, man auf eine Anzahl von 600 Bewertungen alleine f{\"u}r die Bestimmung des personalisierten Wertes mithilfe dem EA. 
 
-Aufgrund der Tatsache, dass Probanden nicht so lange an einer freiwilligen Studie teilnehmen wollen, habe man sich für einen anderen Ansatz entschieden. Man muss akzeptieren, dass man über mehrere Generationen hinweg die komplette Population bewerten muss. Das heißt, dass man pro Generation 30 Signale abspielen muss. Um eine Generation zu bestimmen habe man sich Gedanken darüber gemacht, wie man so ein Signal bewerten soll. Dabei ist man zu dem Entschluss gekommen, dass man man den Benutzer zuerst fragt, was für ein Signaltyp er erkannt habe. Weiterhin habe man Ihn zwei Fragen wie in einem Fragebogen (Likert-Skala) gefragt, wie gut er das Signal erkannt wurde und wie man die Stärke des Signals empfunden hat. 
+Aufgrund der Tatsache, dass Probanden nicht so lange an einer freiwilligen Studie teilnehmen wollen, habe man sich f{\"u}r einen anderen Ansatz entschieden. Man muss akzeptieren, dass man {\"u}ber mehrere Generationen hinweg die komplette Population bewerten muss. Das hei{\ss}t, dass man pro Generation 30 Signale abspielen muss. Um eine Generation zu bestimmen habe man sich Gedanken dar{\"u}ber gemacht, wie man so ein Signal bewerten soll. Dabei ist man zu dem Entschluss gekommen, dass man man den Benutzer zuerst fragt, was f{\"u}r ein Signaltyp er erkannt habe. Weiterhin habe man Ihn zwei Fragen wie in einem Fragebogen (Likert-Skala) gefragt, wie gut er das Signal erkannt wurde und wie man die St{\"a}rke des Signals empfunden hat. 
 
-Wie oben schon erwähnt,  für die Anfangspopulation hat jedes Individuum eine zufällige Stärke zugewiesen. Dabei entspricht die Stärke einem Zustand aus dem Zustandsdiagramm Y. Anhand der Bewertung verändert sich der aktuelle Zustand der Stärke eines aktuellen Individuums um bis zu zwei Zustände. Dabei ist die Wertigkeit der Antwort der Frage in der Tabelle XX beschrieben. Dabei bedeutet +2, dass der aktuelle Zustand zwei mal +1 im Zustandsdiagramm XW ausführt. 
+Wie oben schon erw{\"a}hnt,  f{\"u}r die Anfangspopulation hat jedes Individuum eine zuf{\"a}llige St{\"a}rke zugewiesen. Dabei entspricht die St{\"a}rke einem Zustand aus dem Zustandsdiagramm Y. Anhand der Bewertung ver{\"a}ndert sich der aktuelle Zustand der St{\"a}rke eines aktuellen Individuums um bis zu zwei Zust{\"a}nde. Dabei ist die Wertigkeit der Antwort der Frage in der Tabelle XX beschrieben. Dabei bedeutet +2, dass der aktuelle Zustand zwei mal +1 im Zustandsdiagramm XW ausf{\"u}hrt. 
 
 %\input{chapter/04entwurf/0421signalZustandsdiagramm}
 
@@ -136,8 +136,8 @@ Wertigkeit & \multicolumn{1}{c}{-2} & \multicolumn{1}{c}{-1} & \multicolumn{1}{c
 \end{tabular}
 \end{table}
 
-Die Antwort was für ein Signal erkannt wurde zeigt, was für ein Signal der Proband erkannt hat. Dies ist für die Bewertung der Studie hilfreich.
-Die letzte Frage die der Benutzer zu beantworten hat, wie er das Signal erkannt hat, hat die Wertigkeit wie in Tabelle XA definiert. Diese Antwort auf die Frage, ist der entscheidende Wert, der den Fitnesswert repräsentiert. 
+Die Antwort was f{\"u}r ein Signal erkannt wurde zeigt, was f{\"u}r ein Signal der Proband erkannt hat. Dies ist f{\"u}r die Bewertung der Studie hilfreich.
+Die letzte Frage die der Benutzer zu beantworten hat, wie er das Signal erkannt hat, hat die Wertigkeit wie in Tabelle XA definiert. Diese Antwort auf die Frage, ist der entscheidende Wert, der den Fitnesswert repr{\"a}sentiert. 
 
 \begin{table}[]
 \centering
@@ -150,24 +150,24 @@ Wertigkeit & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{
 \end{table}
 
 %% ==============================
-\subsection{Erzeugung der nächsten Generation}
+\subsection{Erzeugung der n{\"a}chsten Generation}
 %% ==============================
-Im Anschluss nach der Bewertung erfolgt die Bestimmung der nächsten Generation. Dies erfolgt mit der Selektion, Rekombination und Mutation der Gene. 
+Im Anschluss nach der Bewertung erfolgt die Bestimmung der n{\"a}chsten Generation. Dies erfolgt mit der Selektion, Rekombination und Mutation der Gene. 
 
 %% ==============================
 \subsubsection{Selektion}
 %% ==============================
-Für die Selektion wird für jeden Signaltyp ein neuer Pool erzeugt. 
-Im Anschluss daran werden die drei Maxima für jeden Signaltypen von allen Fitnesswerten bestimmt. 
-Anhand der Formel $(Fitnesswert eines Individuums / Maximum des zugehörigen Signaltypens) * 100$ lässt sich die Häufigkeit bestimmen, wie oft ein Individuum in den Pool hinzugefügt wird. Als Beispiel hat man ein Maximum von 5 und einen Fitnesswert von 2, daraus ergibt sich 40, das heißt, es wird 40 mal das jeweilige Individuum in den Pool hinzufügt wird. Dabei wird jedes Individuum in das Pool hinzugefügt, welchem Signaltyp es angehört. 
+F{\"u}r die Selektion wird f{\"u}r jeden Signaltyp ein neuer Pool erzeugt. 
+Im Anschluss daran werden die drei Maxima f{\"u}r jeden Signaltypen von allen Fitnesswerten bestimmt. 
+Anhand der Formel $(Fitnesswert eines Individuums / Maximum des zugeh{\"o}rigen Signaltypens) * 100$ l{\"a}sst sich die H{\"a}ufigkeit bestimmen, wie oft ein Individuum in den Pool hinzugef{\"u}gt wird. Als Beispiel hat man ein Maximum von 5 und einen Fitnesswert von 2, daraus ergibt sich 40, das hei{\ss}t, es wird 40 mal das jeweilige Individuum in den Pool hinzuf{\"u}gt wird. Dabei wird jedes Individuum in das Pool hinzugef{\"u}gt, welchem Signaltyp es angeh{\"o}rt. 
 
-Nach der Erzeugung der Pools wird eine Rekombination durch zwei zufällig ausgewählte Individuen ausgeführt.
+Nach der Erzeugung der Pools wird eine Rekombination durch zwei zuf{\"a}llig ausgew{\"a}hlte Individuen ausgef{\"u}hrt.
 
 
 %% ==============================
 \subsubsection{Rekombination}
 %% ==============================
-Bei der Rekombination werden die die Gene Stärke 
+Bei der Rekombination werden die die Gene St{\"a}rke 
 \dots
 
 %% ==============================
