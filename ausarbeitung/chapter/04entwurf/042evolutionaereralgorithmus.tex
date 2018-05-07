@@ -9,7 +9,9 @@
 %% ==============================
 \subsection{Signal}
 %% ==============================
-Ein Signal bildet eine Vibration ab. Dabei besitzt ein Signal Attribute, die die obengenannte Reaktion darstellen sollten. Als man sich die Einstellungsm{\"o}glichkeiten einer Vibration des Wearable genauer angeguckt hat, hat man festgestellt, dass man die L{\"a}nge und die St{\"a}rke einer Vibration einstellen kann. Das hat zur Folge, dass diese zwei Faktoren als die Attribute eines Signales benutzt wurden um eine Vibration zu repr{\"a}sentieren.
+Ein Signal bildet eine Vibration ab. 
+%Dabei besitzt ein Signal Attribute, die die obengenannte Reaktion darstellen sollten. 
+Als man sich die Einstellungsm{\"o}glichkeiten einer Vibration des Wearable genauer angeguckt hat, hat man festgestellt, dass man die L{\"a}nge und die St{\"a}rke einer Vibration einstellen kann. Das hat zur Folge, dass diese zwei Faktoren als die Attribute eines Signales benutzt wurden um eine Vibration zu repr{\"a}sentieren.
 
 Man stellt sich jetzt die Frage,
 Wie lang sollen die Vibrationen denn jetzt sein ? 
@@ -18,9 +20,9 @@ Um diese Frage zu beantworten, guckt man sich anhand an dem Paper \cite{pescara2
 
 Anhand der Hypothese der Bachelorarbeit wolle man wissen, wie gut sich personalisierte Vibrationen im Vergleich zu generischen Vibrationen verbessern. Diese Frage l{\"a}sst sich wie folgt beantworten. Erstens musste man sich {\"u}berlegen, wie man personalisierte Vibrationen mittels dem EA f{\"u}r einen Probanden bestimmen will.
 Au{\ss}erdem sollte man herausfinden was f{\"u}r Signale noch gut voneinander unterscheidbar sind, die die Grenzen von 100ms bis 1000ms besitzen.
-Man habe sich auf drei Typen von Signalen festgelegt, die als Kurz, Mittel und Lang definiert. Dadurch wolle man wissen, ob ein Signal als Kurz, Mittel oder Lang empfunden wurde.
+Man habe sich auf drei Typen von Signalen festgelegt, die als Kurz, Mittel und Lang definiert sind. Dadurch wolle man wissen, ob ein Signal als Kurz, Mittel oder Lang empfunden wurde.
 
-Die jeweiligen Typen definieren innerhalb der Grenzen von 100ms und 1000ms ein Intervall, das sich voneinander nicht {\"u}berschneiden kann. Abgesehen davon ist der niedrigste Messwert von Lang Signal allgemein gr{\"o}{\ss}er als der h{\"o}chste Messwert von Mittel Signal. Wiederum ist die kleinste Intensit{\"a}t von Mittel Signal ist in der Regel gr{\"o}{\ss}er als die gr{\"o}{\ss}te Internsit{\"a}t von Kurz Signal. Als Beispiel habe man f{\"u}r Kurz die Intervallgrenzen 100ms und 300ms, f{\"u}r Mittel habe man dann die Intervallgrenzen von 400ms bis 600ms und f{\"u}r Lang habe man die Intervallgrenzen von 700ms bis 1000ms. 
+Die jeweiligen Typen definieren innerhalb der Grenzen von 100ms und 1000ms ein Intervall, die sich voneinander nicht {\"u}berschneiden kann. Abgesehen davon ist der niedrigste Messwert von einem Langen Signal allgemein gr{\"o}{\ss}er als der h{\"o}chste Messwert von einem Mittleren Signal. Wiederum ist die kleinste Intensit{\"a}t von einem Mittleren Signal in der Regel gr{\"o}{\ss}er als die gr{\"o}{\ss}te Internsit{\"a}t von einem Kurzen Signal. Als Beispiel habe man f{\"u}r Kurz die Intervallgrenzen 100ms und 300ms, f{\"u}r Mittel habe man dann die Intervallgrenzen von 400ms bis 600ms und f{\"u}r Lang habe man die Intervallgrenzen von 700ms bis 1000ms. 
 Allerdings wurde es darauf geachtet, dass die Grenzen nicht aufeinander liegen, sondern einen Abstand zwischen den Grenzen existiert. Bei der St{\"a}rke einer Vibration wurde man an der Darstellbarkeit des Wearable gebunden. Nachdem man herausgefunden hat, dass man nur die Bereiche von 0x7FFF bis 0xFFFF als merkbare Vibrationsst{\"a}rken besitzt, hat man sich diese Bereiche in 5 Stufen eingeteilt. Daraus folgt dass man sich f{\"u}r den sp{\"a}teren Verlauf f{\"u}nf Zust{\"a}nde definiert. 
 
 \begin{tabular}{lcr}
@@ -167,12 +169,36 @@ Nach der Erzeugung der Pools wird eine Rekombination durch zwei zuf{\"a}llig aus
 %% ==============================
 \subsubsection{Rekombination}
 %% ==============================
-Bei der Rekombination werden die die Gene St{\"a}rke 
-\dots
+In der Rekombination wurden die zwei zuf{\"a}llig ausgew{\"a}hlten Individuen als Eltern definiert. Die gefundenen Eltern erzeugen ein neues Individuum, dass in die Population der n{\"a}chsten Generation hinzugef{\"u}gt wird. 
+
+Dieser Vorgang wurde wie folgt f{\"u}r das Problem angepasst. Man hat die zwei Gene, die St{\"a}rke und die L{\"a}nge eines Signals.
+
+Zuerst beginnen wir mit der L{\"a}nge des Signals. Es wird die L{\"a}nge des ersten Elternteils und die L{\"a}nge des zweiten Elternteils genommen und ein Mittelwert von beiden Werten gebildet. Der Mittelwert ist die L{\"a}nge des neuen Individuums.
+F{\"u}r die St{\"a}rke des neuen Individuums wird ebenfalls der Mittelwert von beiden Elternteilen gebildet und abgerundet.
+
+Aus jedem der drei erzeugten Pools werden zehn neue Individuen f{\"u}r die n{\"a}chste Generation erzeugt, so dass man wieder auf eine Gesamtzahl von 30 Individuen f{\"u}r eine Population kommt.
+
+
+%% ==============================
+\subsubsection{Mutation}
+%% ==============================
+Es besteht eine Chance von 5\% dass sich ein Individuum mutieren kann. Das bedeutet in diesem Fall, dass sich lediglich die L{\"a}nge zuf{\"a}llig ver{\"a}ndern kann. 
+
+%% ==============================
+\subsubsection{Abbruchkriterium}
+%% ==============================
+Man wiederholt f{\"u}r jede Generation wie im (BILD) dargestellten Zyklus, bis man eine ausreichende L{\"o}sung erh{\"a}lt.
+
+Das Abbruchkriterium ist erreicht, wenn die vierte Generation erzeugt worden ist. Um hier die Stellung zu der Entscheidung von vier Generationen zu nehmen, ist es so, dass man versucht habe die Anzahl der Vibrationen f{\"u}r einen Probanden niedrig zu belassen. Im Vergleich zum ersten Ansatz, in der man 600 Vibrationen f{\"u}r vier Generationen hat, habe man f{\"u}r die aktuell benutze L{\"o}sung bei 30 Individuen pro Population, f{\"u}r 4 Generationen, 120 Vibrationen. 
+
+Nach dem man die letzte Population vom Algorithmus erh{\"a}lt, bestimmt man f{\"u}r jeden Signaltypen das Minimum und Maximum von der St{\"a}rke und der L{\"a}nge von allen Signalen. Anhand derer man den Mittelwert bestimmt und schlie{\ss}lich den personalisierten Wert f{\"u}r den Probanden erh{\"a}lt.
 
 %% ==============================
 \section{Muster}
 %% ==============================
-Ein Muster ist eine Folge von mehreren Signalen. 
-Nach dem Algorithmus hat man eine Population von Individuen, dabei bestimmt man das Maximum und Minimum der Signaltypen und berechnet den Mittelwert aus.
- Das entscheidende bei den Mustern ist es gewesen,  
+Ein Muster ist eine Folge von mehreren Signalen die hintereinander abgespielt werden. 
+
+Damit man schlie{\ss}lich die Hypothese der Bachelorarbeit beantworten kann, muss man zuvor die generische Vibrationen mit genetische Vibrationen vergleichen. Man habe im Vorfeld 15 Muster eine Signall{\"a}nge von drei, vier und f{\"u}nf, dass macht in der Summe 45 Muster.
+Man habe diese 45 Muster zwei mal erzeugt, jedoch einmal mit den Kurz, Mittel und Lang Werten und die dazugeh{\"o}rige St{\"a}rke, die man nach dem Algorithmus bestimmt hat und einmal fest Vorgegebene Werte von Kurz, Mittel und Lang sowie die St{\"a}rke $Strong$. Bei den Vordefinierten Werten hat man sich wieder anhand dem Paper \cite{pescara2016ruttelflug} f{\"u}r einen Kurz Wert von 200ms, einen Mittel Wert von 400ms und einem Lang Wert von 800ms orientiert.
+
+Dabei habe man den Probanden in der Studie dabei gefragt, was f{\"u}r Signale er in welcher Reihenfolge erkannt habe. Diese Daten wurden in der Evaluierung ausgewertet.
