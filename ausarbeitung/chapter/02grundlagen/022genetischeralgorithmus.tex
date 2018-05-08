@@ -24,7 +24,7 @@ Beim EA hat man sich das Verhalten in der Biologie angeschaut und versucht zu {\
 %% ==============================
 
 Eine \textbf{Selektion} ist eine Auswahl von Individuen einer Population. Durch Kombination der Gene der ausgew{\"a}hlten Individuen, werden neue Individuen f{\"u}r die n{\"a}chste Generation erzeugt. Diese Kombination wird \textbf{Rekombination} genannt.
-Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, die eine bestm{\"o}glichste L{\"o}sung f{\"u}r ein Problem liefern. \cite{weicker2015evolutionare} \cite{flickevolutionare}
+Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, die eine bestm{\"o}glichste L{\"o}sung f{\"u}r ein Problem liefern. \cite{weicker2015evolutionare, flickevolutionare}
 
 %% ==============================
 \subsection{Variation}
@@ -97,3 +97,28 @@ Das dabei erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das P
 Der Vorgang der Selektion, Rekombination und Mutation wird so oft ausgef{\"u}hrt, bis man eine neue Population hat, die genauso gro{\ss} ist, wie die Anfangapopulation.
 Nachdem die neue Population erzeugt wurde, wird diese durch die Anfangspopulation ersetzt und man f{\"u}hrt den Algorithmus erneut aus. 
 Dies geschieht so lange, bis man eine hinreichende L{\"o}sung f{\"u}r das Problem hat. 
+
+%% ==============================
+\paragraph*{Wiederholung durch neuer Generation}
+%% ==============================
+
+We played the participant 10 equally distributed signals and asked him which signal type he detected.  The participant could replay a signal again. The answer that he could pick for a signal is SHORT, MIDDLE or LONG.
+Before the participant should answer the questions we played all signals on the wristband. 
+
+To achieve that the user does not to do random selections, we proofed a few cases.
+
+We defined, that the shortest Signal (here 100ms) should be a SHORT Signal and the longest Signal (here 1000ms) should be a LONG Signal. 
+The user should at least use 2 times one signal type as an answer. The borders of the Signal types should be rising.
+If one of these cases wouldn't be true, than the participant should do it again. 
+That happened just by 15,625 \% of all participants (5 of 32), that they should repeat it a second time. 
+
+To define the borders we picked the first and last SHORT as their border. The signal after the last SHORT would be a MIDDLE. This MIDDLE Signal is the first border and the last border is the last MIDDLE. The same for the LONG border.
+
+We got three borders, once for each signal type. The SHORT border is defined as the first and last answer of SHORT. The signal followed of the last SHORT is a the typical a MIDDLE answer. It is taken as the first border of MIDDLE and the last of that type is the last border. The same for the LONG border.
+
+The easiest way would be if the participant select SHORT for the first elements followed with just MIDDLE and just LONG answers. 
+You may think that this is just a rare example, but actually 75 \% of the participants had a result like this. In the other 25 \% the user just swapped up to 1 elements.
+
+
+
+

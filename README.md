@@ -35,3 +35,28 @@ https://ebblogs.com/mobiles/standardton-vibration-android-ios/
 - Apps Vibration
 https://play.google.com/store/apps/details?id=com.avibrim&referrer=androidcentral-s7
 https://play.google.com/store/apps/details?id=sk.martinflorek.wear.feelthewear&hl=de
+
+
+- 1.
+bei wie vielen Probanden war das der fall, 
+dass die Standardgrenzen innerhalb der Grenzen waren
+die man zu beginn bestimmt hat. Prozentual bestimmen
+
+- 2.
+sehr genau wie der EA funktioniert.
+
+- 3.
+- Application of EA (beispiele) wo man parameter optimiert hat
+- personaliserung von vibrationen Granit
+prozentuale Anteil der Leistung des Zustands 7FFF -> FFFF
+
+
+was wurde wo abgespielt, da kann man das als resulatate verwenden 
+(in den Grenzen)
+
+
+anhand der grenzen aller personen den 
+durchschnitt und standardabweichung berechnen
+4
+
+https://123mathe.de/spannweite-median-varianz-und-standardabweichung
