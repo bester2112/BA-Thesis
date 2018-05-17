@@ -60,3 +60,12 @@ durchschnitt und standardabweichung berechnen
 4
 
 https://123mathe.de/spannweite-median-varianz-und-standardabweichung
+
+Die Probanden bei denen die Intervalle so gewesen sind, dass die Standardwerte von 200 in Kurz, 400 in Mittel und 800 in Lang sind war bei den folgenden Probanden der Fall:
+Proband Nr.
+3,4,6,8,12,14,15,17,18,19,20,22,23,27,29,30,34
+
+
+Bei den Probanden war genau die werte 200 als Kurz, 400 als Mittel und 800 als Lang vertreten
+Proband Nr.
+6,14

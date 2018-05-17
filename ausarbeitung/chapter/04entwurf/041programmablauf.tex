@@ -3,38 +3,102 @@
 %%
 
 %% ==============================
-\section{Ausführung des Programms}
+\section{Ausf{\"u}hrung des Programms}
 %% ==============================
-\label{ch:Entwurf:sec:Ausführung des Programms}
+\label{ch:Entwurf:sec:Ausf{\"u}hrung des Programms}
 
-Zu Beginn musste man sich {\"u}ber alles einen {\"U}berblick schaffen. 
-Das heißt, dass man sich alle Bestandteile einzeln betrachten musste bevor man alles zusammen setzen konnte. 
-Es gibt drei / vier gro{\ss}e Bestandteile die ich mir {\"u}berlegen musste.
+Zu Beginn hat man sich {\"u}ber das gesamte Problem einen {\"U}berblick schaffen m{\"u}ssen.
+Dabei hat man sich alle einzelnen Bestandteile im Detail angeguckt, um herauszufinden welche Komponenten man wie zusammensetzt. 
+Es haben sich drei / vier gro{\ss}e Komponenten ergeben, die man erledigen musste.
 
-Zualler erst musste man sich mit dem Armband besch{\"a}ftigen, um herauzufinden, was es alles konnte. 
-Man konnte die Zeit, die das Armband vibrieren sollte festlegen, sowie auch die St{\"a}rke, wie Stark das Armband vibrieren sollte. 
-Man musst darauf achten, dass man die 20 Bytes, die man lediglich mit Bluethooth {\"u}bertragen konnte nicht {\"u}berschreitet.
+Zuerst habe man sich mit dem Wearable auseinandergesetzt, um zu bestimmen, was man alles mit dem Wearable umsetzen kann.
+Man fand heraus, dass man zwei Parameter hatte die man einstellen konnte. Diese waren die Zeit, wie lang das Wearable vibriert und die St{\"a}rke, wie stark das Armband vibrieret.
+%Man fand heraus, dass man die Zeit, wie lang das Armband vibriert, und die St{\"a}rke, wie Stark das Armband vibrieren kann, einstellen konnte.
+Um ein Signal zu {\"u}bertragen hatte man eine Beschr{\"a}nkung von 20 Bytes, die man maximal in einer Nachricht mittels Bluethooth {\"u}bertragen kann.
 
-Als n{\"a}chstes habe ich mir erst einmal {\"a}berlegt, wie ich die Daten repr{\"a}sentieren sollte. Ich habe mir {\"u}berlegt, dass ich eine Datenstruktur erstellen m{\"u}sste um das Signal anschlie{\ss}end {\"u}ber BLE an das Armband zu {\"u}bertragen. Aber wie sehen Signale aus? Zuerst habe ich mir {\"u}berlegt, was ist die Maximale und Minimale L{\"a}nge, die ich {\"u}bertragen werde. Dabei habe ich mich f{\"u}r einen Minimalen Wert von 100 Millisekunden (ms) und eine Maximale L{\"a}nge von 1024 ms entschieden. Da man das Armabnd auch in verschiedenen Vibrationsst{\"a}rken abspielen konnte, habe ich herausgefunden, manche Vibrationsst{\"a}rken gar keine Vibration abspielten, weil so wenig Strom{\"u}bertragen wurde, dass die Vibrationsmotoren gar nicht erst angesteuert wurden. Dabei haben sich die Grenzen hierbei von 0x07FF bis 0xFFFF behandelt. Um jedoch merkbare unterschiede der Vibrationsst{\"a}rke zu bestimmen habe ich mir die Grenzen in 5 Bereiche aufgeteilt. 
-Somit hatte ich zwei Variablen, die ich f{\"u}r meine Darstellung von einem Signal entscheidend war. 
+Als n{\"a}chste Komponente des Problems habe man sich eine geeignete Repr{\"a}sentation eines Signals {\"u}berlegen m{\"u}ssen. Um nicht au{\ss}er Bedacht zu lassen ist diese die wichtigste Komponente des Problems, denn es h{\"a}ngen alle anderen Komponenten davon ab, wie diese Daten repr{\"a}sentiert werden. 
 
-Da ich jetzt Signale mit einer L{\"a}nge von 100 ms bis 1024 ms hatte musste ich mir {\"u}berlegen, wie viele Signaltpyen ich hier erzeugen w{\"u}rde. Der Morsecode beispielsweise bestand aus 3 Teilen ein Kurzes Signal, ein Langes Signal und einer Pause. Dabei wollte ich jetzt nicht den Morsecode nehmen und habe mich f{\"u}r eine eigene Definition entschieden. Dabei habe ich gesagt dass es drei Signaltypen gibt. Diese drei Signaltypen sind Kurz, Mittel und Lang, auf die ich gleich noch einmal zu sprechen komme.
+Daher stellte sich die Frage, wie sieht ein solches Signal aus?
 
-Vorher will ich auf den Evolution{\"a}ren Algorithmus zu sprechen kommen. Beim Evolution{\"a}ren Algorithmus musste man sich zu beginn eine Anfangspopulation erstellen. Also in meinem Fall w{\"a}re die Anfangspopulation eine Menge von Signalen die eine Variation aufweisen sollte. Wie sollte eine solche Population aussehen? Hier ist mir der Gedanken gekommen, man sollte die Signaltypen in Grenzen aufteilen, das bedeutet, dass man beispielsweise von 100 bis 300 ms Kurz, von 400 bis 700 ms Mittel und von 800 bis 1024 ms Lang definieren sollte. Am Anfang habe ich dies auch gemacht, dass die Grenzen fest von mir vorgegeben waren, jedoch  hat man festgestellt, dass die Nutzer nicht genau diese Grenzen als Kurz, Mittel und Lang empfunden haben. Das hei{\ss}t man musste sich vor dem Evolution{\"a}ren Algorithmus {\"u}berlegen, wie die Nutzer die Signalgrenzen selbst bestimmten. (N{\"a}here Information im Kapitel Implementierung)
+%% ==============================
+\subsection{Signal}
+%% ==============================
 
-Nach der Bestimmung der Signaltypen, hat man sich erneut an den Evolution{\"a}ren Algorithmus gewagt. Das bedeutete, man musste eine Anfangspopulation bestimmen. Dabei hat man N Individuen f{\"u}r jeden Signaltypen innerhalb seiner Grenzen erzeugt. Zuerst komplett zuf{\"a}llig innerhalb der Grenzen, dabei kam man zu dem Ergebnis, dass die Grenzen nur in seltenen f{\"a}llen drinnen waren. D.h. dass man nie den vollst{\"a}ndigen Intervall den man vorher bestimmt hat in der Anfangspopulation vertreten war. Deshalb habe man von den N Individuen zwei Individuen erzeugt, die genau die beiden Grenzen repr{\"a}sentiert haben.
+Anhand der zwei Parameter, die L{\"a}nge und die St{\"a}rke des Wearables, hat man diese als Attribute eines Signals definiert.  
 
-Nach der Erzeugung der Anfangspopulation sollten die Signale vom Benutzer alle bewertet werden. 
-Dabei hatte man den Gedanken, dass man den Benutzer die Signale mehrmals abspielt und ihn jedes mal abfragt, was f{\"u}r ein Signal er erkannt hat und anhand der H{\"a}ufigkeit, die er das Signal als den Signaltypen erkannt hat wie das Programm es f{\"u}r Ihn im Vorfeld bestimmt hatte, einen Fittnesswert bestimme. Jedoch m{\"u}ssten diese 3*N Signale mehrmals abgespielt werden, um eine H{\"a}ufigkeit zu erhalten. Wenn man hier f{\"u}r die Population jedes Individuum f{\"u}nf mal abspielen w{\"a}rde, w{\"a}re man bei 15*N. Bei einem N von 10 Signalen pro Signaltyp w{\"a}ren dass dann 150 Bewertungen die der Nutzer pro Population machen m{\"u}sste um nur eine Generation zu bewerten. Wenn man nur vier Generationen bestimmen wollte, so wäre man bei 450 Bewertungen nur um einen personalisierten Wert zu erhalten. Das w{\"a}re f{\"u}r einen normalen Benutzer nicht zumutbar, dass er so viel Zeit in Anspruch nehmen w{\"u}rde um so viele Signale zu bewerten. 
+Technisch gesehen h{\"a}tte man f{\"u}r die L{\"a}nge eines Signals von 0 ms (0x0000) bis 65535 ms (0xFFFF) nutzen k{\"o}nnen. 
+Man hat sich jedoch anhand vorheriger Studien \cite{pescara2016ruttelflug} orientiert und ein Minimum von 100 ms und ein Maximum von 1000 ms als Grenzen f{\"u}r die L{\"a}nge {\"u}bernommen.
 
-Daher musste eine alternative her. Die Alternative ist gewesen, man spiele dem Benutzer jedes Individuum nur einmal ab und stellt Ihn dazu drei Fragen, die wie in einem SUS Fragebogen gestellt wird, mit einer Skala von sehr gut bis sehr schlecht. [BILD EINFÜGEN]
-Anhand der Fragen habe ich einen Fitnesswert bestimmt. Die weitere Beschreibung des Algorithmus wird in der Implementierung beschrieben.
+Bei der St{\"a}rke eines Signals hat man sich auch hier am Wearable orientiert. 
+Theoretisch gesehen h{\"a}tte man die gleichen Grenzen von 0 bis 65535 zur Repr{\"a}sentation der St{\"a}rke vorhanden, aber technisch hat man erst ab einer St{\"a}rke von 32767 (0x7FFF) ein sp{\"u}rbare Vibration gehabt. Vor dem genannten Wert ist zu wenig Strom {\"u}bertragen worden, sodass kein Traktor funktionierte.
+Daher hat man sich zwischen den Grenzen von (0x7FFF) und (0xFFFF) f{\"u}r die St{\"a}rke festgelegt. 
 
-Mit jeder Generation ist man davon ausgegangen, dass die Grenzen der Signaltypen kleiner wurde und zu dem Wert, dass dem Nutzer am besten gefallen w{\"u}rde hinkonvergieren w{\"u}rde.
- W{\"u}rde man dies weitertreiben, bis die jeweiligen Signaltypen gegen eine Zahl konvergieren, w{\"u}rde man noch ein paar mehr Itterationen machen m{\"u}ssen, was unter Bedacht, dass der Benutzer nicht so lange die Signale bewerten w{\"u}rde nach vier Itterationen aufgeh{\"o}rt. Nachdem der Algorithmus also nach der vierten Generation die Population erzeugt hat, wurde von allen Individuen das Minumin und Maximum der jeweiligen Signaltypen bestimmt worden. Anhand der Minima und Maxima wurde f{\"u}r jeden Signaltypen der Mittelwert bestimmt.
+Anhand der Hypothese der Bachelorarbeit wolle man wissen, wie gut sich personalisierte Vibrationen im Vergleich zu generischen Vibrationen verbessern. Dabei musste man sich {\"u}berlegen, wie man personalisierte Vibrationen mittels dem EA f{\"u}r einen Probanden bestimmen will.
+Au{\ss}erdem sollte man herausfinden was f{\"u}r Signale noch gut voneinander unterscheidbar sind, die die Grenzen von 100ms bis 1000ms besitzen.
+Man habe sich auf drei Typen von Signalen festgelegt: \textbf{Kurz}, \textbf{Mittel} und \textbf{Lang}. Dadurch wolle man wissen, ob ein Signal als Kurz, Mittel oder Lang empfunden wurde.
 
-Somit hat man nach dem Algorithmus einen personalisierten Kurz, Mittel und Lang Wert.
+Die jeweiligen Typen definieren innerhalb der Grenzen zwischen 100 ms und 1000 ms ein Intervall, die sich nicht {\"u}berschneiden. Abgesehen davon ist \textbf{kurz}, das zahlenwertigste kleinste Intervall, gefolgt von \textbf{mittel}, \textbf{lang} ist das zahlenwertigste gr{\"o}{\ss}te Intervall.
+Allerdings wurde es darauf geachtet, dass die Grenzen nicht aufeinander liegen, sondern einen Abstand zwischen den Grenzen existiert.
+Als Beispiel habe man f{\"u}r Kurz die Intervallgrenzen 100ms und 300ms, f{\"u}r Mittel habe man dann die Intervallgrenzen von 400ms bis 600ms und f{\"u}r Lang habe man die Intervallgrenzen von 700ms bis 1000ms. 
 
-Im dritten Schritt musste man herausfinden, wie die Signale im Vergleich zu Vorgegebenen Werten erkannt werden.
-Dabei hat man verschiedene Folgen von Signalen vordefiniert, die der Benutzer erkennen sollte. Dabei habe man zuerst drei Signal-Folgen (aka Muster) abgespielt, anschlie{\ss}end vierer Muster und zu letzt f{\"u}nfer Muster. Es wurde abwechselnd ein zuf{\"a}lliges genetisches Muster und ein generisches Muster abgespielt. 
+F{\"u}r die St{\"a}rke der Vibration war man an den Darstellbarkeit des Wearable gebunden. Zwischen die Grenzen von (0x7FFF) und (0xFFFF) hat man sich f{\"u}nf voneinander unterscheidbare Stufen definiert. F{\"u}r den sp{\"a}teren Verlauf habe man sich Zust{\"a}nde definiert.
+
+\begin{tabular}{lcr}
+  Signalst{\"a}rke & Namen & Zustandsnamen \\
+  $\mathtt{0x7FFF}$ & Very Weak & $q_{0}$ \\
+  $\mathtt{0x9FFF}$ & Weak & $q_{1}$ \\
+  $\mathtt{0xBFFF}$ & OK & $q_{2}$ \\
+  $\mathtt{0xDFFF}$ & Strong & $q_{3}$ \\
+  $\mathtt{0xFFFF}$ & Very Strong & $q_{4}$ \\
+\end{tabular}
+
+%Zu Beginn musste man sich {\"u}ber alles einen {\"U}berblick schaffen. 
+%Das heiÃŸt, dass man sich alle Bestandteile einzeln betrachten musste bevor man alles zusammen setzen konnte. 
+%Es gibt drei / vier gro{\ss}e Bestandteile die ich mir {\"u}berlegen musste.
+
+%Zualler erst musste man sich mit dem Armband besch{\"a}ftigen, um herauzufinden, was es alles konnte. 
+%Man konnte die Zeit, die das Armband vibrieren sollte festlegen, sowie auch die St{\"a}rke, wie Stark das Armband vibrieren sollte. 
+%Man musst darauf achten, dass man die 20 Bytes, die man lediglich mit Bluethooth {\"u}bertragen konnte nicht {\"u}berschreitet.
+
+%Als n{\"a}chstes habe ich mir erst einmal {\"u}berlegt, wie ich die Daten repr{\"a}sentieren sollte. 
+%Ich habe mir {\"u}berlegt, dass ich eine Datenstruktur erstellen m{\"u}sste um das Signal anschlie{\ss}end {\"u}ber BLE an das Armband zu {\"u}bertragen. 
+%Aber wie sehen Signale aus? 
+%Zuerst habe ich mir {\"u}berlegt, was ist die Maximale und Minimale L{\"a}nge, die ich {\"u}bertragen werde. 
+
+%Dabei habe ich mich f{\"u}r einen Minimalen Wert von 100 Millisekunden (ms) und eine Maximale L{\"a}nge von 1024 ms entschieden. 
+%Da man das Armabnd auch in verschiedenen Vibrationsst{\"a}rken abspielen konnte, habe ich herausgefunden, manche Vibrationsst{\"a}rken gar keine Vibration abspielten, weil so wenig Strom{\"u}bertragen wurde, dass die Vibrationsmotoren gar nicht erst angesteuert wurden. 
+%Dabei haben sich die Grenzen hierbei von 0x7FFF bis 0xFFFF behandelt. 
+
+%Um jedoch merkbare unterschiede der Vibrationsst{\"a}rke zu bestimmen habe ich mir die Grenzen in 5 Bereiche aufgeteilt. 
+%Somit hatte ich zwei Variablen, die ich f{\"u}r meine Darstellung von einem Signal entscheidend war. 
+
+%Da ich jetzt Signale mit einer L{\"a}nge von 100 ms bis 1024 ms hatte musste ich mir {\"u}berlegen, wie viele Signaltpyen ich hier erzeugen w{\"u}rde. Der Morsecode beispielsweise bestand aus 3 Teilen ein Kurzes Signal, ein Langes Signal und einer Pause. Dabei wollte ich jetzt nicht den Morsecode nehmen und habe mich f{\"u}r eine eigene Definition entschieden. Dabei habe ich gesagt dass es drei Signaltypen gibt. Diese drei Signaltypen sind Kurz, Mittel und Lang, auf die ich gleich noch einmal zu sprechen komme.
+
+%Vorher will ich auf den Evolution{\"a}ren Algorithmus zu sprechen kommen. 
+%Beim Evolution{\"a}ren Algorithmus musste man sich zu beginn eine Anfangspopulation erstellen. 
+%Also in meinem Fall w{\"a}re die Anfangspopulation eine Menge von Signalen die eine Variation aufweisen sollte. 
+
+
+
+
+%-----------------
+%Wie sollte eine solche Population aussehen? 
+%Hier ist mir der Gedanken gekommen, man sollte die Signaltypen in Grenzen aufteilen, das bedeutet, dass man beispielsweise von 100 bis 300 ms Kurz, von 400 bis 700 ms Mittel und von 800 bis 1024 ms Lang definieren sollte. 
+%Am Anfang habe ich dies auch gemacht, dass die Grenzen fest von mir vorgegeben waren, jedoch  hat man festgestellt, dass die Nutzer nicht genau diese Grenzen als Kurz, Mittel und Lang empfunden haben. Das hei{\ss}t man musste sich vor dem Evolution{\"a}ren Algorithmus {\"u}berlegen, wie die Nutzer die Signalgrenzen selbst bestimmten. (N{\"a}here Information im Kapitel Implementierung)
+
+%Nach der Bestimmung der Signaltypen, hat man sich erneut an den Evolution{\"a}ren Algorithmus gewagt. Das bedeutete, man musste eine Anfangspopulation bestimmen. Dabei hat man N Individuen f{\"u}r jeden Signaltypen innerhalb seiner Grenzen erzeugt. Zuerst komplett zuf{\"a}llig innerhalb der Grenzen, dabei kam man zu dem Ergebnis, dass die Grenzen nur in seltenen f{\"a}llen drinnen waren. D.h. dass man nie den vollst{\"a}ndigen Intervall den man vorher bestimmt hat in der Anfangspopulation vertreten war. Deshalb habe man von den N Individuen zwei Individuen erzeugt, die genau die beiden Grenzen repr{\"a}sentiert haben.
+
+%Nach der Erzeugung der Anfangspopulation sollten die Signale vom Benutzer alle bewertet werden. 
+%Dabei hatte man den Gedanken, dass man den Benutzer die Signale mehrmals abspielt und ihn jedes mal abfragt, was f{\"u}r ein Signal er erkannt hat und anhand der H{\"a}ufigkeit, die er das Signal als den Signaltypen erkannt hat wie das Programm es f{\"u}r Ihn im Vorfeld bestimmt hatte, einen Fittnesswert bestimme. Jedoch m{\"u}ssten diese 3*N Signale mehrmals abgespielt werden, um eine H{\"a}ufigkeit zu erhalten. Wenn man hier f{\"u}r die Population jedes Individuum f{\"u}nf mal abspielen w{\"a}rde, w{\"a}re man bei 15*N. Bei einem N von 10 Signalen pro Signaltyp w{\"a}ren dass dann 150 Bewertungen die der Nutzer pro Population machen m{\"u}sste um nur eine Generation zu bewerten. Wenn man nur vier Generationen bestimmen wollte, so wÃ¤re man bei 450 Bewertungen nur um einen personalisierten Wert zu erhalten. Das w{\"a}re f{\"u}r einen normalen Benutzer nicht zumutbar, dass er so viel Zeit in Anspruch nehmen w{\"u}rde um so viele Signale zu bewerten. 
+
+%Daher musste eine alternative her. Die Alternative ist gewesen, man spiele dem Benutzer jedes Individuum nur einmal ab und stellt Ihn dazu drei Fragen, die wie in einem SUS Fragebogen gestellt wird, mit einer Skala von sehr gut bis sehr schlecht. [BILD EINFÃœGEN]
+%Anhand der Fragen habe ich einen Fitnesswert bestimmt. Die weitere Beschreibung des Algorithmus wird in der Implementierung beschrieben.
+
+%Mit jeder Generation ist man davon ausgegangen, dass die Grenzen der Signaltypen kleiner wurde und zu dem Wert, dass dem Nutzer am besten gefallen w{\"u}rde hinkonvergieren w{\"u}rde.
+ %W{\"u}rde man dies weitertreiben, bis die jeweiligen Signaltypen gegen eine Zahl konvergieren, w{\"u}rde man noch ein paar mehr Itterationen machen m{\"u}ssen, was unter Bedacht, dass der Benutzer nicht so lange die Signale bewerten w{\"u}rde nach vier Itterationen aufgeh{\"o}rt. Nachdem der Algorithmus also nach der vierten Generation die Population erzeugt hat, wurde von allen Individuen das Minumin und Maximum der jeweiligen Signaltypen bestimmt worden. Anhand der Minima und Maxima wurde f{\"u}r jeden Signaltypen der Mittelwert bestimmt.
+
+%Somit hat man nach dem Algorithmus einen personalisierten Kurz, Mittel und Lang Wert.
+
+%Im dritten Schritt musste man herausfinden, wie die Signale im Vergleich zu Vorgegebenen Werten erkannt werden.
+%Dabei hat man verschiedene Folgen von Signalen vordefiniert, die der Benutzer erkennen sollte. Dabei habe man zuerst drei Signal-Folgen (aka Muster) abgespielt, anschlie{\ss}end vierer Muster und zu letzt f{\"u}nfer Muster. Es wurde abwechselnd ein zuf{\"a}lliges genetisches Muster und ein generisches Muster abgespielt. 
 
