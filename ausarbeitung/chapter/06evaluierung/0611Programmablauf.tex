@@ -1,0 +1,84 @@
+%% Studiendesign.tex
+%% $Id: Studiendesign.tex 4 2005-10-10 20:51:21Z bless $
+%%
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, draw, text width=2cm, text badly centered, node distance=3cm, inner sep=0pt, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+\hspace*{-3cm}
+\begin{tikzpicture}[node distance=1.8cm]
+
+%\node (in1) [io, below of=start] {Input};
+
+\node (start) [startstop] {Start};
+\node (pro1) [process, below of=start] {Proband wird über Studie aufgeklärt};
+\node (pro2) [process, below of=pro1, yshift=0.4cm] {Fragen zur Person beantworten};
+\node (pro3) [process, below of=pro2, yshift=0.4cm] {alle Signale werden abgespielt};
+\node (pro4) [process, below of=pro3, yshift=0.4cm] {einzelnes Signal wird abgespielt};
+\node (pro5) [process, below of=pro4, yshift=0.4cm] {Signal wird bewertet};
+\node (dec1) [decision, below of=pro5, yshift=0.5cm] {alle Signale bewertet?};
+\node (dec2) [decision, below of=dec1, yshift=-0.5cm] {Bewertung verfälscht?};
+\node (pro6) [process, right of=dec2, xshift=1.6cm] {Bewertung aller Signale wird zur{\"u}ckgesetzt};
+\node (pro7) [process, below of=dec2, yshift=-0.4cm] {Grenzen werden bestimmt};
+\node (pro8) [process, right of=start, xshift=5.3cm] {Population wird erzeugt};
+\node (pro9) [process, below of=pro8, yshift=0.2cm] {Signal wird aus der Population abgespielt};
+\node (pro10) [process, below of=pro9, yshift=0cm] {Proband beantwortet Fragen zum Signal};
+\node (dec3) [decision, below of=pro10, yshift=0.5cm] {alle Signale bewertet?};
+\node (pro11) [process, below of=dec3, yshift=-0.4cm] {Nächste Generation bestimmen};
+\node (dec4) [decision, below of=pro11, yshift=0.5cm] {aktuelle Generation \textgreater4?};
+\node (pro12) [process, right of=dec4, xshift=2.1cm] {Population wird ersetzt};
+\node (pro13) [process, below of=dec4, yshift=-0.6cm] {Genetische Werte bestimmen};
+\node (pro14) [process, below of=pro13, yshift=0cm] {Pool f{\"u}r Generische und Genetische Muster erzeugen};
+\node (pro15) [process, right of=pro8, xshift=5.7cm] {Einzelne Muster werden abgespielt};
+\node (pro16) [process, below of=pro15, yshift=0.4cm] {Proband bewertet Muster};
+\node (stop) [startstop, below of=pro16] {Stop};
+
+
+%\node (decX) [decision, below of=pro7, yshift=-0.5cm] {Decision 1};
+%\node (pro2a) [process, below of=decX, yshift=-0.5cm] {Process 2a text text text text text text text text text text};
+%\node (pro2b) [process, right of=decX, xshift=2cm] {Process 2b};
+%\node (out1) [io, below of=pro2a] {Output};
+%\node (stop) [startstop, below of=out1] {Stop};
+
+\draw [arrow] (start) -- (pro1);
+\draw [arrow] (pro1) -- (pro2);
+\draw [arrow] (pro2) -- (pro3);
+\draw [arrow] (pro3) -- (pro4);
+\draw [arrow] (pro4) -- (pro5);
+\draw [arrow] (pro5) -- (dec1);
+\draw [arrow] (dec1) -- node[anchor=east,right] {ja}  (dec2);
+\draw [arrow] (dec1.east) -- +(1,0)|- node[right,yshift=-2cm] {nein}  (pro4);
+\draw [arrow] (dec2) -- node[anchor=east,above]  {ja}   (pro6);
+\draw [arrow] (dec2) -- node[anchor=south,right] {nein} (pro7);
+\draw [arrow] (pro6) -- +(0,1)|- node[anchor=north]{} (pro4);
+\draw [arrow] (pro7) |-(pro7.east)-- ([shift={(-2.1mm,-15.6cm)}]pro8.west)|-(pro8);
+\draw [arrow] (pro8) -- (pro9);
+\draw [arrow] (pro9) -- (pro10);
+\draw [arrow] (pro10) -- (dec3);
+\draw [arrow] (dec3) -- node[anchor=east,right] {ja}  (pro11);
+\draw [arrow] (dec3.east) -- +(1,0)|- node[right,yshift=-2cm] {nein}  (pro9);
+\draw [arrow] (pro11) -- (dec4);
+\draw [arrow] (dec4) -- node[anchor=east,right]  {ja}   (pro13);
+\draw [arrow] (dec4) -- node[anchor=south,above] {nein} (pro12);
+\draw [arrow] (pro12) -- +(0,1)|- node[anchor=north]{} (pro9);
+\draw [arrow] (pro13) -- (pro14);
+\draw [arrow] (pro14) |-(pro14.east)-- ([shift={(-2.1mm,-14.8cm)}]pro15.west)|-(pro15);
+\draw [arrow] (pro15) -- (pro16);
+\draw [arrow] (pro16) -- (stop);
+
+
+\end{tikzpicture}
+
+
+
+\end{document}
