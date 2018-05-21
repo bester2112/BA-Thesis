@@ -20,7 +20,7 @@ Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man 
 \item Haben Sie schon einmal eine Smartwatch verwendet?
 \end{itemize}
 
-Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{AngabenZurPerson}. Im Hintergrund hatte man eine einfache Klasse \textif{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonyme Datei angelegt, die im Nachhinein nicht auf den Probanden zur{\"u}ckschlie{\ss}en zu k{\"o}nnen.  
+Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{AngabenZurPerson}. Im Hintergrund hatte man eine einfache Klasse \textbf{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonyme Datei angelegt, die im Nachhinein nicht auf den Probanden zur{\"u}ckschlie{\ss}en zu k{\"o}nnen.  
 
 \begin{figure}[htbp] 
 	\centering
@@ -38,11 +38,11 @@ Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufe
 Wie schon im Entwurf beschrieben, ist das Signal eines der wichtigsten Bestandteile des Programms.
 %Das Signal ist wie im Entwurf schon beschrieben, einer der wichtigsten Bestandteile meines Programms. 
 
-Ein \textif{Signal} besitzt die Attribute L{\"a}nge in ms, St{\"a}rke, die den jeweiligen Zustand der St{\"a}rke speichert \autoref{zdiagramm}, den Signaltypen, sowie die Grenzen des Signaltypens und die Anzahl wie oft ein Signal erneut abgespielt wurde. 
+Ein \textbf{Signal} besitzt die Attribute L{\"a}nge in ms, St{\"a}rke, die den jeweiligen Zustand der St{\"a}rke speichert \autoref{zdiagramm}, den Signaltypen, sowie die Grenzen des Signaltypens und die Anzahl wie oft ein Signal erneut abgespielt wurde. 
 Da man in den n{\"a}chsten beiden Phasen dem Signal einen Signaltypen zuordnen soll, wurde daf{\"u}r auch ein weiteres Attribut angelegt, sowie die Zeit, die ben{\"o}tigt wurde um die Frage zu beantworten.
 %Jedes Signal beinhaltet die Attribute L{\"a}nge, St{\"a}rke, der Signaltyp sowie die Grenzen des Signaltyps.
 
-In der Phase indem der Algorithmus durchgef{\"u}hrt wird, werden noch zwei zus{\"a}tzliche Fragen gestellt f{\"u}r die man in der Klasse \textif{Signal} auch noch diese beiden Werte gespeichert hat.
+In der Phase indem der Algorithmus durchgef{\"u}hrt wird, werden noch zwei zus{\"a}tzliche Fragen gestellt f{\"u}r die man in der Klasse \textbf{Signal} auch noch diese beiden Werte gespeichert hat.
 
 %Je nach dem in welcher Phase des Programms man sich gerade befindet, werden noch weitere Attribute gespeichert
 %Das Programm besteht aus vier Phasen.
@@ -53,7 +53,7 @@ Nachdem der Proband die Angaben zur Person beantwortet hat, erscheint ein Benach
 Falls der Proband zu einem Zeipunkt Fragen haben sollte, werden diese durch den Aufseher beantwortet.
 F{\"u}r die Bestimmung der Grenzen wurden 10 Signale erzeugt, die gleichverteilt sind. 
 Mithilfe einer Zufallsfunktion werden diese Signale zuf{\"a}llig ausgew{\"a}hlt und in dieser Reihefolge abgespielt. 
-Der Proband soll f{\"u}r jeden der 10 Signalen einen der Signaltypen \textif{Kurz}, \textif{Mittel} oder \textif{Lang} zuordnen. 
+Der Proband soll f{\"u}r jeden der 10 Signalen einen der Signaltypen \textbf{Kurz}, \textbf{Mittel} oder \textbf{Lang} zuordnen. 
 Dabei habe man die im Entwurf besprochenen Sonderf{\"a}lle {\"u}berpr{\"u}ft und bei erfolgreicher Bildung der Grenzen ist man in die n{\"a}chste Phase {\"u}bergegangen.
 %Als alle 10 Signale bewertet wurden, hat man {\"u}berpr{\"u}ft, ob der Kleinste Wert von 100ms Kurz und der gr{\"o}{\ss}te Wert von 1000ms Lang gewesen ist. 
 
