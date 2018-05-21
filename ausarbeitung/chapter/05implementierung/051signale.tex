@@ -2,37 +2,25 @@
 %% $Id: Signale.tex 4 2005-10-10 20:51:21Z bless $
 %%
 
-Das Signal ist wie im Entwurf schon beschrieben, einer der wichtigsten Bestandteile meines Programms. 
-Jedes Signal beinhaltet die Attribute Länge, Stärke, der Signaltyp sowie die Grenzen des Signaltyps.
+Das Kapitel \textbf{Implementierung} wird anhand dem im Entwurf besprochenen Verlauf der Studie erkl{\"a}rt.
 
-Je nach dem in welcher Phase des Programms man sich gerade befindet, werden noch weitere Attribute gespeichert.
-Das Programm besteht aus vier Phasen.
+Bei der Entwicklung des Programms hat man sich Gedanken {\"u}ber ein System gemacht, bei dem man die Ganzen Daten schon digital abgespeichert hat und nicht noch Informationen vom Probanden vom Zettel per Hand in den PC eintragen muss. Aus diesem Grund hat man sich f{\"u}r eine Grafische Benutzeroberfl{\"a}che, auch kurz GUI (graphical user interface) genannt, entschieden. 
+Die Programmiersprache die verwendet wurde ist C\# gewesen.
+Der Entstehungsprozess wurde auf Papier entworfen. Das Design sollte schlicht und einfach sein und den Fokus auf das Programm und nicht auf andere Komponenten des Betriebsystems ablenken. Die Papier Skizzen sind im Anhang vorhanden.
 
-\paragraph {1. Aufnahme der Personalien}
-\paragraph {2. Bestimmung der Grenzen durch Bewertung durch den Nutzer}
-\paragraph {3. Ausführen des Algorithmus}
-\paragraph {4. Muster Erkennung} 
+\paragraph{Informationen zur Person}
+Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man sich nach mehreren Entw{\"u}rfen f{\"u}r folgende Fragen entschieden:
 
-Das Signal ist ein wichtiger Bestandteil meines Programm. 
-Ein Signal beinhaltet die Signall{\"a}nge, die in Millisekunden gespeichert wird, und eine Signalst{\"a}rke, die in 5 St{\"a}rkestufen eingeteilt ist. 
+\begin{itemize}
+\item Wie alt sind Sie?
+\item Angabe des Geschlechts
+\item Empfinden Sie sich als musikalisch? 
+\item Spielen Sie gelegentlich Computer Spiele?
+\item Haben Sie Erfahrungen mit Taktilen Ger{\"a}ten?
+\item Haben Sie schon einmal eine Smartwatch verwendet?
+\end{itemize}
 
-
-
-Ich habe meinen Evolution{\"a}ren Algorithmus so angepasst, dass bei mir ein Induviduum ein Signal ist. 
-Ich habe dem Benutzer das Signal mit dem Wearable abspielen lassen und im Anschluss Fragen beantworten lassen. 
-Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer war entscheidend um nach der kompletten Bewertung der Population 
-
-
-
-
-
-
-
-
-
-% -----------------------------------------------------------------------
-
-\paragraph {1. Aufnahme der Personalien}
+Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{AngabenZurPerson}. Im Hintergrund hatte man eine einfache Klasse \textif{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonyme Datei angelegt, die im Nachhinein nicht auf den Probanden zur{\"u}ckschlie{\ss}en zu k{\"o}nnen.  
 
 \begin{figure}[htbp] 
 	\centering
@@ -42,22 +30,50 @@ Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer
 	\begin{minipage}[t]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson2}.png}
 	\end{minipage}
-	\caption{}
-	\label{fig:Bild10}
+	\caption{GUI f{\"u}r die Befragung zu den Angaben zur Person}
+	\label{fig:AngabenZurPerson}
 \end{figure}
 
-Um in der Evaluierung mögliche Erkentnisse zwischen bestimmten Benutzergruppen herausfinden zu können, hat man dem Benutzer Eine Reihe von Fragen gestellt, die im Bild XXXX zu sehen sind.
-Diese Daten wurden anonymisiert gespeichert. 
-\paragraph {2. Bestimmung der Grenzen durch Bewertung durch den Nutzer}
+\paragraph{Signal}
+Wie schon im Entwurf beschrieben, ist das Signal eines der wichtigsten Bestandteile des Programms.
+%Das Signal ist wie im Entwurf schon beschrieben, einer der wichtigsten Bestandteile meines Programms. 
+
+Ein \textif{Signal} besitzt die Attribute L{\"a}nge in ms, St{\"a}rke, die den jeweiligen Zustand der St{\"a}rke speichert \autoref{zdiagramm}, den Signaltypen, sowie die Grenzen des Signaltypens und die Anzahl wie oft ein Signal erneut abgespielt wurde. 
+Da man in den n{\"a}chsten beiden Phasen dem Signal einen Signaltypen zuordnen soll, wurde daf{\"u}r auch ein weiteres Attribut angelegt, sowie die Zeit, die ben{\"o}tigt wurde um die Frage zu beantworten.
+%Jedes Signal beinhaltet die Attribute L{\"a}nge, St{\"a}rke, der Signaltyp sowie die Grenzen des Signaltyps.
+
+In der Phase indem der Algorithmus durchgef{\"u}hrt wird, werden noch zwei zus{\"a}tzliche Fragen gestellt f{\"u}r die man in der Klasse \textif{Signal} auch noch diese beiden Werte gespeichert hat.
+
+%Je nach dem in welcher Phase des Programms man sich gerade befindet, werden noch weitere Attribute gespeichert
+%Das Programm besteht aus vier Phasen.
+
+\paragraph {Bestimmung der Grenzen durch Bewertung durch den Nutzer}
+
+Nachdem der Proband die Angaben zur Person beantwortet hat, erscheint ein Benachrichtigungsfenster, indem Informationen {\"u}ber den die aktuelle Phase erkl{\"a}rt sind. 
+Falls der Proband zu einem Zeipunkt Fragen haben sollte, werden diese durch den Aufseher beantwortet.
+F{\"u}r die Bestimmung der Grenzen wurden 10 Signale erzeugt, die gleichverteilt sind. 
+Mithilfe einer Zufallsfunktion werden diese Signale zuf{\"a}llig ausgew{\"a}hlt und in dieser Reihefolge abgespielt. 
+Der Proband soll f{\"u}r jeden der 10 Signalen einen der Signaltypen \textif{Kurz}, \textif{Mittel} oder \textif{Lang} zuordnen. 
+Dabei habe man die im Entwurf besprochenen Sonderf{\"a}lle {\"u}berpr{\"u}ft und bei erfolgreicher Bildung der Grenzen ist man in die n{\"a}chste Phase {\"u}bergegangen.
+%Als alle 10 Signale bewertet wurden, hat man {\"u}berpr{\"u}ft, ob der Kleinste Wert von 100ms Kurz und der gr{\"o}{\ss}te Wert von 1000ms Lang gewesen ist. 
+
+Wenn die Bestimmung der Grenzen nicht erolgreich gewesen ist, wird der Benutzer gebeten die gleiche zuf{\"a}llige Reihenfolge erneut zu bewerten. 
+
+Sollte ein Proband den Replay-Button dr{\"u}cken, wird das letzte Signal erneut abgespielt.
+
+F{\"u}r die GUI \autoref{GrenzenBestimmen} hat man sich auf das wesentliche beschr{\"a}nkt. Die Anweisung an den Benutzer, hat immer den gleichen Text dargestellt. Als Antwortm{\"o}glichkeiten des Signals wurden je ein Radio-Button erstellt, der einen der Signaltypen repr{\"a}sentierte. Ist in jeder Phase, inder ein Signal abgespielt wurde, wurde der Replay-Button immer an der gleichen Position plaziert. 
+
+Der Ablauf einer Bewertung ist wie folgt abgelaufen, nach der Best{\"a}tigung des Benachrichtigungsfenster wurden im Hintergrund die Signale in zuf{\"a}lliger Reihenfolge erstellt. Darauf wurde das erste Signal {\"u}ber BLE an das Wearable gesendet. Das Wearable hat dieses Signal empfangen, ausgewertet und hat die Informationen als Vibration abgespielt. Das was der Benutzer dadurch empfunden hat wurde {\"u}ber den PC mittels der Maus bewertet. Nach einer Bewertung gab es keine M{\"o}glichkeit die Bewertung eines vorherigen Signals erneut anzupassen. Nachdem das Signal vom Probanden bewertet wurde, wurde der Maus-Cursor durch dem Programm an eine Anfangsposition gesetzt, damit der Benutzer doppelt auf ein Radio-Button dr{\"u}cken konnte. Um dem Probanden zu signalisieren, dass er die Checkbox gedr{\"u}ckt hat, hat man die Check-Box einen Augenblick visuell markiert gelassen, nachdem man den Maus-Cursor neu positioniert hat. Mit der Neupositionierung der Maus hat man erreicht, dass man immer den gleichen Weg hatte um die Checkboxen zu erreichen, aber man hatte auch nach mehreren Fragen die Maus anheben weiter nach oben legen m{\"u}ssen, denn man hat schon das Ende der Tischkannte erreicht.
 
 \begin{figure}
 	\centering
     \includegraphics[width=\textwidth]{pics/gui/GrenzenBestimmen.png}
-    \caption{Settings on the apple watch}
-    \label{fig:applewatch}
+    \caption{GUI zur Bestimmung der Grenzen}
+    \label{fig:GrenzenBestimmen}
 \end{figure}
 
-\paragraph {3. Ausführen des Algorithmus}
+\paragraph {3. Ausf{\"u}hren des Algorithmus}
+
 
 \begin{figure}[htbp] 
 	\centering
@@ -71,7 +87,40 @@ Diese Daten wurden anonymisiert gespeichert.
 	\label{fig:Bild10}
 \end{figure}
 
+
+
+
+%\paragraph {1. Aufnahme der Personalien}
+%Der erste Schritt bestand darin, den Probanden den Personalien zu fragen. 
+
+%\paragraph {2. Bestimmung der Grenzen durch Bewertung durch den Nutzer}
+%\paragraph {3. Ausf{\"u}hren des Algorithmus}
 \paragraph {4. Muster Erkennung} 
 
-MUSTER BILD
+%Das Signal ist ein wichtiger Bestandteil meines Programm. 
+Ein Signal beinhaltet die Signall{\"a}nge, die in Millisekunden gespeichert wird, und eine Signalst{\"a}rke, die in 5 St{\"a}rkestufen eingeteilt ist. 
+
+
+
+Ich habe meinen Evolution{\"a}ren Algorithmus so angepasst, dass bei mir ein Induviduum ein Signal ist. 
+Ich habe dem Benutzer das Signal mit dem Wearable abspielen lassen und im Anschluss Fragen beantworten lassen. 
+Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer war entscheidend um nach der kompletten Bewertung der Population 
+
+% -----------------------------------------------------------------------
+
+%\paragraph {1. Aufnahme der Personalien}
+
+
+%Um in der Evaluierung m{\"o}gliche Erkentnisse zwischen bestimmten Benutzergruppen herausfinden zu k{\"o}nnen, hat man dem Benutzer Eine Reihe von Fragen gestellt, die im Bild XXXX zu sehen sind.
+%Diese Daten wurden anonymisiert gespeichert. 
+
+%\paragraph {2. Bestimmung der Grenzen durch Bewertung durch den Nutzer}
+
+
+%\paragraph {3. Ausf{\"u}hren des Algorithmus}
+
+
+%\paragraph {4. Muster Erkennung} 
+
+%MUSTER BILD
 
