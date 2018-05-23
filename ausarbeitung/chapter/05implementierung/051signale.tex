@@ -9,19 +9,6 @@ Die Programmiersprache die verwendet wurde ist C\# gewesen.
 Der Entstehungsprozess wurde auf Papier entworfen. Das Design sollte schlicht und einfach sein und den Fokus auf das Programm und nicht auf andere Komponenten des Betriebsystems ablenken. Die Papier Skizzen sind im Anhang vorhanden.
 
 \paragraph{Informationen zur Person}
-Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man sich nach mehreren Entw{\"u}rfen f{\"u}r folgende Fragen entschieden:
-
-\begin{itemize}
-\item Wie alt sind Sie?
-\item Angabe des Geschlechts
-\item Empfinden Sie sich als musikalisch? 
-\item Spielen Sie gelegentlich Computer Spiele?
-\item Haben Sie Erfahrungen mit Taktilen Ger{\"a}ten?
-\item Haben Sie schon einmal eine Smartwatch verwendet?
-\end{itemize}
-
-Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{AngabenZurPerson}. Bei der Frage um das Geschlecht habe man ebenfalls drei antwortmöglichkeiten geboten, ob man \textit{männlich}, \textit{weiblich} oder \textit{keine Angabe}.
-Im Hintergrund hatte man eine einfache Klasse \textbf{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonymisierte Datei angelegt, die im Nachhinein nicht mehr auf den Probanden zur{\"u}ckschlie{\ss}en konnte.  
 
 \begin{figure}[htbp] 
 	\centering
@@ -35,11 +22,25 @@ Im Hintergrund hatte man eine einfache Klasse \textbf{Person}, die die Informati
 	\label{fig:AngabenZurPerson}
 \end{figure}
 
+Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man sich nach mehreren Entw{\"u}rfen f{\"u}r folgende Fragen entschieden:
+
+\begin{itemize}
+\item Wie alt sind Sie?
+\item Angabe des Geschlechts
+\item Empfinden Sie sich als musikalisch? 
+\item Spielen Sie gelegentlich Computer Spiele?
+\item Haben Sie Erfahrungen mit Taktilen Ger{\"a}ten?
+\item Haben Sie schon einmal eine Smartwatch verwendet?
+\end{itemize}
+
+Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{fig:AngabenZurPerson}. Bei der Frage um das Geschlecht habe man ebenfalls drei antwortmöglichkeiten geboten, ob man \textit{männlich}, \textit{weiblich} oder \textit{keine Angabe}.
+Im Hintergrund hatte man eine einfache Klasse \textbf{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonymisierte Datei angelegt, die im Nachhinein nicht mehr auf den Probanden zur{\"u}ckschlie{\ss}en konnte.  
+
 \paragraph{Signal}
 Wie schon im Entwurf beschrieben, ist das Signal eines der wichtigsten Bestandteile des Programms.
 %Das Signal ist wie im Entwurf schon beschrieben, einer der wichtigsten Bestandteile meines Programms. 
 
-Ein \textbf{Signal} besitzt die Attribute L{\"a}nge in ms, St{\"a}rke, die den jeweiligen Zustand der St{\"a}rke speichert \autoref{zdiagramm}, den Signaltypen, sowie die Grenzen des Signaltypens und die Anzahl wie oft ein Signal erneut abgespielt wurde. 
+Ein \textbf{Signal} besitzt die Attribute L{\"a}nge in ms, St{\"a}rke, die den jeweiligen Zustand der St{\"a}rke speichert \autoref{fig:zdiagramm}, den Signaltypen, sowie die Grenzen des Signaltypens und die Anzahl wie oft ein Signal erneut abgespielt wurde. 
 Da man in den n{\"a}chsten beiden Phasen dem Signal einen Signaltypen zuordnen soll, wurde daf{\"u}r auch ein weiteres Attribut angelegt, sowie die Zeit, die ben{\"o}tigt wurde um die Frage zu beantworten.
 %Jedes Signal beinhaltet die Attribute L{\"a}nge, St{\"a}rke, der Signaltyp sowie die Grenzen des Signaltyps.
 
@@ -69,7 +70,7 @@ Wenn die Bestimmung der Grenzen nicht erolgreich gewesen ist, wird der Benutzer 
 
 Sollte ein Proband den Replay-Button dr{\"u}cken, wird das letzte Signal erneut abgespielt.
 
-F{\"u}r die GUI \autoref{GrenzenBestimmen} hat man sich auf das wesentliche beschr{\"a}nkt. Die Anweisung an den Benutzer war immer die selbe, daher hat man nur den gleichen Text dargestelllt. Als Antwortm{\"o}glichkeiten des Signals wurde für jeden Sognaltyp je ein Radio-Button erstellt. 
+F{\"u}r die GUI \autoref{fig:GrenzenBestimmen} hat man sich auf das wesentliche beschr{\"a}nkt. Die Anweisung an den Benutzer war immer die selbe, daher hat man nur den gleichen Text dargestelllt. Als Antwortm{\"o}glichkeiten des Signals wurde für jeden Sognaltyp je ein Radio-Button erstellt. 
 In den Phasen, in denen ein Signal abgespielt wurde, wurde der Replay-Button immer an der gleichen feste Position plaziert. 
 
 Der Ablauf einer Bewertung wird im folgenden beschrieben. Nach der Best{\"a}tigung des Benachrichtigungsfenster wurden im Hintergrund die 10 Signale in zuf{\"a}lliger Reihenfolge ausgew{\"a}hlt. Darauf wurde das erste Signal {\"u}ber BLE an das Wearable gesendet. Das Wearable hat dieses Signal empfangen, ausgewertet und hat die Informationen als Vibration abgespielt. Das was der Benutzer dadurch empfunden hat wurde {\"u}ber den PC mittels der Maus bewertet. Nach einer Bewertung gab es keine M{\"o}glichkeit die Bewertung eines vorherigen Signals erneut anzupassen. Nachdem das Signal vom Probanden bewertet wurde, wurde der Maus-Cursor durch dem Programm an eine Anfangsposition gesetzt, damit der Benutzer nicht unabsichtlich doppelt auf ein Radio-Button dr{\"u}cken konnte. Um dem Probanden zu signalisieren, dass er die Checkbox gedr{\"u}ckt hat, hat man die Check-Box einen Augenblick visuell markiert gelassen, nachdem man den Maus-Cursor neu positioniert hat. Mit der Neupositionierung der Maus hat man erreicht, dass man immer den gleichen Weg hatte um die Checkboxen zu erreichen, aber man hatte auch nach mehreren Fragen die Maus anheben weiter nach oben legen m{\"u}ssen, denn man hat schon das Ende der Tischkannte erreicht. Nach einer Bewertung wurde die vorherige Auswahl entfernt und man hat das n{\"a}chste Signal {\"u}bertragen.
