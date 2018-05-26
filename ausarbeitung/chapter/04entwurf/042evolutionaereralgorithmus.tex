@@ -47,25 +47,26 @@ Nach der Eingabe des Probanden erh{\"a}lt man beispielsweise folgende Bewertung 
 
 \begin{table}[]
 \centering
-\caption{Bewertung eines Probanden die Ideal ist}
+\caption{Bewertung eines Probanden die Ideal ist. Dabei ist die \textit{L{\"a}nge} die Signall{\"a}nge in ms und \textit{Erkannt} ist das erkannte Signal durch dem Benutzer }
 \label{idealeingabe}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
- Signall{\"a}nge (in ms) & 100 & 200 & 300 & 400 & 500 & 600 & 700 & 800 & 900 & 1000 \\ \hline
- Erkannten Signaltyp & Kurz & Kurz & Kurz & Mittel & Mittel & Mittel & Lang & Lang & Lang & Lang \\ \hline
-\end{tabular}
+ L{\"a}nge & 100 & 200 & 300 & 400 & 500 & 600 & 700 & 800 & 900 & 1000 \\ \hline
+ Erkannt & Kurz & Kurz & Kurz & Mittel & Mittel & Mittel & Lang & Lang & Lang & Lang \\ \hline
+\end{tabular}}
 \end{table}
 
 Falls die Eingabe jedoch nicht so Ideal sein sollte, wie im Beispiel \autoref{nichtidealeeingabe}, mussten ein paar Vorkehrungen getroffen werden. Um einige Sonderf{\"a}lle auszuschlie{\ss}en, hat man {\"u}berpr{\"u}ft, ob das Signal mit der L{\"a}nge von 100ms ein Kurzes Signal ist und das Signal mit der L{\"a}nge von 1000ms ein Langes Signal ist, sowie man annimmt, dass mindestens jeder Signaltyp mindesten zwei mal ausgew{\"a}hlt wurde. Sollte dies nicht der Fall sein, so w{\"u}rde man den Benutzer dazu bitten, die zehn Signale erneut zu bewerten. 
 
 \begin{table}[]
 \centering
-\caption{Bewertung eines Probanden die nicht Ideal ist}
+\caption{Bewertung eines Probanden die nicht Ideal ist. Dabei ist die \textit{L{\"a}nge} die Signall{\"a}nge in ms und \textit{Erkannt} ist das erkannte Signal durch dem Benutzer}
 \label{nichtidealeeingabe}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
- Signall{\"a}nge (in ms) & 100 & 200 & 300 & 400 & 500 & 600 & 700 & 800 & 900 & 1000 \\ \hline
- Erkannten Signaltyp & Kurz & Kurz & Mittel & Mittel & Lang & Mittel & Lang & Lang & Lang & Lang \\ \hline
+ L{\"a}nge & 100 & 200 & 300 & 400 & 500 & 600 & 700 & 800 & 900 & 1000 \\ \hline
+ Erkannt & Kurz & Kurz & Mittel & Mittel & Lang & Mittel & Lang & Lang & Lang & Lang \\ \hline
 \end{tabular}
 \end{table}
 
@@ -151,23 +152,23 @@ Um es an einem Beispiel zu erkl{\"a}ren, nehmen wir an, dass der Startzustand $q
 \centering
 \caption{Signalst{\"a}rke}
 \label{belegungzdiagramm}
-\begin{tabular}{lcr}
-  Signalst{\"a}rke & Namen & Zustandsnamen \\
-  $\mathtt{0x7FFF}$ & Very Weak & $q_{0}$ \\
-  $\mathtt{0x9FFF}$ & Weak & $q_{1}$ \\
-  $\mathtt{0xBFFF}$ & OK & $q_{2}$ \\
-  $\mathtt{0xDFFF}$ & Strong & $q_{3}$ \\
-  $\mathtt{0xFFFF}$ & Very Strong & $q_{4}$ \\
+\begin{tabular}{l|l|l}
+  Signalst{\"a}rke  & Namen       & Zustandsnamen \\ \hline
+  $\mathtt{0x7FFF}$ & Very Weak   & $q_{0}$       \\ \hline
+  $\mathtt{0x9FFF}$ & Weak        & $q_{1}$       \\ \hline
+  $\mathtt{0xBFFF}$ & OK          & $q_{2}$       \\ \hline
+  $\mathtt{0xDFFF}$ & Strong      & $q_{3}$       \\ \hline
+  $\mathtt{0xFFFF}$ & Very Strong & $q_{4}$       \\
 \end{tabular}
 \end{table}
 
 \begin{table}[]
 \centering
-\caption{Bewertung auf die Frage wie man die St{\"a}rke empfunden hat}
+\caption{Bewertung der Frage, wie man die St{\"a}rke empfunden hat}
 \label{bewertungzdiagrammfrage}
-\begin{tabular}{llllll}
-Antwort   & zu schwach          & schwach               & ok                    & stark                   & zu stark              \\
-Wertigkeit & \multicolumn{1}{c}{+2} & \multicolumn{1}{c}{+1} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{-1} & \multicolumn{1}{c}{-2}
+\begin{tabular}{l|l|l|l|l|l}
+Antwort    & zu schwach              & schwach                 & ok                     & stark                   & zu stark               \\ \hline
+Wertigkeit & \multicolumn{1}{c|}{+2} & \multicolumn{1}{c|}{+1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{-1} & \multicolumn{1}{c}{-2}
 \end{tabular}
 \end{table}
 
@@ -179,11 +180,11 @@ Mittels der letzten Frage, wie gut ein Proband das Signal erkannt hat, hat man e
 
 \begin{table}[]
 \centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{llllll}
-Antwort   & sehr schlecht          & schlecht               & ok                    & gut                   & sehr gut              \\
-Wertigkeit & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5}
+\caption{Bewertung der Frage, wie gut man das Signal erkannt hat.}
+\label{signalRating}
+\begin{tabular}{l|l|l|l|l|l}
+Antwort   & sehr schlecht          & schlecht               & ok                    & gut                   & sehr gut              \\ \hline
+Wertigkeit & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{4} & \multicolumn{1}{c}{5}
 \end{tabular}
 \end{table}
 
