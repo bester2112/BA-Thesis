@@ -14,17 +14,17 @@ Auf die Implementierung vom BLE und dem Wearable wird hier nicht weiter eingegan
 
 \section{Informationen zur Person}
 
-\begin{figure}[htbp] 
-	\centering
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson1}.png}
-	\end{minipage}
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson2}.png}
-	\end{minipage}
-	\caption{GUI f{\"u}r die Befragung zu den Angaben zur Person}
-	\label{fig:AngabenZurPerson}
-\end{figure}
+%\begin{figure}[htbp] 
+%	\centering
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson1}.png}
+%	\end{minipage}
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson2}.png}
+%	\end{minipage}
+%	\caption{GUI f{\"u}r die Befragung zu den Angaben zur Person}
+%	\label{fig:AngabenZurPerson}
+%\end{figure}
 
 Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man sich nach mehreren Entw{\"u}rfen f{\"u}r folgende Fragen entschieden:
 
@@ -55,12 +55,12 @@ In der Phase indem der Algorithmus durchgef{\"u}hrt wird, werden noch zwei zus{\
 
 \section {Bestimmung der Grenzen durch Bewertung durch den Nutzer}
 
-\begin{figure}
-	\centering
-    \includegraphics[width=\textwidth]{pics/gui/GrenzenBestimmen.png}
-    \caption{GUI zur Bestimmung der Grenzen}
-    \label{fig:GrenzenBestimmen}
-\end{figure}
+%\begin{figure}
+%	\centering
+%    \includegraphics[width=0.65\textwidth]{pics/gui/GrenzenBestimmen.png}
+%    \caption{GUI zur Bestimmung der Grenzen}
+%    \label{fig:GrenzenBestimmen}
+%\end{figure}
 
 Nachdem der Proband die Angaben zur Person beantwortet hat, erscheint ein Benachrichtigungsfenster, indem Informationen {\"u}ber den die aktuelle Phase erkl{\"a}rt wird. 
 Falls der Proband zu einem Zeipunkt Fragen haben sollte, werden diese durch den Aufseher beantwortet.
@@ -81,17 +81,17 @@ Der Ablauf einer Bewertung wird im folgenden beschrieben. Nach der Best{\"a}tigu
 
 \section {Ausf{\"u}hren des Algorithmus}
 
-\begin{figure}[htbp] 
-	\centering
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus1}.png}
-	\end{minipage}
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus2Emotion}.png}
-	\end{minipage}
-	\caption{GUI des Algorithmus (links) und der Bewertung der Stimmung (rechts)}
-	\label{fig:AlgorithmusBild}
-\end{figure}
+%\begin{figure}[htbp] 
+%	\centering
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus1}.png}
+%	\end{minipage}
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus2Emotion}.png}
+%	\end{minipage}
+%	\caption{GUI des Algorithmus (links) und der Bewertung der Stimmung (rechts)}
+%	\label{fig:AlgorithmusBild}
+%\end{figure}
 
 F{\"u}r den Algorithmus habe man sich mehrere Klassen erzeugt. 
 Die Klasse \textbf{DNA} beinhaltet ein Signal und Hilfsfunktionen, die eine Rekombination und eine Muatation von zwei Signalen erzeugen.
@@ -143,17 +143,17 @@ Die gerade bestimmten Mittelwerte bilden die personalisierten Werte, die f{\"u}r
 
 \section {Muster Erkennung}
 
-\begin{figure}[htbp] 
-	\centering
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{Muster1}.png}
-	\end{minipage}
-	\begin{minipage}[t]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{pics/gui/{Muster2}.png}
-	\end{minipage}
-	\caption{GUI des Musters ohne Eingabe (links) und (rechts) nach der Eingabe}
-	\label{fig:MusterBild}
-\end{figure}
+%\begin{figure}[htbp] 
+%	\centering
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{Muster1}.png}
+%	\end{minipage}
+%	\begin{minipage}[t]{0.65\textwidth}
+%		\includegraphics[width=\textwidth]{pics/gui/{Muster2}.png}
+%	\end{minipage}
+%	\caption{GUI des Musters ohne Eingabe (links) und (rechts) nach der Eingabe}
+%	\label{fig:MusterBild}
+%\end{figure}
 
 F{\"u}r die Erzeugung der Muster hat man die Grenzen mit {\"u}bergeben m{\"u}ssen, denn in der Klasse \textit{Muster} wird der personalisierte Wert bestimmt, dies geschieht, indem man Mittelwert der Grenzen berechnet. 
 Im Vorfeld hat man drei Typen von Mustern erstellt. F{\"u}r jeden Muster-Typen hat man 15 Muster angelegt. 
@@ -181,6 +181,52 @@ F{\"u}r jedes Muster habe man die M{\"o}glichkeit gehabt, das Muster erneut abzu
 Bei einem Wechsel der Mustertypen wurde ein Signal vorher dem Probanden {\"u}ber ein Benachrichtigungsfenster darauf aufmerksam gemacht.
 
 W{\"a}hrend des Ablauf der Erkennung der Muster wurden noch die Zeit, die ben{\"o}tigt wurde um ein Muster zu bewerten gespeichert. 
+
+
+
+\begin{figure}[htbp] 
+	\centering
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson1}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{AngabenZurPerson2}.png}
+	\end{minipage}
+	\caption{GUI f{\"u}r die Befragung zu den Angaben zur Person}
+	\label{fig:AngabenZurPerson}
+\end{figure}
+
+\begin{figure}
+	\centering
+    \includegraphics[width=0.95\textwidth]{pics/gui/GrenzenBestimmen.png}
+    \caption{GUI zur Bestimmung der Grenzen}
+    \label{fig:GrenzenBestimmen}
+\end{figure}
+
+\begin{figure}[htbp] 
+	\centering
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus1}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Algorithmus2Emotion}.png}
+	\end{minipage}
+	\caption{GUI des Algorithmus (links) und der Bewertung der Stimmung (rechts)}
+	\label{fig:AlgorithmusBild}
+\end{figure}
+
+
+\begin{figure}[htbp] 
+	\centering
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Muster1}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Muster2}.png}
+	\end{minipage}
+	\caption{GUI des Musters ohne Eingabe (links) und (rechts) nach der Eingabe}
+	\label{fig:MusterBild}
+\end{figure}
 
 
 
