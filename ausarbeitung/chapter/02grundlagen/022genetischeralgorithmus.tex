@@ -3,7 +3,7 @@
 %%
 
 Unter dem Begriff der Evalution{\"a}ren Algorithmen (EA) versteht man eine Ansammlung von Techniken und Methoden die f{\"u}r Optimierungsprobleme eine L{\"o}sung findet, die das Problem n{\"a}herungsweise löst. \cite{weicker2015evolutionare} 
-/////Man hat sich bei dem EA an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
+%/////Man hat sich bei dem EA an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
 
 %// Die Evalution{\"a}ren Algorithmen sind stochastische Optimierungsverfahren. Mithilfe eines Evolution{\"a}ren Algorithmus (EA) findet man nicht die beste L{\"o}sung f{\"u}r ein Problem, jedoch findet man eine gute L{\"o}sung, die der eigentlichen L{\"o}sung recht nahe kommt.
 
@@ -16,7 +16,7 @@ In der Biologie ist jeder lebende Organismus ein \textbf{Individuum}.
 Jedes Individuum besitzt Erbinformationen in der Form von Chromosomen. Die Erbinformationen werden auch \textbf{Gene} oder \textbf{DNA} genannt. 
 Eine Gruppe von Individuen wird als \textbf{Population} bezeichnet. 
 
-Bei dem EA hat man sich das Verhalten des in der Biologie angeschaut, wie dort die Arten über Generationen hinweg überleben und versucht dieses zu adaptieren. \cite{flickevolutionare}
+Bei dem EA hat man sich das Verhalten des in der Biologie angeschaut, wie dort die Arten über Generationen hinweg überleben und versucht dieses zu adaptieren. \cite{Repräsentation}
 
 %% ==============================
 \subsection{Selektion}
@@ -51,9 +51,9 @@ Unter \textbf{Gendrift} versteht man eine zuf{\"a}llige Ver{\"a}nderung der Genh
 %% ==============================
 \begin{figure}
 	\centering
-    \includegraphics[width=\textwidth]{pics/algo.png}
+    \includegraphics[width=\textwidth]{pics/algoSchritte.png}
     \caption{Ablauf des Algorithmus}
-    \label{fig:ablaufalgo}
+    \label{fig:algoSchritte}
 \end{figure}
 Der EA besitzt im allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im folgenden erl{\"a}utert. Dieses Wissen stammt aus den folgenden Quellen \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
 
@@ -108,6 +108,20 @@ Das dabei erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das P
 %% ==============================
 \subsection{Darstellung}
 %% ==============================
+Es gibt verschiedene Darstellungsmöglichkeiten um von Genen, bei denen ich hier auf die meist meist verwendeten Darstellungen eingehen werde. Das wissen, wurde aus der Ausarbeitung von \cite{Repräsentation} entnommen.
+
+Eine \textbf{Lineare Repräsentation} besteht aus einer Folge $a_{0}a_{1}a_{2}...a_{n-1}$ von Symbolen fester Länge, die aus einer definierten Symbolmenge $V$, dabei ist $a_{i} \in V$.   
+
+Die binäre Repäsentation besitzt die Symbolmenge $V$ = {0,1} und ist die meist verwendete \textit{lineare Repräsenation}. Dabei sieht ein Beispiel wie folgt aus:
+
+Für baumartige Strukturen, wird Genetisches Programmieren verwendet.
+
+%Die Symbolmenge $V$ = {0,1} ist die binäre Repräsentation, die für Genetische Algorithmen verwendet werden.
+%Die Binärcodierung wird die binäre Repräsentation, die eine Zeichenkette von nur Nullen oder Einsen ist, oft als Repräsentation von Genen verwendet. 
+
+
+
+
 
 
 %//Man f{\"a}hrt den Schritt so oft aus, bis man wieder die gleiche gro{\ss}e an Individuen f{\"u}r die n{\"a}chste Generation 

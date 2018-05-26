@@ -6,9 +6,13 @@ Das Kapitel \textbf{Implementierung} wird anhand dem im Entwurf besprochenen Ver
 
 Bei der Entwicklung des Programms hat man sich Gedanken {\"u}ber ein System gemacht, bei dem man alle Daten schon digital abgespeichert hat und nicht noch Informationen vom Probanden von Fragebögen per Hand in den PC eintragen muss. Aus diesem Grund hat man sich f{\"u}r eine Grafische Benutzeroberfl{\"a}che, auch kurz GUI (graphical user interface) genannt, entschieden. 
 Die Programmiersprache die verwendet wurde ist C\# gewesen.
-Der Entstehungsprozess wurde auf Papier entworfen. Das Design sollte schlicht und einfach sein und den Fokus auf das Programm und nicht auf andere Komponenten des Betriebsystems ablenken. Die Papier Skizzen sind im Anhang vorhanden.
+Der Entstehungsprozess wurde auf Papier entworfen. Das Design sollte schlicht und einfach sein und den Fokus auf das Programm und nicht auf andere Komponenten des Betriebsystems ablenken. 
+Die Papier Skizzen sind im Anhang vorhanden. Aus diesem Grund hat man sich einen schwarzen Rahmen um den Bereich gemacht, damit der Proband nur Focus darauf lenkt. 
+Die folgenden Bilder sind nur die wesentlichen Ausschnitte des Programms. 
+Das Programm wurde für das Surface 4 angepasst und könnte daher bei anderen Displayauflösungen anders plaziert werden. 
+Auf die Implementierung vom BLE und dem Wearable wird hier nicht weiter eingegangen.
 
-\paragraph{Informationen zur Person}
+\section{Informationen zur Person}
 
 \begin{figure}[htbp] 
 	\centering
@@ -36,7 +40,7 @@ Bei den Nachforschungen des Studiendesigns \cite{benyon2005designing}, habe man 
 Da man f{\"u}r den Probanden nicht mit allen Fragen auf einmal {\"u}berh{\"a}ufen wollte, hat man diese Fragen auf zwei Seiten dargestellt \autoref{fig:AngabenZurPerson}. Bei der Frage um das Geschlecht habe man ebenfalls drei antwortmöglichkeiten geboten, ob man \textit{männlich}, \textit{weiblich} oder \textit{keine Angabe}.
 Im Hintergrund hatte man eine einfache Klasse \textbf{Person}, die die Informationen der Antworten dieser Befragung gespeichert hat. Um zu vermeiden, dass Daten verloren gehen, habe man die Daten zur Person schon nach diesem Schritt in einer externen Datei gespeichert. F{\"u}r jeden Probanden hat man im Vorfeld eine anonymisierte Datei angelegt, die im Nachhinein nicht mehr auf den Probanden zur{\"u}ckschlie{\ss}en konnte.  
 
-\paragraph{Signal}
+\section{Signal}
 Wie schon im Entwurf beschrieben, ist das Signal eines der wichtigsten Bestandteile des Programms.
 %Das Signal ist wie im Entwurf schon beschrieben, einer der wichtigsten Bestandteile meines Programms. 
 
@@ -49,7 +53,7 @@ In der Phase indem der Algorithmus durchgef{\"u}hrt wird, werden noch zwei zus{\
 %Je nach dem in welcher Phase des Programms man sich gerade befindet, werden noch weitere Attribute gespeichert
 %Das Programm besteht aus vier Phasen.
 
-\paragraph {Bestimmung der Grenzen durch Bewertung durch den Nutzer}
+\section {Bestimmung der Grenzen durch Bewertung durch den Nutzer}
 
 \begin{figure}
 	\centering
@@ -75,7 +79,7 @@ In den Phasen, in denen ein Signal abgespielt wurde, wurde der Replay-Button imm
 
 Der Ablauf einer Bewertung wird im folgenden beschrieben. Nach der Best{\"a}tigung des Benachrichtigungsfenster wurden im Hintergrund die 10 Signale in zuf{\"a}lliger Reihenfolge ausgew{\"a}hlt. Darauf wurde das erste Signal {\"u}ber BLE an das Wearable gesendet. Das Wearable hat dieses Signal empfangen, ausgewertet und hat die Informationen als Vibration abgespielt. Das was der Benutzer dadurch empfunden hat wurde {\"u}ber den PC mittels der Maus bewertet. Nach einer Bewertung gab es keine M{\"o}glichkeit die Bewertung eines vorherigen Signals erneut anzupassen. Nachdem das Signal vom Probanden bewertet wurde, wurde der Maus-Cursor durch dem Programm an eine Anfangsposition gesetzt, damit der Benutzer nicht unabsichtlich doppelt auf ein Radio-Button dr{\"u}cken konnte. Um dem Probanden zu signalisieren, dass er die Checkbox gedr{\"u}ckt hat, hat man die Check-Box einen Augenblick visuell markiert gelassen, nachdem man den Maus-Cursor neu positioniert hat. Mit der Neupositionierung der Maus hat man erreicht, dass man immer den gleichen Weg hatte um die Checkboxen zu erreichen, aber man hatte auch nach mehreren Fragen die Maus anheben weiter nach oben legen m{\"u}ssen, denn man hat schon das Ende der Tischkannte erreicht. Nach einer Bewertung wurde die vorherige Auswahl entfernt und man hat das n{\"a}chste Signal {\"u}bertragen.
 
-\paragraph {3. Ausf{\"u}hren des Algorithmus}
+\section {Ausf{\"u}hren des Algorithmus}
 
 \begin{figure}[htbp] 
 	\centering
@@ -94,7 +98,7 @@ Die Klasse \textbf{DNA} beinhaltet ein Signal und Hilfsfunktionen, die eine Reko
 In der Klasse \textbf{Population} hat man eine Liste aus 30 Elementen, von einer Klasse \textbf{DNA} erstellt, dabei sind beinhalten die ersten 10 DNA-Objekte Signale, die den Signaltypen \textit{Kurz} haben. Für die nachfolgenden DNA-Objekte gilt das selbe nur mit \textit{Mittel} gefolgt von \textit{Lang}. 
 Bei der Erzeugung der Signale habe man mittels einer Zufallsfunktion sich Signale mit einer zufälligen Stärke und einer zufälligen Länge zwischen den Grenzen des jeweiligen Signaltypens erstellt. Beim ersten Aufruf der Klasse \textit{Population} habe man die Grenzen der Signaltypen ebenfalls als ein Signal erzeugt und in der Liste hinzugefügt.
 
-Für die Grafische Benutzeroberfläche hat man sich für die drei folgenden Fragen entschieden:
+Für die Grafische Benutzeroberfläche \autoref{fig:AlgorithmusBild} hat man sich für die drei folgenden Fragen entschieden:
 \begin{itemize}
 \item Was für einen Signaltypen haben Sie erkannt?
 \item Wie gut haben Sie das Signal erkannt?
@@ -106,7 +110,7 @@ Dabei wird im Hintergrund wie gerade erwähnt eine Population erzeugt. Diese Pop
 Es musste die komplette Population bewertet werden, es wurde keine DNA erneut bewertet. Man habe dabei zufällig eine DNA aus der Population gewählt, die bewertet werden sollte.
 
 Die erste Frage diente nur dazu um in der späteren Auswertung herauszufinden, was der Benutzer im Vergleich zum Programm erkannt hat. 
-Die zweite Frage wurde als eigentlicher Fitnesswert gespeichert. Die Repräsentation der Frage ist in der Tabelle \autoref{} zu sehen.
+Die zweite Frage wurde als eigentlicher Fitnesswert gespeichert. Die Repräsentation der Frage ist in der Tabelle \autoref{} TODO zu sehen.
 Die Stärke wurde direkt nach der Beantwortung aller drei Fragen nach dem Zustandsdiagramm verändert.
 
 Die Informationen der Stärke und des Fitnesswerts habe man in der Klasse \textit{Signal} noch mitgespiechert.
@@ -115,12 +119,84 @@ Nachdem eine Population komplett berechnet wurde, habe man den Generations-zähl
 
 %Die Erzeugung ist dabei so vonstatten gegangen:...
 \paragraph{Selektion}
-Für jeden Signaltypen hat man einen Pool aus DNA-Objekten erstellt, dessen Signale den jeweiligen Signaltypen besitzen.
-Anhand der Formel X (im Entwurf) habe man eine Anzahl berechnet, wie oft ein DNA-Objekt in das jeweilige Pool hinzugefügt wird. Im Schnitt hatte man nach dem Hinzugügen aller DNA-Objekte knapp 1000 Elemente in einem der Pools. 
+Für jeden Signaltypen legt man einen Pool aus DNA-Objekten an, dessen Signale den jeweiligen Signaltypen besitzen.
+Mithilfe der Formel X (im Entwurf) berechnet man die Anzahl, wie oft ein DNA-Objekt in das jeweilige Pool hinzugefügt werden soll. Man legt genausoviele DNA-Objekte, wie berechnet in das Pool. 
+Im Durchschnitt besitzt ein Pool nach dem hinzufügen der Häufigkeit aller DNA-Objekte in etwa bis zu 1000 Elemente.
+%Im Durchschnitt hat man nach dem hinzugügen aller DNA-Objekte in etwa 1000 Elemente in einem der Pools. 
+Die Selektion erfolgt per Zufallsprinzip, dabei wählt man zwei zufällige DNA-Objekte aus einem Pool. Diese beiden DNA-Objekte werden auch als \textit{Eltern} bezeichnet. Die beiden Eltern erzeugen nun durch Ausführung der \textit{Rekombination} und \textit{Mutation} einen Nachkommen für die Population der nächsten Generation. Dabei wird es so lange wiederholt, bis man genauso viele Individuen wie aus der Population der vorherigen Generation vorhanden waren.
 
 \paragraph{Rekombination}
-Bei der Rekombination verwendet man 
+In der Rekombination verwendet man die Eltern, greift man auf die jeweiligen Signale zu und verwendet die beiden Attribute Länge und Stärke. 
+Für die beide Attribute bildet man den Mittelwert, die ganzzahlig abgerundet werden.
+Diese Attribute bilden werden für die Erzeugung des neuen Individuums verwendet.
 
+\paragraph{Mutation und Termination}
+Es existiert eine fünf Prozentige Chance, dass das neu erzeugte Individuum durch ein zufällig generiertes Signal ersetzt wird. 
+
+Nachdem die vierte Generation erzeugt wurde, wird der Algorithmus terminiert. Aus der zuletzt erzeugten Population werden für die Länge und Stärke die Grenzen der drei Signaltypen bestimmt. Die Grenzen dienen als Eingabe für die Erzeugung der personalisierten Muster. 
+
+
+%Nachdem die vierte Generation erzeugt wurde, bestimmt man an der neu erzeugten Population den Mittelwert der Grenzen für die Stärke und Länge der Signaltypen \textit{Kurz}, \textit{Mittel} und \textit{Lang}. 
+Die gerade bestimmten Mittelwerte bilden die personalisierten Werte, die für die Mustererkennung verwendet werden. 
+%Der Algorithmus wird nach der vierten Iteration terminiert und es wird mit der \textit{Erkennung der Muster} fortgefahren.
+%Sobald die vierte Generation erreicht worden ist, wird die zuletzt erzeugte Population verwendet. Dabei verwendet man bestimmt man für jeden Signaltypen 
+
+\section {Muster Erkennung}
+
+\begin{figure}[htbp] 
+	\centering
+	\begin{minipage}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Muster1}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{pics/gui/{Muster2}.png}
+	\end{minipage}
+	\caption{GUI des Musters ohne Eingabe (links) und (rechts) nach der Eingabe}
+	\label{fig:MusterBild}
+\end{figure}
+
+Für die Erzeugung der Muster hat man die Grenzen mit übergeben müssen, denn in der Klasse \textit{Muster} wird der personalisierte Wert bestimmt, dies geschieht, indem man Mittelwert der Grenzen berechnet. 
+Im Vorfeld hat man drei Typen von Mustern erstellt. Für jeden Muster-Typen hat man 15 Muster angelegt. 
+Für jeden Muster-Typen habe man zwei Listen angelegt, dabei wurden alle 15 Muster hineingelegt mit dem einzigen Unterschied, dass in der einen Liste die Muster mit personalisierten Werten und in der anderen Liste die Muster mit den generischen Werten vorhanden sind.
+Die generischen Werte für \textit{Kurz}, \textit{Mittel} und \textit{Lang} sind 200ms, 400ms und 800ms gewesen, alle Signale wurden mit dem Wert \textit{Stark} für die Stärke inizialisiert.
+Als nächstes wurden die Listen in zufälliger Reihenfolge geordnet. 
+Die Initialisierung hat einige Sekunden in Anspruch genommen, da man jedoch vermeiden wollte, dass zur Laufzeit ein Fehler dadurch passieren würde. Diese Wartezeit hat man akzeptiert und dem Probanden darauf Aufmerksam gemacht.
+
+%Um die Muster zu erzeugen hat man im Vorfeld erst einmal Muster-Objekte erzeugt. 
+%Die Muster wurden im Vorfeld für alle Benutzer einmalig festgelegt.
+%Es gab drei verschiedene Arten, einmal Objekte mit drei Signalen und zwei Pausen, vier Signalen und drei Pausen und fünf Signalen und vier Pausen. 
+%Man habe für jeden Muster-Typen zwei Listen erstellt und alle Objekte des Muster-Typens in die zwei Listen kopiert, dabei war die erste Liste mit personalisierten Mustern und die andere Liste mit generischen Mustern  
+%Diese Objekte hat man in sechs verschiedene Listen gepackt. Dabei habe man drei Hüllen von Mustern gehabt, die drei, vier und fünf Signale mit dementsprechenden Pausen ergeugt hatte. Man hat jeweils einen Hüllen-Typen für 2 Listen verwendet. 
+%Für die beiden Listen mit den dreier Muster Hüllen werden jetzt die Werte auf die personalisierten und vorgegebenen Werte gespeichert. Dies passiert auch mit den vierer und fünfer Muster Listen.
+%Anschließend werden die schon in einer zufälligen Reihenfolge in der Liste gespeichert. 
+%Dies hat zu Beginn einige Sekunden in Anspruch genommen, aber man habe lieber einmalig einige Sekunden warten müssen anstatt während man die Muster abspielen würde.
+%Dies könnte einerseits fehleranfälliger sein und in der jetzigen Variante werden während des Bewertung nur noch die Eingabedaten des Benutzers abgespeichert.
+
+Die Muster wurden abwechselnd zwischen den personalisierten und generischen Muster an das Wearable gesendet, dabei hat man die Muster in der Reiehenfolge von den kleinsten bis zum größten Muster-Typen abgespielt. 
+Die Probanden hatten die Aufgabe die Reihenfolge der Signaltypen eines Muster anzugeben.
+Für die GUI \autoref{fig:MusterBild} TODO hat man nur die Bedienelemente anzeigen lassen, die aktuell benötigt waren, man habe nämlich für jeden Signaltypen einen Button gehabt. Durch drücken auf einen dieser Buttons ist der Signaltyp als Eingabe erfolgt und es wurden die Eingaben visuell dargestellt.
+Der Proband hat genau die Anzahl an Signalen einzugeben gehabt, wie auch das Muster lang war, es verschwanden die drei Signal-Eingabe-Buttons und zum vorschein kam ein Bestätigungsbutton. Erst als dieser Button gedrückt wurde, wurde das nächste Muster abgespielt und der Button verschwand und die anderen kamen zum vorschein. 
+Anhand einem \textit{Clear}-Button hat man die komplette Eingabe entfernen können um diese bei Fehlern erneut bewerten zu können.
+Für jedes Muster habe man die Möglichkeit gehabt, das Muster erneut abzuspielen.  
+Bei einem Wechsel der Mustertypen wurde ein Signal vorher dem Probanden über ein Benachrichtigungsfenster darauf aufmerksam gemacht.
+
+Während des Ablauf der Erkennung der Muster wurden noch die Zeit, die benötigt wurde um ein Muster zu bewerten gespeichert. 
+
+
+
+
+%Nachdem der Proband genau  die Länge des Muster war eingegeben hat, erschien ein Bestätigungsbutton. 
+%Erst dann erschien ein Bestätigungsbutton, mit dem man die Eingabe bestätigen konnte. Es gab noch einen Löschen Button, 
+%Das Muster wurde wie die Signale zuvor auch über das Wearable abgespielt dabei , hat man dem Probanden darum gebeten, die einzelnen Signale des Musters anzugeben. 
+
+%Der Proband sollte die Möglichkeit besitzen nur die Anzahl der Signale eingeben zu können, die ein Muster auch besitzt. 
+
+
+%Für jeden Signaltypen hat man einen Button mit dem Anfangsbuchstaben des Typens positioniert. 
+%Um die Signaltypen auswählen zu können, hat man für jeden Signaltypen einen Button erstellt. Die Buttons wurden mit dem Anfangsbuchstaben des Signaltypens beschriftet. 
+
+%Dabei hat man die GUI so entworfen, dass man nur das machen konnte, was erlaubt gewesen ist.
+%Während ein Signal abgespielt wurde, hat man die Signal
 
 
 
@@ -129,16 +205,16 @@ Bei der Rekombination verwendet man
 
 %\paragraph {2. Bestimmung der Grenzen durch Bewertung durch den Nutzer}
 %\paragraph {3. Ausf{\"u}hren des Algorithmus}
-\paragraph {4. Muster Erkennung} 
+%\paragraph {4. Muster Erkennung} 
 
 %Das Signal ist ein wichtiger Bestandteil meines Programm. 
-Ein Signal beinhaltet die Signall{\"a}nge, die in Millisekunden gespeichert wird, und eine Signalst{\"a}rke, die in 5 St{\"a}rkestufen eingeteilt ist. 
+%Ein Signal beinhaltet die Signall{\"a}nge, die in Millisekunden gespeichert wird, und eine Signalst{\"a}rke, die in 5 St{\"a}rkestufen eingeteilt ist. 
 
 
 
-Ich habe meinen Evolution{\"a}ren Algorithmus so angepasst, dass bei mir ein Induviduum ein Signal ist. 
-Ich habe dem Benutzer das Signal mit dem Wearable abspielen lassen und im Anschluss Fragen beantworten lassen. 
-Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer war entscheidend um nach der kompletten Bewertung der Population 
+%Ich habe meinen Evolution{\"a}ren Algorithmus so angepasst, dass bei mir ein Induviduum ein Signal ist. 
+%Ich habe dem Benutzer das Signal mit dem Wearable abspielen lassen und im Anschluss Fragen beantworten lassen. 
+%Er sollte bewerten wie gut er das Signal erkannt hat. Die Bewertung vom Benutzer war entscheidend um nach der kompletten Bewertung der Population 
 
 % -----------------------------------------------------------------------
 

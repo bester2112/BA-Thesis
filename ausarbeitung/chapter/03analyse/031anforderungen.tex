@@ -2,7 +2,10 @@
 %% $Id: Anfroderungen.tex 28 2007-01-18 16:31:32Z bless $
 
 Die Aufgabenstellung bestand darin, herauszufinden, ob ein personalisiertes Vibrationsmuster besser als ein vorgegebenes Vibrationsmuster erkannt wird.
-Man sollte in dieser Bachelorarbeit ein System bauen, dass mit dem Wearable kommuniziert und Daten {\"u}bertragen kann, so dass das Wearable Vibrationen abspielt. Dar{\"u}ber hinaus soll eine Studie erstellt werden, in der man herausfindet, ob es einen signifikanten Unterschied zwischen generischen und genetischen Vibrationen gibt. Dabei sind die generischen Vibrationen fest vorgegeben, wobei die genetischen Vibrationen f{\"u}r den Probanden so angepasst werden sollen, dass diese genau f{\"u}r ihn angepasst werden. Dabei habe man ein Evolution{\"a}ren Algorithmus verwendet um die genetische Vibration f{\"u}r einen Probanden zu bestimmen. 
+Die Grundvorraussetzung sollte ein System sein, dass mit dem Wearable kommuniziert und Daten {\"u}bertragen kann, so dass das Wearable Vibrationen abspielt. 
+Dar{\"u}ber hinaus soll eine Studie erstellt werden, in der man herausfindet, ob es einen signifikanten Unterschied zwischen generischen und genetischen Vibrationen gibt. 
+Dabei sind die generischen Vibrationen fest vorgegeben, wobei die genetischen Vibrationen, anhand der Bewertungen des Probanden angepasst werden sollen. 
+Dabei habe man ein Evolution{\"a}ren Algorithmus verwendet um die genetischen Werte f{\"u}r einen Probanden zu bestimmen. 
 
 Um dies zu l{\"o}sen musste man sich im Vorfeld ein paar Gedanken {\"u}ber die Repr{\"a}senatation eines Signals, die Dekodierung und {\"u}ber die {\"U}bertragung machen.
 Im Folgenden werden diese Entscheidungsfindungen beschrieben.
@@ -11,7 +14,7 @@ Im Folgenden werden diese Entscheidungsfindungen beschrieben.
 
 \begin{figure}
 	\centering
-    \includegraphics[width=\textwidth]{pics/wristband11.png}
+    \includegraphics[width=\textwidth]{pics/wristband111.jpg}
     \caption{Armband ge{\"o}ffnet. Komponenten 2 Traktoren, Batterie, und Mikroprozessor}
     \label{fig:wristband1}
 \end{figure}
@@ -23,37 +26,45 @@ Im Folgenden werden diese Entscheidungsfindungen beschrieben.
     \label{fig:wristband2}
 \end{figure}
 
-Damit man Vibrationen {\"u}berhaupt darstellen kann, h{\"a}tte man sich ein eigenes Taktiles Device entwerfen m{\"u}ssen. In meinem Fall war dies nicht N{\"o}tig, da das Wearable vom TECO vorgegeben war. Die Komponenten des Wearables sind zwei Taktoren (TI TLC5971), einen Mikroprozessor (nRF51822 / BLE Nano) und eine Batterie.
- 
+Damit man Vibrationen {\"u}berhaupt darstellen kann, h{\"a}tte man sich ein eigenes Taktiles Device entwerfen m{\"u}ssen. In meinem Fall war dies nicht n{\"o}tig, da das Wearable vom TECO vorgegeben war. Die Komponenten des Wearables sind zwei Taktoren (TI TLC5971), einen Mikroprozessor (nRF51822 / BLE Nano) und eine Batterie.
+
 Die Kommunikation des Armbands konnte man {\"u}ber eine Serielle Schnittstelle, sowie {\"u}ber Bluetooth Low Energie (LE) realisieren.
-Bei der seriellen Schnittstelle ist ein USB-Kabel n{\"o}tig gewesen um den PC  mit dem Wearable anzusprechen, dabei w{\"a}re die Mobilit{\"a}t verloren gegangen. Daher habe man die verf{\"u}gbare BLE Schnittstelle benutzt um zwischen dem PC und dem Wearable zu kommunizieren. 
+Bei der seriellen Schnittstelle ist ein USB-Kabel n{\"o}tig gewesen um den PC mit dem Wearable anzusprechen, dabei w{\"a}re die Mobilit{\"a}t verloren gegangen. Daher habe man die verf{\"u}gbare BLE Schnittstelle benutzt um zwischen dem PC und dem Wearable zu kommunizieren. 
 
 Bluetooth LE {\"u}bertr{\"a}gt Nachrichten nur in einer maximalen Gr{\"o}{\ss}e von 20 Bytes. Diese werden jeweils als zwei Bytes Bl{\"o}cke {\"u}bertragen. 
 
 Anhand der Begrenzung der Daten{\"u}bertragung hat man sich eine geeignete Dekodierung des Signals {\"u}berlegen m{\"u}ssen. 
 
-Die Programmiersprache um die Kommunikation zwischen dem PC und dem Wearable aufzubauen, konnte frei gew{\"a}hlt werden. Man habe sich hierbei zuvor verschiedenste Programmiersprachen angeguckt. Java hat man nach fehlenden Informationen zum Kommunikationsaufbau ausgeschlossen. Man hat sich letztendlich f{\"u}r C\# entschieden, da man eine funktionierende Kommunikation aufgebaut hat und man gleichzeitig die Grafische Oberfl{\"a}che nutzen kann um Studie darin durchzuf{\"u}hren. 
+Die Programmiersprache um die Kommunikation zwischen dem PC und dem Wearable aufzubauen, konnte frei gew{\"a}hlt werden. 
+Dabei habe man zuvor verschiedenste Programmiersprachen untersucht. 
+Java hat man nach fehlenden Informationen zum Kommunikationsaufbau ausgeschlossen.
+%Java hat man nach fehlenden Informationen zum Kommunikationsaufbau ausgeschlossen. 
+Schließlich hat man sich f{\"u}r C\# entschieden, da hier ausführliche Dokumentationen vorhanden waren, man erfolgreich eine funktionierende Kommunikation realisiert hat und man gleichzeitig eine Grafische Benutzeroberfl{\"a}che nutzen konnte, die für die spätere Studie hilfreich sein könnte.
+%eine funktionierende Kommunikation aufgebaut hat und man gleichzeitig die Grafische Benutzeroberfl{\"a}che nutzen kann um Studie darin durchzuf{\"u}hren. 
 
 Dabei musste herausfinden was f{\"u}r Einstellungsm{\"o}glichkeiten man am Wearable hat. Diese waren die L{\"a}nge und die St{\"a}rke eines Signals.
 
 \paragraph{Signale}
 
-Ein Signal repr{\"a}sentiert eine Vibration, die auf dem Wearable abgespielt wird. Es hat sich die Frage gestellt, wie personalisiert man denn jetzt Signale. Dabei hat man das Signal in drei verschiedene L{\"a}ngen definiert, Kurz, Mittel und Lang. 
+Ein Signal repr{\"a}sentiert eine Vibration, die auf dem Wearable abgespielt wird. Es hat sich die Frage gestellt, wie personalisiert man denn jetzt Signale. Dabei hat man das Signal in drei verschiedene L{\"a}ngen definiert, \textbf{Kurz}, \textbf{Mittel} und \textbf{Lang}. 
 
-Dabei hat man als Vorgabe gehabt, dass man einen Evolution{\"a}ren Algorithmus benutzt.
-Diesen EA hat man verwendet, um f{\"u}r die Signaltypen ein personalisierten Wert bestimmen.
+Dabei hat man als Vorgabe gehabt, dass man einen Evolution{\"a}ren Algorithmus (EA) benutzen sollte.
+Diesen EA hat man verwendet, um f{\"u}r die Signaltypen ein personalisierten Wert zu bestimmen.
 
-Dabei hat man sich ein Vorgang {\"u}berlegen m{\"u}ssen, um f{\"u}r den EA eine Startpopulation zu erzeugen, die Individuen der Population zu bewerten, mittels einer Fitnessfunktion den Fitnesswert f{\"u}r jedes Individuum berechnen, eine geeignete Selektion, Reproduktion und Mutation bestimmen, sowie dass die Terminierungsbedingung. 
+Man hat sich ein Vorgang {\"u}berlegen m{\"u}ssen, um f{\"u}r den EA eine Startpopulation zu erzeugen; die Individuen der Population zu bewerten; mittels einer Fitnessfunktion den Fitnesswert f{\"u}r jedes Individuum berechnen; eine geeignete Selektion, Reproduktion und Mutation, sowie die Terminierungsbedingung zu bestimmen. 
 
 Eine geeignete Signalrepr{\"a}sentation musste definiert werden um Signale vom PC zum Wearable {\"u}ber BLE zu senden und abspielen zu lassen. Das bedeutet sowohl am PC als auch am Wearable selbst musste dies definiert werden.
 
 \paragraph{Studie}
 
-Es sollte eine Grafische Oberfl{\"a}che erstellt werden, damit der Benutzer Studie komplett {\"u}ber das Programm durchf{\"u}hren kann indem er die Instruktionen des Programms folgt und er auch selbst entscheiden kann, wann er ein Signal abgespielt haben will.
+Es sollte eine Grafische Oberfl{\"a}che erstellt werden, damit der Proband die Studie komplett {\"u}ber das Programm durchf{\"u}hren kann, indem er die Instruktionen des Programms folgt.
 
 Es hat sich durch das Definieren der Signale und dem EA ergeben, dass die Studie in drei Schritten unterteilt wird. 
-Der erste Schritt ist es, die Grenzen f{\"u}r eine Startpopulation f{\"u}r einen EA zu bestimmen. 
-Der zweite Schritt ist es, einen genetischen Wert f{\"u}r die eigentliche Studie zu bestimmen, dies passiert durch ausf{\"u}hren mehrerer Generationen des EA. Der letzte Schritt ist es, generische und genetische Signale vom Benutzer bewerten zu lassen.
+In dem ersten Schritt muss man Grenzen f{\"u}r die Erzeugung einer Startpopulation f{\"u}r einen EA bestimmen 
+%Der erste Schritt ist es, die Grenzen f{\"u}r eine Startpopulation f{\"u}r einen EA zu bestimmen. 
+Der zweite Schritt ist es, einen genetischen Wert f{\"u}r die eigentliche Studie zu bestimmen, dies passiert durch ausf{\"u}hren mehrerer Generationen des EA. 
+Schließlich ist der letzte Schritt, dass man sich eine Folge von generische und genetische Signale definiert, die man anschließend vom Benutzer bewerten zu lässt.
+%Der letzte Schritt ist es, generische und genetische Signale vom Benutzer bewerten zu lassen.
 
 Alle Daten sollten {\"u}berpr{\"u}ft werden und es sollte herausgefunden werden ob es am signifikante Unterschiede gibt.
 
