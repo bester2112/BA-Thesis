@@ -114,10 +114,28 @@ Das dadurch erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das
 Es gibt verschiedene Darstellungsm{\"o}glichkeiten von Genen, die meist verwendeten Darstellungen werden im Folgenden erläutert. 
 Das wissen, wurde aus der Ausarbeitung von \cite{flickevolutionare, shiffman2012nature, DillmannZoeller2017} entnommen.
 
+\paragraph{Lineare Repr{\"a}sentation}
 Eine \textbf{Lineare Repr{\"a}sentation} besteht aus einer Folge $a_{0}a_{1}a_{2}...a_{n-1}$ von Symbolen einer fester L{\"a}nge, die aus einer definierten Symbolmenge $V$ entnommen wurde, dabei ist $a_{i} \in V$.   
 
 Die bin{\"a}re Repr{\"a}sentation besitzt die Symbolmenge $V$ = {0,1} und ist die meist verwendete \textit{lineare Repr{\"a}sentation}. 
 Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
+
+Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination übersprungen und es wird mit der Mutation fortgefahren. Es gibt 2 Möglichkeiten die Nachfolger der zwei Eltern zu erzeugen. Bei der \textit{diskrete Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die für besser geeignet sind. Am Beispiel \autoref{tabelleBeispiel} wurden jeweils immer nur die kleineren Werte für das Nachkommen ausgewählt. Die andere Möglichkeit ist die \textit{intermediäre Rekombination} anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
+
+\begin{table}[]
+\centering
+\caption{Dirskete und intermediäre Rekombination}
+\label{tabelleBeispiel}
+\begin{tabular}{l|llll}
+Elternteil A          & 0,3  & 0,9  & 0,1  & 0,5 \\
+Elternteil B          & 0,6  & 0,2  & 0,8  & 0,5 \\ \hline
+Nachkomme dirket      & 0,3  & 0,2  & 0,1  & 0,5 \\ \hline
+Nachkomme intermediär & 0,45 & 0,55 & 0,45 & 0,5
+\end{tabular}
+\end{table}
+
+Die Rekombination einer Rekombination kann auf verschiedensten Arten repräsentiert werden. 
+Dabei werden zwei oder mehrere Eltern miteinander gemischt.
 
 \begin{figure}
 	\centering
@@ -126,8 +144,21 @@ Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
     \label{fig:binar8}
 \end{figure}
 
+\paragraph{Baumstrukturen}
+F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repräsentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgeführt werden.
+Als Beispiel für eine Baumstuktur repräsentiert \autoref{fig:baumstruktur} die $4 - 23 * 2$.
 
-F{\"u}r baumartige Strukturen, wird Genetisches Programmieren verwendet.
+\begin{figure}
+	\centering
+    \includegraphics{pics/grundlage/baumstruktur.png}
+    \caption{Darstellung einer binären Repräsentation der Länge 8}
+    \label{fig:baumstruktur}
+\end{figure}
+
+
+
+
+
 
 %Die Symbolmenge $V$ = {0,1} ist die bin{\"a}re Repr{\"a}sentation, die f{\"u}r Genetische Algorithmen verwendet werden.
 %Die Bin{\"a}rcodierung wird die bin{\"a}re Repr{\"a}sentation, die eine Zeichenkette von nur Nullen oder Einsen ist, oft als Repr{\"a}sentation von Genen verwendet. 
