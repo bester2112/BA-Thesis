@@ -10,20 +10,20 @@ Unter dem Begriff der Evalution{\"a}ren Algorithmen (EA) versteht man eine Ansam
 %% ==============================
 \subsection{Evolution in der Biologie}
 %% ==============================
-Im 19. Jahrhundert hat sich Darwin mit den Gedanken {\"u}ber die Evolution von Lebewesen {\"u}ber mehrere Generationen gemacht. Dabei kam er auf das Prinzip \grqq{Survival of the fittest}. Mit dem Prinzip hat Charles Darwin die Entstehung neuer Arten beschrieben. Dabei haben die Arten {\"u}berlebt, die sich am besten f{\"u}r die Umgebung angepasst haben. Die Arten, die sich an die neue Situation nicht angepasst hatten, sind nach ein paar Generationen zur Minderheit geworden. \cite{hunermann2007brockhaus}
+Im 19. Jahrhundert hat sich Darwin mit den Gedanken {\"u}ber die Evolution von Lebewesen {\"u}ber mehrere Generationen gemacht. Dabei kam er auf das Prinzip "`Survival of the fittest"'. Mit dem Prinzip hat Charles Darwin die Entstehung neuer Arten beschrieben. Es haben die Arten {\"u}berlebt, die sich am besten f{\"u}r die Umgebung angepasst haben. Die Arten, die sich an die neue Situation nicht angepasst hatten, sind nach ein paar Generationen zur Minderheit geworden. \cite{hunermann2007brockhaus}
 
 In der Biologie ist jeder lebende Organismus ein \textbf{Individuum}.
 Jedes Individuum besitzt Erbinformationen in der Form von Chromosomen. Die Erbinformationen werden auch \textbf{Gene} oder \textbf{DNA} genannt. 
 Eine Gruppe von Individuen wird als \textbf{Population} bezeichnet. 
 
-Bei dem EA hat man sich das Verhalten des in der Biologie angeschaut, wie dort die Arten {\"u}ber Generationen hinweg {\"u}berleben und versucht dieses zu adaptieren. \cite{flickevolutionare}
+Bei dem EA hat man sich das Verhalten in der Biologie angeschaut, wie die Arten {\"u}ber Generationen hinweg {\"u}berleben und versucht dieses zu adaptieren. \cite{flickevolutionare}
 
 %% ==============================
 \subsection{Selektion}
 %% ==============================
 
 Eine \textbf{Selektion} ist eine Auswahl von Individuen einer Population. Durch Kombination der Gene der ausgew{\"a}hlten Individuen werden neue Individuen f{\"u}r die n{\"a}chste Generation erzeugt. Diese Kombination wird \textbf{Rekombination} genannt.
-Dabei gibt es verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, die eine best m{\"o}glichste L{\"o}sung f{\"u}r ein Problem liefern. \cite{weicker2015evolutionare, flickevolutionare}
+Es gibt verschiedene Selektionsstrategien. Man versucht die Individuen zu finden, die eine best m{\"o}glichste L{\"o}sung f{\"u}r ein Problem liefern. \cite{weicker2015evolutionare, flickevolutionare}
 
 %% ==============================
 \subsection{Variation}
@@ -33,7 +33,7 @@ F{\"u}r eine Population sollte man zu Beginn eine gro{\ss}e \textbf{Variation} v
 Anhand eines Beispiels nehme man an, dass man mithilfe einer Evolution eine neue Art von S{\"u}{\ss}igkeiten entwickeln m{\"o}chte. Dabei sollten die Form und Farbe neu bestimmt werden. 
 Wenn man jetzt eine Start-Population von Individuen habe, die alle die gleichen Gene besitzen w{\"u}rden, so w{\"u}rde man anhand zwei selektierten Individuen keine {\"A}nderung der n{\"a}chsten Generation erkennen, da die Nachkommen auch alle die gleichen Gene besitzen, falls keine Mutation auftritt.
 Damit dieses Verhalten nicht auftritt, versucht man zu Beginn eine gro{\ss}e Variation an Individuen zu erzeugen und diese als Anfangs-Population f{\"u}r einen Evolution{\"a}ren Algorithmus zu nutzen. 
-Mittels Rekombination und Mutation wird dabei ein neues Individuum f{\"u}r die n{\"a}chste Generation erzeugt, dass neue Gene bestimmt.
+Mittels Rekombination und Mutation wird dabei ein neues Individuum f{\"u}r die n{\"a}chste Generation erzeugt.
 Mithilfe der Rekombination werden verschiedene Gene bei der Fortpflanzung der n{\"a}chsten Generation vermischt und somit neue Gene erzeugt. Die Mutation ist eine Ver{\"a}nderung der Gene eines Individuums, die meistens durch Umwelteinfl{\"u}sse ausgel{\"o}st werden. \cite{flickevolutionare} 
 
 %//Durch Rekombination und Mutation der DNA der Individuen erh{\"a}lt man eine Variation. 
@@ -58,17 +58,18 @@ Unter \textbf{Gendrift} versteht man eine zuf{\"a}llige Ver{\"a}nderung der Genh
     \caption{Ablauf des Algorithmus}
     \label{fig:algoSchritte}
 \end{figure}
-Der EA besitzt im Allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im folgenden erl{\"a}utert. Dieses Wissen stammt aus den Folgenden Quellen: \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
+Der EA besitzt im Allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im Folgenden erl{\"a}utert. Dieses Wissen stammt aus den Folgenden Quellen: \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
 
 %% ==============================
 \paragraph*{Initialisierung}
 %% ==============================
-In der Initialisierung erzeugt man sich eine Population von Individuen, die eine zahlreiche Variationen von Genen besitzen. F{\"u}r die Anfangs-Population nimmt man in der Praxis zuf{\"a}llige Individuen oder auch die besten bekanntesten L{\"o}sungskandidaten.
+In der Initialisierung erzeugt man eine Population von Individuen, die eine zahlreiche Variationen von Genen besitzen. F{\"u}r die Anfangs-Population nimmt man in der Praxis zuf{\"a}llige Individuen oder auch die besten bekanntesten L{\"o}sungskandidaten.
 
 %% ==============================
 \paragraph*{Bewertung der Individuen}
 %% ==============================
-Bevor man eine Evolution f{\"u}r eine Population erzeugen kann, ben{\"o}tigt man Attribute anhand derer man die n{\"a}chste Generation berechnet. Mit einer sogenannten \textbf{Fitnessfunktion} berechnet anhand der Attribute eines Individuums einen \textbf{Fitnesswert}. Der Fitnesswert ist entscheidend f{\"u}r die Selektion.
+Bevor man eine Evolution f{\"u}r eine Population erzeugen kann, ben{\"o}tigt man Attribute, anhand derer man die n{\"a}chste Generation berechnet. 
+Mit einer sogenannten \textbf{Fitnessfunktion} berechnet man mittels der Attribute einen \textbf{Fitnesswert}. Dieser ist entscheidend f{\"u}r die Selektion.
 
 %Diese Attribute nennt man den \textbf{Fitnesswert}. Der Fitnesswert muss f{\"u}r jedes Individuum der Population bestimmt werden. Der Fitnesswert wird anhand mithilfe einer Fitnessfunktion berechnet. 
 
@@ -77,7 +78,8 @@ Bevor man eine Evolution f{\"u}r eine Population erzeugen kann, ben{\"o}tigt man
 %% ==============================
 \paragraph*{Selektion}
 %% ==============================
-Die Selektion w{\"a}hlt zwei Individuen als Eltern aus, diese werden anhand des Fitnesswerts der Individuen aus einer Population bestimmt. 
+Die Selektion w{\"a}hlt zwei Individuen als Eltern aus.
+%, diese werden anhand des Fitnesswerts der Individuen aus einer Population bestimmt. 
 %In der Selektion werden Individuen ausgew{\"a}hlt, die als Paare neue Kinder f{\"u}r die n{\"a}chste Generation bilden.
 %Bei der Selektion w{\"a}hlt man Individuen aus der Population.
 %Bei der Selektion w{\"a}hlt man die Individuen jeweils Individuen aus einer Population aus. 
@@ -101,24 +103,25 @@ Nach der Rekombination besteht eine Chance, dass die Gene des Nachkommens mutier
 \paragraph*{Terminierung}
 %% ==============================
 
-Man f{\"u}hrt f{\"u}r eine Generation die Selektion, Rekombination und Mutation so oft aus, bis man die gleiche Anzahl an Individuen f{\"u}r die n{\"a}chste Generation erzeugt hat.
+Man f{\"u}hrt f{\"u}r eine Population die Selektion, Rekombination und Mutation so oft aus, bis man die gleiche Anzahl an Individuen f{\"u}r die n{\"a}chste Generation erzeugt hat.
 Der Vorgang der Evaluierung, Selektion, Rekombination und Mutation muss f{\"u}r jede neue Generation durchgef{\"u}hrt werden. 
-Die neu erzeugte Population wird als Eingabe f{\"u}r die neue Generation verwendet. 
+Die neu erzeugte Population wird als Eingabe f{\"u}r die nächste Generation verwendet. 
 Dabei wird der Algorithmus so lange ausgef{\"u}hrt, bis eine hinreichende Abbruchbedingung erreicht worden ist. 
-Je nach Definition der Terminierung, kann nach einer festen Anzahl an Generationen oder erst nachdem es keine signifikanten {\"A}nderungen der Generationen mehr gibt, der EA terminiert werden.
+Je nach Definition wird entweder nach einer festen Anzahl an Generationen oder erst nachdem es keine signifikanten {\"A}nderungen mehr gibt, der EA terminiert.
+%Je nach Definition der Terminierung, kann nach einer festen Anzahl an Generationen oder erst nachdem es keine signifikanten {\"A}nderungen der Generationen mehr gibt, der EA terminiert werden.
 Das dadurch erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das Problem.
 
 %% ==============================
 \subsection{Darstellung}
 %% ==============================
 Es gibt verschiedene Darstellungsm{\"o}glichkeiten von Genen, die meist verwendeten Darstellungen werden im Folgenden erläutert. 
-Das wissen, wurde aus der Ausarbeitung von \cite{flickevolutionare, shiffman2012nature, DillmannZoeller2017} entnommen.
+Das wissen, wurde aus den Quellen \cite{flickevolutionare, shiffman2012nature, DillmannZoeller2017} entnommen.
 
 \paragraph{Lineare Repr{\"a}sentation}
-Eine \textbf{Lineare Repr{\"a}sentation} besteht aus einer Folge $a_{0}a_{1}a_{2}...a_{n-1}$ von Symbolen einer fester L{\"a}nge, die aus einer definierten Symbolmenge $V$ entnommen wurde, dabei ist $a_{i} \in V$.   
+Eine \textbf{Lineare Repr{\"a}sentation} besteht aus einer Folge $a_{0}a_{1}a_{2}...a_{n-1}$ von Symbolen einer fester L{\"a}nge $n$, die aus einer definierten Symbolmenge $V$ entnommen wurde, dabei ist $a_{i} \in V$.   
 
-Die bin{\"a}re Repr{\"a}sentation besitzt die Symbolmenge $V$ = {0,1} und ist die meist verwendete \textit{lineare Repr{\"a}sentation}. 
-Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
+Die bin{\"a}re Repr{\"a}sentation \autoref{fig:binar8} besitzt die Symbolmenge $V$ = \{0,1\} und ist die meist verwendete \textit{lineare Repr{\"a}sentation}. 
+%Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
 
 \begin{figure}
 	\centering
@@ -130,9 +133,11 @@ Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
 
 Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination übersprungen und es wird mit der Mutation fortgefahren. 
 Es gibt zwei Möglichkeiten die Nachfolger der zwei Eltern zu erzeugen. 
-Bei der \textit{diskrete Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die besser geeignet sind. 
-Am Beispiel \autoref{tabelleBeispiel} wurden jeweils immer nur die kleineren Werte für das Nachkommen ausgewählt. 
-Die andere Möglichkeit ist die \textit{intermediäre Rekombination} anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
+Bei der \textit{diskreten Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die besser geeignet sind. 
+Am Beispiel \autoref{tabelleBeispiel} wurden nur die kleineren Werte für das Nachkommen bevorzugt. 
+Die andere Möglichkeit ist die \textit{intermediäre Rekombination}.
+Aus den Attributen der Elternteile wird der Durchschnitt gebildet und an das Nachkommen vererbt. 
+%anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
 
 \begin{table}[]
 \centering
@@ -148,7 +153,7 @@ Nachkomme intermediär & 0,45 & 0,55 & 0,45 & 0,5
 
 Beim \textit{crossover} erhält man aus zwei Eltern zwei Nachkommen. 
 Das Single-point crossover überschneidet die beiden Eltern an einer Stelle und die resultierenden Eltern werden als Nachkommen übernommen.
-Beim Two-point crossover hat man zwei überschneidungen der Eltern, sowie man bei dem unoform corssover jedes zweite Element mit dem Partner getauscht hat. 
+Beim Two-point crossover hat man zwei {\"U}berschneidungen der Eltern, sowie man bei dem uniform corssover jedes zweite Element mit dem Partner getauscht hat. 
 
 \begin{figure}[htbp] 
 	\centering
@@ -168,12 +173,12 @@ Beim Two-point crossover hat man zwei überschneidungen der Eltern, sowie man be
 
 \paragraph{Baumstrukturen}
 F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repräsentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgeführt werden.
-Als Beispiel für eine Baumstuktur repräsentiert \autoref{fig:baumstruktur} die $4 - 23 * 2$.
+Als Beispiel für eine Baumstuktur repräsentiert die \autoref{fig:baumstruktur} den mathematischen Ausdruck $4 - 23 * 2$.
 
 \begin{figure}
 	\centering
     \includegraphics{pics/grundlage/baumstruktur.png}
-    \caption{Darstellung einer binären Repräsentation der Länge 8}
+    \caption{Baumstruktur des mathematischen Ausdrucks $4 - 23 * 2$}
     \label{fig:baumstruktur}
 \end{figure}
 

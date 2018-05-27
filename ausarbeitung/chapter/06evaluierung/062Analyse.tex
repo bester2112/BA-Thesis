@@ -18,7 +18,9 @@
 	\label{fig:AngabenZurPerson}
 \end{figure}
 
-Nach der Befragung der Probanden hat sich ergeben \autoref{fig:AngabenZurPerson}, dass 31\% musikalisch sind, 81\% gelegentlich Computerspiele spielen. 21\% haben schon mal eine Smartwatch benutzt und genau die h{\"a}lfte haben schon mal taktile Ger{\"a}te benutzt.
+Nach der Befragung der Probanden hat sich ergeben \autoref{fig:AngabenZurPerson}, dass 31\% musikalisch sind, 81\% gelegentlich Computerspiele spielen. 21\% haben schon mal eine Smartwatch benutzt und genau die h{\"a}lfte haben schon mal taktile Ger{\"a}te benutzt. 
+
+Die Auswertung der {\"U}bertragung hat ergeben, dass es im Durschnitt 300ms gedauert hat, bis das Signal {\"u}bertragen worden ist.
 
 %% ==============================
 \subsection{Initialisierung der Grenzen}
@@ -32,10 +34,10 @@ Nach der Befragung der Probanden hat sich ergeben \autoref{fig:AngabenZurPerson}
 	\label{fig:Initialisierung}
 \end{figure}
 
-F{\"u}r die Bestimmung der Grenzen von Kurz, Mittel und Lang hat der Benutzer 10 Signale zu der jeweiligen Kategorie einordnen sollen. 
-Da man bei 16\% der Probanden bei diesem Schritt keine eindeutigen Grenzen bestimmen konnte, musste der Schritt ein weiteres mal wiederholt werden. Die Auswertung der {\"u}bertragung hat ergeben, dass es im Durschnitt 300ms gedauert hat, bis das Signal {\"u}bertragen worden ist.
+F{\"u}r die Bestimmung der Grenzen von \textit{Kurz}, \textit{Mittel} und \textit{Lang} hat der Benutzer 10 Signale zu der jeweiligen Kategorie einordnen sollen. 
+Da man bei 16\% der Probanden bei diesem Schritt keine eindeutigen Grenzen bestimmen konnte, musste der Schritt ein weiteres mal wiederholt werden. 
 
-Obwohl die 10 normalverteilten Signale in zuf{\"a}lliger Reihenfolge abgespielt wurden, wurde bei 84\% aller Probanden die zehn Signale so bewertet, dass zuerst alle Kurz, gefolgt von nur Mittel und anschlie{\ss}end nur Lang bewertet wurden. 
+Obwohl die 10 normalverteilten Signale in zuf{\"a}lliger Reihenfolge abgespielt wurden, wurde bei 84\% aller Probanden die zehn Signale so bewertet, dass zuerst alle \textit{Kurz}, gefolgt von nur \textit{Mittel} und anschlie{\ss}end nur \textit{Lang} bewertet wurden. 
 Die restlichen Probanden haben an den Grenzen der Signaltypen nur \textit{Kurz} und \textit{Mittel} oder \textit{Mittel} und \textit{Lang} vertauscht.
 %von Kurz und Mittel oder Mittel und Lang vertauscht gehabt.
 
@@ -45,11 +47,11 @@ Die restlichen Probanden haben an den Grenzen der Signaltypen nur \textit{Kurz} 
 %Die restlichen 16\% der Probanden haben an den Grenzen der Signaltypen nur ein Signal vom Kurz und Mittel oder Mittel und Lang vertauscht gehabt.
 
 In der Auswertung \autoref{fig:Initialisierung} haben sich drei Normalverteilungen gebildet. 
-Daraus kann man entnehmen, dass Werte 100ms und  200 ms eindeutig als Kurz, sowie auch Werte 900ms und 1000ms als Lang erkannt worden sind. 
-Einen eindeutigen Hochpunkt f{\"u}r Mittel hat man bei dem Wert von 500ms, dennoch gab es einige Probanden f{\"u}r die dieser Wert noch als Kurz oder Lang empfunden wurde. 
+Daraus kann man entnehmen, dass die Werte 100ms und 200ms eindeutig als \textit{Kurz}, sowie auch die Werte 900ms und 1000ms als \textit{Lang} erkannt worden sind. 
+Einen eindeutigen Hochpunkt f{\"u}r Mittel hat man bei dem Wert von 500ms, dennoch gab es einige Probanden f{\"u}r die dieser Wert noch als \textit{Kurz} oder Lang empfunden wurde. 
 
 Aus dem Diagramm kann man sehr sch{\"o}n erkennen, dass man eine Personalisierung von Vibrationen ben{\"o}tigen k{\"o}nnte, da man au{\ss}er den R{\"a}ndern keine eindeutige Zuweisung von \textit{Kurz}, \textit{Mittel} oder \textit{Lang} unter allen Probanden bestimmen konnte. 
-Man kann zwar im Vorfeld Werte f{\"u}r Signale definieren, wie es derzeitig einige Firmen machen, diese Werte k{\"o}nnten jedoch von Personen unterschiedlich wahrgenommen werden.
+Man kann zwar im Vorfeld Werte f{\"u}r Signale definieren, wie es in dem Paper \cite{pescara2016ruttelflug} gemacht wurde. Bei mehreren Signallängen ist die Differenzierung von Personen unterschiedlich.
 %Aus dem Diagramm kann man sehr sch{\"o}n erkennen, dass man Werte zwar im Vorfeld selbst definieren kann, diese Werte k{\"o}nnten unter verschiedenen Probanden jedoch anders wahrgenommen werden und es wei{\ss}t darauf hin, dass man sehr wohl eine Personalisierung von Vibrationen ben{\"o}tigen k{\"o}nnte. 
 
 %% ==============================
@@ -84,46 +86,45 @@ Man kann zwar im Vorfeld Werte f{\"u}r Signale definieren, wie es derzeitig eini
 Der Algorithmus wurde insgesamt vier mal ausgef{\"u}hrt, anschlie{\ss}end wurde aus der letzten Population der personalisierte Wert gemittelt. 
 
 \paragraph{Kurz}
-Eine der gr{\"o}{\ss}ten Ver{\"a}nderungen im Diagramm \autoref{MinMaxSignale} gibt es bei \textbf{Kurz}; die oberste Grenze vom Maximum ist nach vier Iterationen von 600ms auf 415ms gesunken. 
-Die obere Grenze des Minimum ist von 100ms auf 300ms gestiegen. 
+Eine der gr{\"o}{\ss}ten Ver{\"a}nderungen im Diagramm \autoref{fig:MinMaxSignale} gibt es bei \textit{Kurz}; die oberste Grenze vom Maximum ist nach vier Iterationen von 600ms auf 415ms gesunken. 
+Die obere Grenze des Minimums ist von 100ms auf 300ms gestiegen. 
 %Der Bereich verkleinert insgesamt das Intervall um 44\% von 100 bis 600ms auf 140 bis 420 ms. 
 Der Median von den Maximum und Minimum konvergieren in die gleiche Richtung. 
 Nach vier Iterationen ist der Median vom Minimum um 80ms nach oben und der Median von dem Maximum auch um 80ms nach unten gewandert. 
 Das Minimum und Maximum {\"u}berschneidet sich in der 2. Iteration nur minimal. 
 In der 4. Iteration {\"u}berschneiden sich Minimum und Maximum um 150ms. 
-Das 50\% Quartil vom Minimum w{\"a}chst um bis zu 100ms, wobei das 50\% Quartil beim Maximum von einem 200ms Intervall auf ein 120ms Intervall verkleinert. 
+Das 50\% Quartil vom Minimum w{\"a}chst um bis zu 100ms, wobei das 50\% Quartil beim Maximum sich das 200ms Intervall auf ein 120ms Intervall verkleinert. 
 Das gesamte Intervall von \textit{Kurz} verkleinert sich insgesamt um 44\% von 100-600ms auf 140-420ms, somit ist das die gr{\"o}{\ss}te Ver{\"a}nderung unter allen Intervallen.
 
 
 
 \paragraph{Mittel}
-In der ersten Iteration besitzt man schon {\"u}berschneidungen des Minimum und Maximum. 
-Von der ersten zur zweiter Iteration verschieben sich die Grenzen des Minimum um ca. 10 ms nach oben, diese werden im Verlauf der Iteration minimal kleiner.  
+In der ersten Iteration besitzt man schon {\"U}berschneidungen beim Minimum und Maximum. 
+Von der ersten zur zweiter Iteration verschieben sich die Grenzen des Minimums um ca. 10ms nach oben, diese werden im Verlauf der Iteration minimal kleiner.  
 Die Grenzen des Maximums hingegen werden gr{\"o}{\ss}er und verschieben sich anschlie{\ss}end minimal nach unten. 
-Das 50\% Quartil verkleinert sich um 40\% sich beim Minimum von einem 200ms Intervall auf ein 120ms Intervall und verschiebt sich anschlie{\ss}end im Verlauf der folgenden Iterationen nur nach oben. 
-Bei \textit{Mittel} habt sich das gesamt Intervall um 16\% von 300-800ms auf 345-766ms verkleinert.
+Das 50\% Quartil verkleinert sich um 40\% beim Minimum von einem 200ms Intervall auf ein 120ms Intervall und verschiebt sich anschlie{\ss}end im Verlauf der folgenden Iterationen nur nach oben. 
+Bei \textit{Mittel} hat sich das gesamt Intervall um 16\% von 300-800ms auf 345-766ms verkleinert.
 
 
 \paragraph{Lang}
-Die meisten Ausrei{\ss}er sind in bei Lang vertreten, hier hat man in der zweiten Iteration schon ein Maximum von 1000ms auf unter 800ms und 880ms erhalten, das ist eine {\"a}nderung eines Maximums um 200ms nach nur einer Iteration bei einem Probanden.
-Die 50\% Quartile des Maximums werden Minimal gr{\"o}{\ss}er und wachsen nach unten.
-Das 50\% Quartile des Minimums werden die kurzzeitig gr{\"o}{\ss}er, minimiert sich minimal wieder im Verlauf.
+Die meisten Ausrei{\ss}er sind in bei Lang vertreten, hier hat man in der zweiten Iteration schon ein Maximum von 1000ms auf unter 800ms und 880ms erhalten, das ist eine {\"A}nderung eines Maximums um 200ms nach nur einer Iteration bei einem Probanden.
+Das 50\% Quartile des Maximums werden minimal gr{\"o}{\ss}er und wachsen nach unten.
+Die 50\% Quartile des Minimums werden kurzzeitig gr{\"o}{\ss}er, minimieren sich minimal im Verlauf.
 Die Grenzen des gesamten Intervalls von \textit{Lang} haben sich um 11\% von 500-1000ms auf 555-997ms minimiert.
-Zwischen der 3. und 4. Iteration bei \textit{Lang} ist es das einzige mal vorgekommen, dass zwischen zwei Itterationen bis auf 3ms keine Unterschiede erkennbar sind.
+Zwischen der 3. und 4. Iteration bei \textit{Lang} ist es das einzige mal vorgekommen, dass zwischen zwei Iterationen bis auf 3ms keine Unterschiede erkennbar sind.
 Das w{\"u}rde bedeuten, dass nach der 3. Generation f{\"u}r die Probanden schon ein sehr gut unterscheidbares Ergebnis vorhanden gewesen ist.
 % {\"a}ndern sich aber wieder auf mit dem Ausrei{\ss}er der ersten Iteration auf das gleiche Intervall und verschieben sich pro Iteration leicht nach oben.
 
 %\\
 
-Unter den Signaltypen {\"u}berschneiden sich die Iterationen die Grenzen selbst zwischen den Iterationen selbst. 
-Diese {\"U}berschneidungen verringern sich nach den 4 Iterationen.
+Unter den Signaltypen {\"u}berschneiden sich die Grenzen selbst, diese verringern sich im Verlauf der Iterationen.
 
 Das Minimum steigt stetig und das Maximum verringert sich. 
 Denn genau diesen Effekt wollte man auch erzielen, dass der Benutzer zu seinen personalisierten Wert konvergiert.
-Bei Kurz und Mittel {\"u}berschneiden sich die 50\% Quartile. 
-Bei Lang {\"u}berschneiden diese in keiner Iteration.
+Bei \texit{Kurz} und \texit{Mittel} {\"u}berschneiden sich die 50\% Quartile. 
+Bei \texit{Lang} {\"u}berschneiden sich diese in keiner Iteration.
 
-Schlussfolgernd kann man sagen, dass die man anhand der 50\% Quartile vom Maximum und Minimum aller Probanden einen Kurzes Signal in dem Bereich von 130ms bis 300ms, ein Mittleres Signal zwischen 430ms und 640ms und ein Langes Signal zwischen 740ms und 980ms die gebildet haben. 
+Schlussfolgernd kann man sagen, dass die man anhand der 50\% Quartile vom Maximum und Minimum aller Probanden einen Kurzes Signal in dem Bereich von 130ms bis 300ms, ein Mittleres Signal zwischen 430ms und 640ms und ein Langes Signal zwischen 740ms und 980ms gebildet haben. 
 
 
 
@@ -139,12 +140,13 @@ Schlussfolgernd kann man sagen, dass die man anhand der 50\% Quartile vom Maximu
 
 In dem Diagramm \autoref{fig:GrenzenNachAlgo} sind alle gemittelten personalisierten Werte nach der vierten Iteration abgebildet. 
 Daraus l{\"a}sst sich ableiten, dass zwischen den Signaltypen von \textit{Kurz}, \textit{Mittel} und \textit{Lang} sich die Grenzen {\"u}berschneiden und man somit sagen kann, dass man diese Bereiche auf f{\"u}r vordefinierte Signale meiden sollte. 
-Die Grenzen {\"u}berschneiden zwischen \textit{Kurz} und \textit{Mittel} von 289-355ms und zwischen \textit{Mittel} und \textit{Lang} von 729-752ms.
-F{\"u}r die einzelnen Signaltypen hat sich der Median f{\"u}r \textit{Kurz} bei 202ms, f{\"u}r \textit{Mittel} bei 548ms und \textit{Lang} bei 893ms bestimmen k{\"o}nnen.
+Die Grenzen {\"u}berschneiden sich zwischen \textit{Kurz} und \textit{Mittel} von 289-355ms und zwischen \textit{Mittel} und \textit{Lang} von 729-752ms.
+F{\"u}r die einzelnen Signaltypen hat sich der Median f{\"u}r \textit{Kurz} bei 202ms, f{\"u}r \textit{Mittel} bei 548ms und \textit{Lang} bei 893ms gebildet.
 Die oberen 25\% von \textit{Lang} und die unteren 25\% von \textit{Kurz} weisen nur eine minimale Abweichung auf. 
 Im Gegensatz dazu gibt es eine Abweichung von genau 109ms bei den oberen 25\% von \textit{Kurz} und den unteren 25\% von \textit{Lang}.
 Es gibt einen Ausrei{\ss}er bei \textit{Lang} mit einem Wert von 635ms, dabei handelt es sich nicht um keinen Fehler, sondern einen Probanden der genau dies f{\"u}r sich als personalisierten Wert bestimmt hat.
-Im Vergleich der inneren 50\% von den jeweiligen Signaltypen wei{\ss}t \textit{Kurz} einen Intervall von 90 ms und \textit{Lang} einen Intervall von 99ms auf, wobei \textit{Mittel} diesen Wert von 144 ms am gr{\"o}{\ss}ten Bereich ist und um nahezu 50ms gr{\"o}{\ss}er als Kurz und Lang ist. 
+Im Vergleich zu dem inneren 50\% Quartil von \textit{Kurz}, das ein 90ms Intervall hat, und für \textit{Lang} 99ms Intervall existiert, hat \textit{Mittel} den Wert von 144ms. Damit ist \textit{Mittel} um nahezu 50ms größer als die anderen Signaltypen.
+%Im Vergleich der inneren 50\% Quartile von den jeweiligen Signaltypen wei{\ss}t \textit{Kurz} einen Intervall von 90 ms und \textit{Lang} einen Intervall von 99ms auf, wobei \textit{Mittel} diesen Wert von 144 ms am gr{\"o}{\ss}ten Bereich ist und um nahezu 50ms gr{\"o}{\ss}er als Kurz und Lang ist. 
 
 
 \paragraph{Stimmung im Verlauf des Algorithmus}
@@ -159,7 +161,7 @@ Im Vergleich der inneren 50\% von den jeweiligen Signaltypen wei{\ss}t \textit{K
 Nach jeder Iteration wurden die Benutzer gefragt, wie Ihre Stimmung \autoref{fig:Stimmung} aktuell sei. 
 Dabei hat es bei 62\% aller Probanden keine {\"A}nderung der Stimmung gegeben. 
 Diese Probanden hatten Ihre Stimmung mit \textit{Gut} oder \textit{Sehr gut} bewertet gehabt. 
-Im Gegensatz dazu hat sich die Stimmung bei 16\% der Probanden entweder zwischen \textbf{Gut} und \textbf{Sehr gut} oder \textbf{Gut} und \textbf{OK} abgewechselt. 
+Im Gegensatz dazu hat sich die Stimmung bei 16\% der Probanden entweder zwischen \textit{Gut} und \textit{Sehr gut} oder \textit{Gut} und \textit{OK} abgewechselt. 
 Des Weiteren gab es bei 13\% der Probanden eine aufsteigende Stimmung und bei den restlichen 9\% ist die Stimmung pro Iteration gefallen.
 
 Somit kann man feststellen, dass die Anzahl von vier Iterationen keinen wirklichen Einfluss auf die Stimmung des Benutzers ausgewirkt hat.
@@ -176,7 +178,7 @@ Somit kann man feststellen, dass die Anzahl von vier Iterationen keinen wirklich
 \end{figure}
 
 Man hat dem Probanden die M{\"o}glichkeit geboten, ein Signal wiederholen zu d{\"u}rfen. 
-Im Verlauf des Algorithmus wollte man herausfinden wie oft unter allen Probanden auf Replay f{\"u}r ein bestimmtes Intervall Replay gedr{\"u}ckt wurde \autoref{fig:ReplayFinal290}. 
+Im Verlauf des Algorithmus wollte man herausfinden, wie oft unter allen Probanden auf Replay f{\"u}r ein bestimmtes Intervall gedr{\"u}ckt wurde \autoref{fig:ReplayFinal290}. 
 %Die Anzahl der wie oft auf Replay gedr{\"u}ckt wurde 
 
 In der ersten Iteration haben 44\% der Probanden in dem Intervall von 700-799ms die gr{\"o}{\ss}ten Schwierigkeiten gehabt ein Signal zuzuordnen und sich das Signal erneut abgespielt. 
@@ -186,18 +188,18 @@ Die Restlichen Intervalle der ersten Iteration wurden mit einem Mittelwert von 3
 In der zweiten Iteration hat sich die Anzahl der Replays um einiges verringert, hier war der Mittelwert insgesamt bei 22\%, das Minimum war bei 200-299ms im Wert von 15\% und das Maximum bei 500-599ms mit 27\%.  
 Die dritte Iteration hat eine Verbesserung bei allen nahezu allen Werten gehabt, bis auf das Intervall von 700-799ms was auf 35\% angestiegen ist; insgesamt ist der Mittelwert in dieser Iteration bei 19\%. 
 
-Selbst in der letzten Iteration hat sich ein globales Minimum unter allen Iterationen bei 800-899ms von 9,5\% gebildet. Der globale Maximum war bei 700-799ms in der ersten Iteration mit 43\%, ist aber auch in der vierten Iteration, trotz Verbesserungen zwischen durch das Maximum mit 42,5\%. 
+Selbst in der letzten Iteration hat sich ein globales Minimum unter allen Iterationen bei 800-899ms von 9,5\% gebildet. Das globale Maximum war bei 700-799ms in der ersten Iteration mit 43\%, ist aber auch in der vierten Iteration, trotz Verbesserungen zwischen durch das Maximum mit 42,5\% geblieben. 
 
 Man kann daraus erkennen, dass die Probanden genau an dem Bereich von Kurz zu Mittel, was sich in der 4. Iteration bei 200-399ms bewegt, und Mittel zu Lang, dass zwischen 600-799ms liegt, am meisten den Replay Knopf gedr{\"u}ckt haben. 
 Ein viertel aller Probanden haben bei 900-1000ms in jeder Iteration das Signal erneut abgespielt. 
 Jedoch kann man in der vierten Iteration sehr gut erkennen, dass die Signale mit den Werten 100-199ms, 400-599ms und 800-899ms am geringsten erneut abgespielt werden mussten.
 Im Durchschnitt wurde, der Replay Button 1,7mal gedr{\"u}ckt, wenn man ein Signal erneut abgespielt haben wollte. 
-Dabei war das Minimum einmal und das Maximum neun mal, dass man das Signal erneut abgespielt hat.
+Dabei war das Minimum einmal und das Maximum neun mal, dass man das Signal erneut abspielen wollte.
 
 \paragraph{Mittelwert}
-Beim Verlauf des Algorithmus konnte man feststellen, dass zwischen der ersten und der letzten Iteration unter allen Probanden der Mittelwert sich wie im folgenden Verhalten hat. 
-\textit{Kurz} hatte eine durchschnittliche Abweigung von 10,11\% bei einem Minimum von 1\% und einem Maximum von 23\%. 
-Weiterhin habe sich der Mittelwert bei den beiden Signaltypen \textit{Miitel} und \textit{Lang} von der ersten zur letzten Iteration im Durchschnitt nur um 3,34\% ver{\"a}ndert.
+Im Verlauf des Algorithmus konnte man feststellen, dass zwischen der ersten und der letzten Iteration unter allen Probanden der Mittelwert sich wie im folgenden Verhalten hat. 
+\textit{Kurz} hatte eine durchschnittliche Abweigung von 10,11\%, bei einem Minimum von 1\% und einem Maximum von 23\%. 
+Weiterhin habe sich der Mittelwert bei den beiden Signaltypen \textit{Mittel} und \textit{Lang} von der ersten zur letzten Iteration im Durchschnitt nur um 3,34\% ver{\"a}ndert.
 Dabei war das Minimum bei 0,09\% und ein Maximum bei 9,9\% f{\"u}r \textit{Mittel} sowie ein Minimum von 0,06\% und ein Maximum von 15,33\% f{\"u}r \textit{Lang} vorhanden.
 
 \paragraph{Beantwortung der Fragen}
@@ -207,11 +209,11 @@ Dabei war das Minimum bei 0,09\% und ein Maximum bei 9,9\% f{\"u}r \textit{Mitte
 	\caption{Durchschnittlich ben{\"o}tigte Zeit der Probanden, um die drei Fragen des Algorithmus zu bewerten.}
 	\label{fig:ZeitDurchschnitt}
 \end{figure}
-Im Verlauf des Algorithmus hat man auch die Zeit \autoref{fig:ZeitDurchschnitt}, die ben{\"o}tigt wurde um die Fragen f{\"u}r ein Signal zu beantworten, gespcierht. 
-Daraus hat sich ergeben, dass \textit{Kurz} in jeder Iteration um einer ganzen Sekunde schneller beantwortet wurde. 
+Im Verlauf des Algorithmus hat man auch die Zeit \autoref{fig:ZeitDurchschnitt}, die ben{\"o}tigt wurde um die Fragen f{\"u}r ein Signal zu beantworten, gespeichert. 
+Daraus hat sich ergeben, dass \textit{Kurz} in jeder Iteration um einer ganzen Sekunde schneller beantwortet wurde als die anderen beiden Signaltypen. 
 F{\"u}r \textit{Mittel} und \textit{Lang} hat man im Durchschnitt immer gleich viel Zeit ben{\"o}tigt.
-Nach der dritten Iteration ist der Wert f{\"u}r alle drei Signaltypen nahezu konstant geblieben, desweiteren hat sich bis zur dritten Iteration bei allen Signaltypen der Wer um drei Sekunden verringert. 
-Daraus l{\"a}sst sich ableite, dass die Probanden sich an die Signale gew{\"o}hnt haben und die drei Fragen schneller beantworten konnten.
+Nach der dritten Iteration ist der Wert f{\"u}r alle drei Signaltypen nahezu konstant geblieben, desweiteren hat sich bis zur dritten Iteration bei allen Signaltypen der Wert um drei Sekunden verringert. 
+Daraus l{\"a}sst sich ableiten, dass die Probanden sich an die Signale gew{\"o}hnt haben und die drei Fragen schneller beantworten konnten.
 
 \paragraph{Verlauf der Werte}
 \begin{figure}[htbp] 
@@ -230,14 +232,18 @@ Anhand des Diagramms \autoref{fig:ergebnisNachAlgo} kann man erkennen, dass die 
 	\label{fig:gruppierung}
 \end{figure}
 
-In der ersten Itteration \autoref{fig:gruppierung} sieht man sehr sch{\"o}n, wie es noch keine wirklliche Unterteilung existiert, es gibt die Bereiche bis 250ms in denen sich das Signal \textit{Kurz} befindet und von 800-1000ms auch \textit{Lang}, aber es gab {\"u}berschneidungen in den Bereich von \textit{Mittel} mit den anderen beiden Signaltypen. 
+In der ersten Itteration \autoref{fig:gruppierung} erkennt man sehr gut, dass es noch keine wirkliche Unterteilung existiert.
+Bis zum Bereich von 250ms hat sich eindeutig \textit{Kurz} und in dem Bereich von 800-1000ms eindeutig \textit{Lang} gebildet. In dem restlichen Bereich existieren Überschneidungen der Signaltypen.
+%In dem Bereich bis zu 250ms hat sich vermehrt das Signal \textit{Kurz} und 
+%Die Bereiche bis 250ms in denen sich das Signal \textit{Kurz} befindet und von 800-1000ms auch \textit{Lang}, aber es gab {\"u}berschneidungen in den Bereich von \textit{Mittel} mit den anderen beiden Signaltypen. 
 Anhand der zweiten Iteration haben sich schon leichte Cluster gebildet, bei denen es dennoch Ausrei{\ss}er von Kurz und Mittel an den Werten nahe 500ms existieren. 
 Bis zur vierten Iteration verdichten sich die Signale von \textit{Kurz} in dem oberen linken Bereich, das bedeutet, dass man f{\"u}r Signale vom Typ \textit{Kurz} eher st{\"a}rkere Signale bevorzugt hat. 
-Die Signale des Typs \textit{Mittel} haben im Verlauf des Algorithmus genau in der Mitte bei dem Wert 500ms und der mittleren St{\"a}rkestufe eine Hochpunkt gebildet. 
+Die Signale des Typs \textit{Mittel} haben im Verlauf des Algorithmus genau in der Mitte bei dem Wert 500ms und der mittleren St{\"a}rkestufe einen Hochpunkt gebildet. 
 Desweiteren hat sich das Signaltyp \textit{Lang} in den St{\"a}rkestufen eins (f{\"u}r sehr schwach) bis drei (f{\"u}r o.k.) einzelne Cluster gebildet. 
-Wohingegen bei \textit{Kurz} und \textit{Mittel} sich ein Hochpunkt gebildet haben, hat sich bei \textit{Lang} f{\"u}r die St{\"a}rkestufen eins (f{\"u}r sehr schwach) bis drei (f{\"u}r o.k.) jeweils ein Cluster gebildet.
+Wohingegen bei \textit{Kurz} und \textit{Mittel} sich ein Hochpunkt gebildet haben.
+%, hat sich bei \textit{Lang} f{\"u}r die St{\"a}rkestufen eins (f{\"u}r sehr schwach) bis drei (f{\"u}r o.k.) jeweils ein Cluster gebildet.
 
-Man kann zweifellos erkennen, dass wenn man noch weitere Iterationen ausgef{\"u}hrt h{\"a}tte, w{\"u}rde sich das Ergebnis weiter in einem Punkt verdichten. 
+Man kann zweifellos erkennen, dass wenn man noch weitere Iterationen ausgef{\"u}hrt h{\"a}tte, w{\"u}rde sich das Ergebnis weiter verdichten. 
 
 %H{\"a}tte man noch mehr Iterationen des Algorithmus ausgef{\"u}hrt, w{\"a}re es zweifellos, dass sich das Ergebnis weiter in einem Punkt verdichten w{\"u}rden. 
 
@@ -266,20 +272,21 @@ Man kann zweifellos erkennen, dass wenn man noch weitere Iterationen ausgef{\"u}
 \end{tabular}
 \end{table}
 
-Die Tabelle \autoref{MusterGenauigkeit} beschreibt, wie genau die Probanden ein Signal aus den Mustern erkennen konnten, man hat die generischen Muster mit den genetischen Mustern verglichen, sowie f{\"u}r jede Gruppierung von Probanden die Auswertung neu bestimmt. 
+Die \autoref{MusterGenauigkeit} beschreibt, wie genau die Probanden ein Signal aus den Mustern erkannt haben, man hat die generischen Muster mit den genetischen Mustern verglichen, sowie f{\"u}r jede Gruppierung von Probanden die Auswertung neu bestimmt. 
 %Die Tabelle \autoref{MusterGenauigkeit} beschreibt, wie genau die Probanden ein Muster ohne Fehler erkennen konnten, man hat die generischen Muster mit den genetischen Mustern verglichen, sowie f{\"u}r jede Gruppierung von Probanden die Auswertung neu bestimmt. 
 %Dabei hat man in den jeweiligen Kategorien nach den gelisteten Kategorien die Genauigkeit gruppiert.
 
-Laut der Tabelle kann man feststellen, dass die Probanden die keine Computerspiele spielen, die einzelnen Signale der generischen f{\"u}nfer Muster nur zu 58\% richtig erkannt haben. Dieser Wert ist das Globale Minimum unter allen Gruppierungen der Probanden.
+Laut der Tabelle kann man feststellen, dass die Probanden die keine Computerspiele spielen, die einzelnen Signale der generischen f{\"u}nfer Muster nur zu 58\% richtig erkannt haben. 
+Dieser Wert ist das globale Minimum unter allen Gruppierungen der Probanden.
 Bei den Probanden, die schon einmal eine Smartwatch nutzten, haben bei den genetischen dreier Mustern ein einzelnes Signal mit 86\% Wahrscheinlichkeit richtig erkannt, der auch als globales Maximum unter allen Probanden-Gruppen existiert.
 
 %Das Globale Maximum ein Signal richtig zu erkennen, war bei den genetischen Mustern mit drei Signalen, bei einem Wert von 86\% durchschnittlicher Genauigkeit bei Probanden, die schon mal eine Smartwatch benutzt hatten. 
 %Das Globale Maximum war bei den genetischen Mustern mit drei Signalen bei einem Wert von 86\% durchschnittlicher Genauigkeit bei Probanden, die schon mal eine Smartwatch benutzt hatten. 
 %Das Globale Minimum war bei der Gruppe an Probanden die keine Computerspiele spielen und zwar mit der Genauigkeit von 58\% bei generischen Mustern mit 5 Signalen.
 
-Unter den vorliedenden Ergebnissen, haben die m{\"a}nnlichen Probanden im Vergleich zu den weiblichen Probanden die einzelnen Signale unter allen Muster-Typen besser erkannt.
+Unter den vorliedenden Ergebnissen, haben die m{\"a}nnlichen Probanden im Vergleich zu den weiblichen Probanden die einzelnen Signale aller Muster-Typen besser erkannt.
 %Unter den vorliegenden Ergebnissen, waren die m{\"a}nnlichen Probanden bei der Erkennung von komplett richtigen Mustern im Durchschnitt immer um einige Prozent besser.
-Die musikalischen und nicht musikalischen Probanden erkennen bei den dreier Mustern die Signale gleich gut, wobei bei den vierer und f{\"u}nfer Muster die musikalischen Probanden bis zu 5\% besser waren.
+%Die musikalischen und nicht musikalischen Probanden erkennen bei den dreier Mustern die Signale gleich gut, wobei bei den vierer und f{\"u}nfer Muster die musikalischen Probanden bis zu 5\% besser waren.
 Bei den dreier Mustern k{\"o}nnen die musikalischen im Vergleich zu nicht musikalischen Probanden die Signale gleich gut erkennen, jedoch zeigen die musikalichen Probanden bei vierer und f{\"u}nfer Muster eine Verbesserung bis zu 5\%.
 %Unter der Kategorie "`musikalisch"' kann man nachvolzeihen, dass bei den dreier Mustern die Signale gleichgut erkannt worden sind. 
 %Bei den Musikalischen Probanden sind bei den genetischen dreier Mustern gleich gut wie die nicht musikalischen Probanden. 
@@ -299,7 +306,7 @@ Bei den Signalen der f{\"u}nfer Muster haben die Probanden, die schon einmal ein
 
 Im Vergleich zu den generischen Muster wurden die Signale der genetischen Muster {\"o}fter richtig zuge{\"o}rdnet. 
 Die Genauigkeit erreichte sogar bei dem genetischen dreier Muster bis zu 82\%. 
-Somit ist es um 5\% besser als der Wert von der generischen dreier Muster.
+Somit ist es um 5\% besser als der Wert von den generischen dreier Mustern.
 %Im Vergleich der genetischen und generischen Muster aller Probanden, wurden die Genetischen Signale eindeutig {\"o}fter richtig erkannt als die generischen Werte. 
 %Die genetischen dreier Muster wurden die Signale mit 82\% um 5\% besser erkannt als die generischen dreier Muster. 
 Obwohl der Prozenzsatz bei den vierer Mustern ingesamt gesunken ist, gewinnt jedoch der Unterschied an Ausdehnung.
@@ -328,11 +335,11 @@ Generell wurden 75\% der Signale bei den genetischen f{\"u}nfer Mustern korrekt 
 	\begin{minipage}[t]{0.8\textwidth}
 		\includegraphics[width=\textwidth]{pics/analyse/algo/ohneFehler/Fehler5.png}
 	\end{minipage}
-	\caption{Anhand der Diagramme wird die H{\"a}ufigkeit, wie oft einem Muster nicht richtig erkannt worden ist. Es z{\"a}hlt ein Muster als nicht erkannt, wenn mindestens ein Signal nicht korrekt zugrordnet werden konnte.   
+	\caption{Anhand der Diagramme wird die H{\"a}ufigkeit, wie oft einem Muster nicht richtig erkannt worden ist dargestellt. Es z{\"a}hlt ein Muster als nicht erkannt, wenn mindestens ein Signal nicht korrekt zugrordnet werden konnte.   
 	%Darstellung der Wahrscheinlichkeit {\"u}ber alle Probanden, wie oft bei einem Muster mindestens ein Signal nicht korrekt zugeordnet werden konnte.
 	Dabei wurden die genetischen und generischen Fehlerangaben (in \%) direkt miteinander verglichen. 
-	Die Diagramme wurden f{\"u}r die jeweiligen Muster (dreier, vierer und f{\"u}nfer) seperat angezeigt.
-	Hier steht K f{\"u}r \textit{Kurz}, M f{\"u}r \textit{Mittel} und L f{\"u}r \textit{Lang}}
+	Die Diagramme wurden f{\"u}r die jeweiligen Muster (dreier, vierer und f{\"u}nfer) seperat dargestellt.
+	Hier steht K f{\"u}r \textit{Kurz}, M f{\"u}r \textit{Mittel} und L f{\"u}r \textit{Lang}.
 	\label{fig:FehlerBild}
 \end{figure}
  
@@ -340,8 +347,10 @@ In der Darstellung \autoref{fig:FehlerBild} wurden die Muster und die H{\"a}ufig
 Die Muster \textit{KKK} und \textit{LLL} haben die meisten Probanden korrekt erkannt, nur 12 \% haben bei den genetischen Werten das Signal nicht korrekt erkennen k{\"o}nnen. 
 Au{\ss}erdem wurden hat man bei den selben Mustern mit den generischen Werten eine Verschlechterung von 7\% bei \textit{KKK} und eine Verdopplung bei \textit{LLL} festgestellt, wobei man das gleiche Verhalten auch bei den vierer Muster erkennen kann.
 
-Im Vergleich der drei Diagramme kann man erkennen, dass f{\"u}r die dreier und vierer Muster mit nur einem Signaltypen bei \textit{Kurz} und \textit{Lang} nahezu identisch sind und die genetischen Muster {\"o}fter erkannt wurden als die generischen Muster. 
-Das Muster mit durchgehenden \textit{Mittel} Signalen haben die Probanden bei den dreier sowie bei den vierer Mustern jeweils das genetische bevorzugt, da die generischen Muster um jeweils das Doppelte schlechter erkannt wurde. 
+Wenn man die drei Diagramme vergleicht, erkannt man, dass f{\"u}r die dreier und vierer Muster mit nur einem Signaltypen (\textit{Kurz} und \textit{Lang}) nahezu identisch sind.
+Die genetischen Muster wurden dabei {\"o}fter erkannt als die generischen Muster. 
+%Im Vergleich zu den drei Diagrammen kann man erkennen, dass f{\"u}r die dreier und vierer Muster mit nur einem Signaltypen, bei \textit{Kurz} und \textit{Lang} nahezu identisch sind und die genetischen Muster {\"o}fter erkannt wurden als die generischen Muster. 
+Das Muster mit durchgehenden \textit{Mittel} Signalen haben die Probanden schlechter erkannt als die anderen beiden Signaltypen und es waren bei den dreier sowie bei den vierer Mustern jeweils das genetische um das doppelte besser als die generischen Muster.
 
 Unter allen dreier Mustern wurden zwei drittel der genetischen Muster besser als die generischen Muster erkannt. 
 Zus{\"a}tzlich befindet sich der Durschnitt bei 36\% f{\"u}r die genetischen und bei 43\% f{\"u}r die generischen dreier Muster.
@@ -349,9 +358,9 @@ Dieser Prozenzssatz steigt bei den genetischen vierer Muster auf 46\% und bei de
 Anhand dieser Daten kann man sagen, je h{\"o}her die Anzahl der Signale in einem Muster werden, desto weniger Probanden k{\"o}nnen diesen noch richtig erkennen.
 
 Desweiteren kann man feststellen, dass die genetischen vierer Muster nur noch eine minimale Abweichung zu den generischen Muster aufweisen, das selbe ist auch bei den f{\"u}nfer Mustern zu erkennen.
-Vor allem habe sich im durch dem erh{\"o}hen nicht alles verschlechtert, denn bei dem auf- und wieder absteigenden Muster \textit{KMLMK} haben die Probanden es genauso gut erkannt, wie das durchg{\"a}ngige Kurze f{\"u}nfer Muster. 
+Durch dem Erh{\"o}hen der Komplexität hat sich nicht alles verschlechtert, denn bei dem auf- und wieder absteigenden Muster \textit{KMLMK} haben die Probanden es genauso gut erkannt, wie das durchg{\"a}ngige Kurze f{\"u}nfer Muster. 
 
-Die meisten Probanden haben bei den Mustern nur ein Signal falsch erkannt oder haben es um eine Signaltypen h{\"o}her oder niedriger bewertet, dabei  haben die aber dennoch erkannt, dass die Signale sich ver{\"a}ndert haben. Als Beispiel haben Sie das Muster \textit{LMMLL} als \textit{MKKMM} bewertet. \\
+Die meisten Probanden haben bei den Mustern nur ein Signal falsch erkannt oder haben es um eine Signaltypen h{\"o}her oder niedriger bewertet, dennoch haben die Probanden erkannt, dass die Signale sich ver{\"a}ndert haben. Als Beispiel haben Sie das Muster \textit{LMMLL} als \textit{MKKMM} bewertet. \\
 
 \begin{figure}[htbp] 
             \centering
@@ -359,11 +368,14 @@ Die meisten Probanden haben bei den Mustern nur ein Signal falsch erkannt oder h
 	\caption{Durchschnittlich ben{\"o}tigte Zeit der Probanden, um ein Signal eines Musters zu erkennen}
 	\label{fig:ZeitbenoetigtSignalMuster}
 \end{figure}
+
 Im Gegensatz zu der ben{\"o}tigten Zeit beim Algorithmus \autoref{fig:ZeitDurchschnitt}, hat man f{\"u}r jeden Muster-Typen der ein weiteres Signal hinzugef{\"u}gt hat, mehr Zeit ben{\"o}tigt um ein Signal zu erkennen \autoref{fig:ZeitbenoetigtSignalMuster}. 
 Die Zeiten f{\"u}r die Muster mit drei Signalen haben sogar eine bessere Zeit als die letzte Iteration vom Algorithmus. 
 Alle Signaltypen bei dem dreier Muster haben eine {\"a}hnliche Durchschnittliche Erkennungszeit von f{\"u}nf Sekunden.
 %Im Vergleich der Signaltypen bei den dreier Muster-Typen untereinander, wurden unter den dreier Signaltypen jeweils eine Durschnittliche Zeit von ca f{\"u}nf Sekunden ben{\"o}tigt.
-Man kann gut erkennen, wie bei den vierer und f{\"u}nfer Muster jeweils die Signaltypen um eine Sekunde mehr Zeit ben{\"o}tigen um diese zu erkennnen, als die dreier Muster.
+Man kann gut erkennen, dass jeder Signaltyp um eine Sekunde stets wächst, bei wachsender Signallänge.
+%Man kann gut erkennen, wie man bei den vierer und f{\"u}nfer Mustern jeweils die Signaltypen eine Sekunde mehr Zeit ben{\"o}tigt hat
+%Man kann gut erkennen, wie bei den vierer und f{\"u}nfer Mustern jeweils die Signaltypen eine Sekunde mehr Zeit ben{\"o}tigen, um diese zu erkennnen, als die dreier Muster.
 
 \begin{table}[]
 \centering
@@ -378,7 +390,7 @@ Man kann gut erkennen, wie bei den vierer und f{\"u}nfer Muster jeweils die Sign
 \end{table}
 
 Mittels einer Varianzanalyse habe man die Werte aus der \autoref{anova} bestimmt. 
-Es hat sich ergeben, dass die Probanden signifikant schlechter abgeschnitten sind, als man sie mit einem komplexeren Mustern konfrontiert hat, im Vergleich zu weniger komplexeren Mustern. 
+Es hat sich ergeben, dass die Probanden signifikant schlechter abgeschnitten sind, als man sie mit einem komplexeren Muster konfrontiert hat, im Vergleich zu weniger komplexeren Mustern. 
 Eine weitere Erkentniss ist gewesen, dass die genetischen Muster besser erkannt wurden als die generischen Muster.
 
 
