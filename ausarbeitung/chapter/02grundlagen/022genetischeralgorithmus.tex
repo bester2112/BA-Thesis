@@ -120,7 +120,19 @@ Eine \textbf{Lineare Repr{\"a}sentation} besteht aus einer Folge $a_{0}a_{1}a_{2
 Die bin{\"a}re Repr{\"a}sentation besitzt die Symbolmenge $V$ = {0,1} und ist die meist verwendete \textit{lineare Repr{\"a}sentation}. 
 Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
 
-Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination übersprungen und es wird mit der Mutation fortgefahren. Es gibt 2 Möglichkeiten die Nachfolger der zwei Eltern zu erzeugen. Bei der \textit{diskrete Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die für besser geeignet sind. Am Beispiel \autoref{tabelleBeispiel} wurden jeweils immer nur die kleineren Werte für das Nachkommen ausgewählt. Die andere Möglichkeit ist die \textit{intermediäre Rekombination} anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
+\begin{figure}
+	\centering
+    \includegraphics[width=0.7\textwidth]{pics/grundlage/binar8.png}
+    \caption{Darstellung einer binären Repräsentation der Länge 8}
+    \label{fig:binar8}
+\end{figure}
+
+
+Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination übersprungen und es wird mit der Mutation fortgefahren. 
+Es gibt zwei Möglichkeiten die Nachfolger der zwei Eltern zu erzeugen. 
+Bei der \textit{diskrete Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die besser geeignet sind. 
+Am Beispiel \autoref{tabelleBeispiel} wurden jeweils immer nur die kleineren Werte für das Nachkommen ausgewählt. 
+Die andere Möglichkeit ist die \textit{intermediäre Rekombination} anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
 
 \begin{table}[]
 \centering
@@ -134,15 +146,25 @@ Nachkomme intermediär & 0,45 & 0,55 & 0,45 & 0,5
 \end{tabular}
 \end{table}
 
-Die Rekombination einer Rekombination kann auf verschiedensten Arten repräsentiert werden. 
-Dabei werden zwei oder mehrere Eltern miteinander gemischt.
+Beim \textit{crossover} erhält man aus zwei Eltern zwei Nachkommen. 
+Das Single-point crossover überschneidet die beiden Eltern an einer Stelle und die resultierenden Eltern werden als Nachkommen übernommen.
+Beim Two-point crossover hat man zwei überschneidungen der Eltern, sowie man bei dem unoform corssover jedes zweite Element mit dem Partner getauscht hat. 
 
-\begin{figure}
+\begin{figure}[htbp] 
 	\centering
-    \includegraphics[width=0.7\textwidth]{pics/grundlage/binar8.png}
-    \caption{Darstellung einer binären Repräsentation der Länge 8}
-    \label{fig:binar8}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/grundlage/{singlepoint}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/grundlage/{twopoint}.png}
+	\end{minipage}
+	\begin{minipage}[t]{0.95\textwidth}
+		\includegraphics[width=\textwidth]{pics/grundlage/{uniform}.png}
+	\end{minipage}
+	\caption{Darstellung eines Single-point, Two-point und uniform crossovers (von oben nach unten)}
+	\label{fig:MusterBild}
 \end{figure}
+
 
 \paragraph{Baumstrukturen}
 F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repräsentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgeführt werden.
