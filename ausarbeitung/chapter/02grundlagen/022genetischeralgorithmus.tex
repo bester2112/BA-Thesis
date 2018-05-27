@@ -105,7 +105,7 @@ Nach der Rekombination besteht eine Chance, dass die Gene des Nachkommens mutier
 
 Man f{\"u}hrt f{\"u}r eine Population die Selektion, Rekombination und Mutation so oft aus, bis man die gleiche Anzahl an Individuen f{\"u}r die n{\"a}chste Generation erzeugt hat.
 Der Vorgang der Evaluierung, Selektion, Rekombination und Mutation muss f{\"u}r jede neue Generation durchgef{\"u}hrt werden. 
-Die neu erzeugte Population wird als Eingabe f{\"u}r die nächste Generation verwendet. 
+Die neu erzeugte Population wird als Eingabe f{\"u}r die n{\"a}chste Generation verwendet. 
 Dabei wird der Algorithmus so lange ausgef{\"u}hrt, bis eine hinreichende Abbruchbedingung erreicht worden ist. 
 Je nach Definition wird entweder nach einer festen Anzahl an Generationen oder erst nachdem es keine signifikanten {\"A}nderungen mehr gibt, der EA terminiert.
 %Je nach Definition der Terminierung, kann nach einer festen Anzahl an Generationen oder erst nachdem es keine signifikanten {\"A}nderungen der Generationen mehr gibt, der EA terminiert werden.
@@ -114,45 +114,45 @@ Das dadurch erzeugte Ergebnis ist eine n{\"a}herungsweise L{\"o}sung f{\"u}r das
 %% ==============================
 \subsection{Darstellung}
 %% ==============================
-Es gibt verschiedene Darstellungsm{\"o}glichkeiten von Genen, die meist verwendeten Darstellungen werden im Folgenden erläutert. 
+Es gibt verschiedene Darstellungsm{\"o}glichkeiten von Genen, die meist verwendeten Darstellungen werden im Folgenden erl{\"a}utert. 
 Das wissen, wurde aus den Quellen \cite{flickevolutionare, shiffman2012nature, DillmannZoeller2017} entnommen.
 
 \paragraph{Lineare Repr{\"a}sentation}
 Eine \textbf{Lineare Repr{\"a}sentation} besteht aus einer Folge $a_{0}a_{1}a_{2}...a_{n-1}$ von Symbolen einer fester L{\"a}nge $n$, die aus einer definierten Symbolmenge $V$ entnommen wurde, dabei ist $a_{i} \in V$.   
 
 Die bin{\"a}re Repr{\"a}sentation \autoref{fig:binar8} besitzt die Symbolmenge $V$ = \{0,1\} und ist die meist verwendete \textit{lineare Repr{\"a}sentation}. 
-%Dabei sieht eine binäre Repräsentation wie in \autoref{fig:binar8} aus.
+%Dabei sieht eine bin{\"a}re Repr{\"a}sentation wie in \autoref{fig:binar8} aus.
 
 \begin{figure}
 	\centering
     \includegraphics[width=0.7\textwidth]{pics/grundlage/binar8.png}
-    \caption{Darstellung einer binären Repräsentation der Länge 8}
+    \caption{Darstellung einer bin{\"a}ren Repr{\"a}sentation der L{\"a}nge 8}
     \label{fig:binar8}
 \end{figure}
 
 
-Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination übersprungen und es wird mit der Mutation fortgefahren. 
-Es gibt zwei Möglichkeiten die Nachfolger der zwei Eltern zu erzeugen. 
-Bei der \textit{diskreten Rekombination} wählt man die Werte eines Gens für das Nachkommen aus, die besser geeignet sind. 
-Am Beispiel \autoref{tabelleBeispiel} wurden nur die kleineren Werte für das Nachkommen bevorzugt. 
-Die andere Möglichkeit ist die \textit{intermediäre Rekombination}.
+Falls man nur aus einem Elternteil ein Nachkomme erzeugen soll, wird dabei die Rekombination {\"u}bersprungen und es wird mit der Mutation fortgefahren. 
+Es gibt zwei M{\"o}glichkeiten die Nachfolger der zwei Eltern zu erzeugen. 
+Bei der \textit{diskreten Rekombination} w{\"a}hlt man die Werte eines Gens f{\"u}r das Nachkommen aus, die besser geeignet sind. 
+Am Beispiel \autoref{tabelleBeispiel} wurden nur die kleineren Werte f{\"u}r das Nachkommen bevorzugt. 
+Die andere M{\"o}glichkeit ist die \textit{intermedi{\"a}re Rekombination}.
 Aus den Attributen der Elternteile wird der Durchschnitt gebildet und an das Nachkommen vererbt. 
-%anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen für den Nachkommen weitergegeben.
+%anhand der Gene beider Elternteile wird der Durchschnitt von beiden Werten berechnet und als Gen f{\"u}r den Nachkommen weitergegeben.
 
 \begin{table}[]
 \centering
-\caption{Dirskete und intermediäre Rekombination}
+\caption{Dirskete und intermedi{\"a}re Rekombination}
 \label{tabelleBeispiel}
 \begin{tabular}{l|llll}
 Elternteil A          & 0,3  & 0,9  & 0,1  & 0,5 \\
 Elternteil B          & 0,6  & 0,2  & 0,8  & 0,5 \\ \hline
 Nachkomme dirket      & 0,3  & 0,2  & 0,1  & 0,5 \\ \hline
-Nachkomme intermediär & 0,45 & 0,55 & 0,45 & 0,5
+Nachkomme intermedi{\"a}r & 0,45 & 0,55 & 0,45 & 0,5
 \end{tabular}
 \end{table}
 
-Beim \textit{crossover} erhält man aus zwei Eltern zwei Nachkommen. 
-Das Single-point crossover überschneidet die beiden Eltern an einer Stelle und die resultierenden Eltern werden als Nachkommen übernommen.
+Beim \textit{crossover} erh{\"a}lt man aus zwei Eltern zwei Nachkommen. 
+Das Single-point crossover {\"u}berschneidet die beiden Eltern an einer Stelle und die resultierenden Eltern werden als Nachkommen {\"u}bernommen.
 Beim Two-point crossover hat man zwei {\"U}berschneidungen der Eltern, sowie man bei dem uniform corssover jedes zweite Element mit dem Partner getauscht hat. 
 
 \begin{figure}[htbp] 
@@ -172,8 +172,8 @@ Beim Two-point crossover hat man zwei {\"U}berschneidungen der Eltern, sowie man
 
 
 \paragraph{Baumstrukturen}
-F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repräsentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgeführt werden.
-Als Beispiel für eine Baumstuktur repräsentiert die \autoref{fig:baumstruktur} den mathematischen Ausdruck $4 - 23 * 2$.
+F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repr{\"a}sentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgef{\"u}hrt werden.
+Als Beispiel f{\"u}r eine Baumstuktur repr{\"a}sentiert die \autoref{fig:baumstruktur} den mathematischen Ausdruck $4 - 23 * 2$.
 
 \begin{figure}
 	\centering
