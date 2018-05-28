@@ -2,10 +2,10 @@
 %% $Id: Genetischer Algorithmus.tex 28 2007-01-18 16:31:32Z bless $
 %%
 
-Unter dem Begriff der Evalution{\"a}ren Algorithmen (EA) versteht man eine Ansammlung von Techniken und Methoden, die f{\"u}r Optimierungsprobleme eine L{\"o}sung findet, die das Problem n{\"a}herungsweise l{\"o}st. \cite{weicker2015evolutionare} 
+Unter dem Begriff der Evolution{\"a}ren Algorithmen (EA) versteht man eine Ansammlung von Techniken und Methoden, die f{\"u}r Optimierungsprobleme eine L{\"o}sung findet, die das Problem n{\"a}herungsweise l{\"o}st. \cite{weicker2015evolutionare} 
 %/////Man hat sich bei dem EA an der Biologischen Evolution von Darwin inspirieren lassen. \cite{selzam2003genetische}
 
-%// Die Evalution{\"a}ren Algorithmen sind stochastische Optimierungsverfahren. Mithilfe eines Evolution{\"a}ren Algorithmus (EA) findet man nicht die beste L{\"o}sung f{\"u}r ein Problem, jedoch findet man eine gute L{\"o}sung, die der eigentlichen L{\"o}sung recht nahe kommt.
+%// Die Evolution{\"a}ren Algorithmen sind stochastische Optimierungsverfahren. Mithilfe eines Evolution{\"a}ren Algorithmus (EA) findet man nicht die beste L{\"o}sung f{\"u}r ein Problem, jedoch findet man eine gute L{\"o}sung, die der eigentlichen L{\"o}sung recht nahe kommt.
 
 %% ==============================
 \subsection{Evolution in der Biologie}
@@ -58,7 +58,7 @@ Unter \textbf{Gendrift} versteht man eine zuf{\"a}llige Ver{\"a}nderung der Genh
     \caption{Ablauf des Evolution{\"a}ren Algorithmus}
     \label{fig:algoSchritte}
 \end{figure}
-Der EA besitzt im Allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im Folgenden erl{\"a}utert. Dieses Wissen stammt aus den Folgenden Quellen: \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
+Der EA besitzt im Allgemeinen immer die gleichen Komponenten. Diese Komponenten werden im Folgenden erl{\"a}utert. Dieses Wissen stammt aus den folgenden Quellen: \cite{shiffman2012nature, flickevolutionare, weicker2015evolutionare}
 
 %% ==============================
 \paragraph*{Initialisierung}
@@ -141,7 +141,7 @@ Aus den Attributen der Elternteile wird der Durchschnitt gebildet und an das Nac
 
 \begin{table}[]
 \centering
-\caption{Beispiel für eine diskrete und intermedi{\"a}re Rekombination}
+\caption{Beispiel f{\"u}r eine diskrete und intermedi{\"a}re Rekombination}
 \label{tabelleBeispiel}
 \begin{tabular}{l|llll}
 Elternteil A          & 0,3  & 0,9  & 0,1  & 0,5 \\
@@ -172,7 +172,9 @@ Beim Two-point crossover hat man zwei {\"U}berschneidungen der Eltern, sowie man
 
 
 \paragraph{Baumstrukturen}
-F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. Man verwendet bei die baumartigen Strukturen um Formeln oder Programme zu repr{\"a}sentieren. Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgef{\"u}hrt werden.
+F{\"u}r \textbf{baumartige Strukturen}, wird die Genetische Programmierung verwendet. 
+Man verwendet die baumartigen Strukturen um Formeln oder Programme zu repr{\"a}sentieren. 
+Die Selektion, Rekombination und Mutation muss auf der Baumstruktur ausgef{\"u}hrt werden.
 Als Beispiel f{\"u}r eine Baumstuktur repr{\"a}sentiert die \autoref{fig:baumstruktur} den mathematischen Ausdruck $4 - 23 * 2$.
 
 \begin{figure}
